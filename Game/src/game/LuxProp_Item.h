@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -28,85 +28,82 @@
 
 class cLuxProp_Item_SaveData : public iLuxProp_SaveData
 {
-	kSerializableClassInit(cLuxProp_Item_SaveData)
-public:
-	tString msVal;
-	tString msExtraVal;
-	int mlSpawnContainerID;
-	float mfAmount;
-	tString msSubItemTypeName;
+    kSerializableClassInit(cLuxProp_Item_SaveData) public : tString msVal;
+    tString msExtraVal;
+    int mlSpawnContainerID;
+    float mfAmount;
+    tString msSubItemTypeName;
 };
-
 
 //----------------------------------------------
 
 class cLuxProp_Item : public iLuxProp
 {
-typedef iLuxProp super_class;
-friend class cLuxPropLoader_Item;
-public:	
-	cLuxProp_Item(const tString &asName, int alID, cLuxMap *apMap);
-	virtual ~cLuxProp_Item();
+    typedef iLuxProp super_class;
+    friend class cLuxPropLoader_Item;
 
-	//////////////////////
-	//General
-	bool CanInteract(iPhysicsBody *apBody);
-	bool OnInteract(iPhysicsBody *apBody, const cVector3f &avPos);
+public:
+    cLuxProp_Item(const tString& asName, int alID, cLuxMap* apMap);
+    virtual ~cLuxProp_Item();
 
-	void OnSetupAfterLoad(cWorld *apWorld);
+    //////////////////////
+    // General
+    bool CanInteract(iPhysicsBody* apBody);
+    bool OnInteract(iPhysicsBody* apBody, const cVector3f& avPos);
 
-	void OnResetProperties();
+    void OnSetupAfterLoad(cWorld* apWorld);
 
-	void UpdatePropSpecific(float afTimeStep);
-	
-	void BeforePropDestruction();
+    void OnResetProperties();
 
-	eLuxFocusCrosshair GetFocusCrosshair(iPhysicsBody *apBody, const cVector3f &avPos);
+    void UpdatePropSpecific(float afTimeStep);
 
-	//////////////////////
-	//Properties
-	const tString& GetStringVal(){ return msVal; }
+    void BeforePropDestruction();
 
-	eLuxItemType GetItemType(){ return mItemType;}
+    eLuxFocusCrosshair GetFocusCrosshair(iPhysicsBody* apBody, const cVector3f& avPos);
 
-	const tString& GetImageFile(){ return msImageFile;}
-	const tString& GetPickSound(){ return msPickSound;}
-	const tString& GetSubItemTypeName(){ return msSubItemTypeName;}
+    //////////////////////
+    // Properties
+    const tString& GetStringVal() { return msVal; }
 
-	float GetAmount(){ return mfAmount;}
+    eLuxItemType GetItemType() { return mItemType; }
 
-	int GetSpawnContainerID() { return mlSpawnContainerID;}
-	void SetSpawnContainerID(int alX) { mlSpawnContainerID = alX;}
-	
-	//////////////////////
-	//Connection callbacks
-	void OnConnectionStateChange(iLuxEntity *apEntity, int alState);
+    const tString& GetImageFile() { return msImageFile; }
+    const tString& GetPickSound() { return msPickSound; }
+    const tString& GetSubItemTypeName() { return msSubItemTypeName; }
 
-	//////////////////////
-	//Save data stuff
-	iLuxEntity_SaveData* CreateSaveData();
-	void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
-	void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
-	void SetupSaveData(iLuxEntity_SaveData *apSaveData);
+    float GetAmount() { return mfAmount; }
 
+    int GetSpawnContainerID() { return mlSpawnContainerID; }
+    void SetSpawnContainerID(int alX) { mlSpawnContainerID = alX; }
+
+    //////////////////////
+    // Connection callbacks
+    void OnConnectionStateChange(iLuxEntity* apEntity, int alState);
+
+    //////////////////////
+    // Save data stuff
+    iLuxEntity_SaveData* CreateSaveData();
+    void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
+    void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
+    void SetupSaveData(iLuxEntity_SaveData* apSaveData);
 
 private:
-	////////////////
-	//Variables
-	tString msVal;
-	tString msExtraVal;
+    ////////////////
+    // Variables
+    tString msVal;
+    tString msExtraVal;
 
-	int mlSpawnContainerID;
+    int mlSpawnContainerID;
 
-	////////////////
-	//Data
-	eLuxItemType mItemType;
+    ////////////////
+    // Data
+    eLuxItemType mItemType;
 
-	tString msImageFile;
-	tString msPickSound;
-	tString msSubItemTypeName;
+    tString msImageFile;
+    tString msPickSound;
+    tString msSubItemTypeName;
 
-	float mfAmount;
+    float mfAmount;
 };
 
 //----------------------------------------------
@@ -114,17 +111,16 @@ private:
 class cLuxPropLoader_Item : public iLuxPropLoader
 {
 public:
-	cLuxPropLoader_Item(const tString& asName);
-	virtual ~cLuxPropLoader_Item(){}
+    cLuxPropLoader_Item(const tString& asName);
+    virtual ~cLuxPropLoader_Item() {}
 
-	iLuxProp *CreateProp(const tString& asName, int alID, cLuxMap *apMap);
-	void LoadVariables(iLuxProp *apProp, cXmlElement *apRootElem);
-	void LoadInstanceVariables(iLuxProp *apProp, cResourceVarsObject *apInstanceVars);
+    iLuxProp* CreateProp(const tString& asName, int alID, cLuxMap* apMap);
+    void LoadVariables(iLuxProp* apProp, cXmlElement* apRootElem);
+    void LoadInstanceVariables(iLuxProp* apProp, cResourceVarsObject* apInstanceVars);
 
 private:
 };
 
 //----------------------------------------------
-
 
 #endif // LUX_PROP_ITEM_H

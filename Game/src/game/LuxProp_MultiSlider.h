@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -28,14 +28,12 @@
 
 class cLuxProp_MultiSlider_SaveData : public iLuxProp_SaveData
 {
-	kSerializableClassInit(cLuxProp_MultiSlider_SaveData)
-public:
-	int mlCurrentState;
-	int mlStuckState;
+    kSerializableClassInit(cLuxProp_MultiSlider_SaveData) public : int mlCurrentState;
+    int mlStuckState;
 
-	bool mbInteractionDisablesStuck;
+    bool mbInteractionDisablesStuck;
 
-	tString msChangeStateCallback;
+    tString msChangeStateCallback;
 };
 
 //----------------------------------------------
@@ -48,94 +46,94 @@ public:
 
 //----------------------------------------------
 
-
 class cLuxProp_MultiSlider : public iLuxProp
 {
-typedef iLuxProp super_class;
-friend class cLuxPropLoader_MultiSlider;
-public:	
-	cLuxProp_MultiSlider(const tString &asName, int alID, cLuxMap *apMap);
-	virtual ~cLuxProp_MultiSlider();
+    typedef iLuxProp super_class;
+    friend class cLuxPropLoader_MultiSlider;
 
-	//////////////////////
-	//General
-	bool CanInteract(iPhysicsBody *apBody);
-	bool OnInteract(iPhysicsBody *apBody, const cVector3f &avPos);
-	
-	void OnSetupAfterLoad(cWorld *apWorld);
+public:
+    cLuxProp_MultiSlider(const tString& asName, int alID, cLuxMap* apMap);
+    virtual ~cLuxProp_MultiSlider();
 
-	void OnResetProperties();
+    //////////////////////
+    // General
+    bool CanInteract(iPhysicsBody* apBody);
+    bool OnInteract(iPhysicsBody* apBody, const cVector3f& avPos);
 
-	void UpdatePropSpecific(float afTimeStep);
-	
-	void BeforePropDestruction();
+    void OnSetupAfterLoad(cWorld* apWorld);
 
-	eLuxFocusCrosshair GetFocusCrosshair(iPhysicsBody *apBody, const cVector3f &avPos);
+    void OnResetProperties();
 
-	//////////////////////
-	//Properties
-	cLuxInteractData_Slide* GetSlideData(){ return &mSlideData;}
-	
-	int GetMultiSliderState(){ return mlCurrentState; }
+    void UpdatePropSpecific(float afTimeStep);
 
-	void SetStuckState(int alState, bool abEffects);
-	int  GetStuckState(){ return mlStuckState; }
+    void BeforePropDestruction();
 
-	void SetInteractionDisablesStuck(bool abX){ mbInteractionDisablesStuck = abX;}
-	bool GetInteractionDisablesStuck(bool abX){ return mbInteractionDisablesStuck;}
+    eLuxFocusCrosshair GetFocusCrosshair(iPhysicsBody* apBody, const cVector3f& avPos);
 
-	void SetChangeStateCallback(const tString &asCallback){ msChangeStateCallback=asCallback;}
+    //////////////////////
+    // Properties
+    cLuxInteractData_Slide* GetSlideData() { return &mSlideData; }
 
-	//////////////////////
-	//Connection callbacks
-	void OnConnectionStateChange(iLuxEntity *apEntity, int alState);
-	
-	//////////////////////
-	//Save data stuff
-	iLuxEntity_SaveData* CreateSaveData();
-	void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
-	void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
-	void SetupSaveData(iLuxEntity_SaveData *apSaveData);
+    int GetMultiSliderState() { return mlCurrentState; }
+
+    void SetStuckState(int alState, bool abEffects);
+    int GetStuckState() { return mlStuckState; }
+
+    void SetInteractionDisablesStuck(bool abX) { mbInteractionDisablesStuck = abX; }
+    bool GetInteractionDisablesStuck(bool abX) { return mbInteractionDisablesStuck; }
+
+    void SetChangeStateCallback(const tString& asCallback) { msChangeStateCallback = asCallback; }
+
+    //////////////////////
+    // Connection callbacks
+    void OnConnectionStateChange(iLuxEntity* apEntity, int alState);
+
+    //////////////////////
+    // Save data stuff
+    iLuxEntity_SaveData* CreateSaveData();
+    void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
+    void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
+    void SetupSaveData(iLuxEntity_SaveData* apSaveData);
 
 private:
-	void CalculateMiddleAngle();
+    void CalculateMiddleAngle();
 
-	void UpdateCheckStuckSound(float afTimeStep);
-	void UpdateCheckNewState(float afPos, float afTimeStep);
-	void UpdateAutoMove(float afPos, float afTimeStep);
+    void UpdateCheckStuckSound(float afTimeStep);
+    void UpdateCheckNewState(float afPos, float afTimeStep);
+    void UpdateAutoMove(float afPos, float afTimeStep);
 
-	void ChangeState(int alState, bool abEffects);
+    void ChangeState(int alState, bool abEffects);
 
-	cLuxInteractData_Slide mSlideData;
+    cLuxInteractData_Slide mSlideData;
 
-	iPhysicsJointSlider *mpSliderJoint;
-	iPhysicsBody *mpSliderBody;
-	std::vector<cLuxProp_MultiSlider_State> mvStates;
+    iPhysicsJointSlider* mpSliderJoint;
+    iPhysicsBody* mpSliderBody;
+    std::vector<cLuxProp_MultiSlider_State> mvStates;
 
-	int mlNumOfStates;
-	float mfStickToStateMaxDist;
-	
-	bool mbCanInteractWithStaticBody;
-	
-	bool mbAutoMoveToCurrentState;
-	float mfAutoMoveSpeedFactor;
-	float mfAutoMoveMaxSpeed;
-	
-	tString msChangeStateSound;
-	tString msStuckSound;
+    int mlNumOfStates;
+    float mfStickToStateMaxDist;
 
-	float mfDefaultMinDist;
-	float mfDefaultMaxDist;
+    bool mbCanInteractWithStaticBody;
 
-	int mlCurrentState;
-	int mlStuckState;
-	float mfStuckSoundTimer;
+    bool mbAutoMoveToCurrentState;
+    float mfAutoMoveSpeedFactor;
+    float mfAutoMoveMaxSpeed;
 
-	bool mbInteractionDisablesStuck;
+    tString msChangeStateSound;
+    tString msStuckSound;
 
-	cPidController<float> mAutoMovePid;
+    float mfDefaultMinDist;
+    float mfDefaultMaxDist;
 
-	tString msChangeStateCallback;
+    int mlCurrentState;
+    int mlStuckState;
+    float mfStuckSoundTimer;
+
+    bool mbInteractionDisablesStuck;
+
+    cPidController<float> mAutoMovePid;
+
+    tString msChangeStateCallback;
 };
 
 //----------------------------------------------
@@ -143,17 +141,16 @@ private:
 class cLuxPropLoader_MultiSlider : public iLuxPropLoader
 {
 public:
-	cLuxPropLoader_MultiSlider(const tString& asName);
-	virtual ~cLuxPropLoader_MultiSlider(){}
+    cLuxPropLoader_MultiSlider(const tString& asName);
+    virtual ~cLuxPropLoader_MultiSlider() {}
 
-	iLuxProp *CreateProp(const tString& asName, int alID, cLuxMap *apMap);
-	void LoadVariables(iLuxProp *apProp, cXmlElement *apRootElem);
-	void LoadInstanceVariables(iLuxProp *apProp, cResourceVarsObject *apInstanceVars);
+    iLuxProp* CreateProp(const tString& asName, int alID, cLuxMap* apMap);
+    void LoadVariables(iLuxProp* apProp, cXmlElement* apRootElem);
+    void LoadInstanceVariables(iLuxProp* apProp, cResourceVarsObject* apInstanceVars);
 
 private:
 };
 
 //----------------------------------------------
-
 
 #endif // LUX_PROP_MULTI_SLIDER_H

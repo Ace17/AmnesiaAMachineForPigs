@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -32,68 +32,65 @@ class cLuxPlayer;
 
 class iLuxPlayerState_DefaultBase_SaveData : public iLuxPlayerState_SaveData
 {
-	kSerializableClassInit(iLuxPlayerState_DefaultBase_SaveData)
-public:
-	virtual ~iLuxPlayerState_DefaultBase_SaveData() {}
+    kSerializableClassInit(iLuxPlayerState_DefaultBase_SaveData) public : virtual ~iLuxPlayerState_DefaultBase_SaveData() {}
 };
-
 
 //----------------------------------------------
 
 class iLuxPlayerState_DefaultBase : public iLuxPlayerState
 {
-typedef iLuxPlayerState super_class;
-public:	
-	iLuxPlayerState_DefaultBase(cLuxPlayer *apPlayer, eLuxPlayerState aType);
-	virtual ~iLuxPlayerState_DefaultBase();
+    typedef iLuxPlayerState super_class;
 
-	void OnEnterState(eLuxPlayerState aPrevState);
-	void OnLeaveState(eLuxPlayerState aNewState);
+public:
+    iLuxPlayerState_DefaultBase(cLuxPlayer* apPlayer, eLuxPlayerState aType);
+    virtual ~iLuxPlayerState_DefaultBase();
 
-	void OnMapEnter(cLuxMap *apMap);
-	void OnMapLeave(cLuxMap *apMap);
+    void OnEnterState(eLuxPlayerState aPrevState);
+    void OnLeaveState(eLuxPlayerState aNewState);
 
-	void Update(float afTimeStep);
-	void PostUpdate(float afTimeStep);
-	virtual void OnDraw(cGuiSet *apGuiSet ,float afFrameTime);
+    void OnMapEnter(cLuxMap* apMap);
+    void OnMapLeave(cLuxMap* apMap);
 
-	virtual cGuiGfxElement* GetCrosshair();
+    void Update(float afTimeStep);
+    void PostUpdate(float afTimeStep);
+    virtual void OnDraw(cGuiSet* apGuiSet, float afFrameTime);
 
-	bool OnDoAction(eLuxPlayerAction aAction,bool abPressed);
+    virtual cGuiGfxElement* GetCrosshair();
 
-	void OnSaveBody(iPhysicsBody *apBody, float &afMass, bool &abCollideCharacter){}
+    bool OnDoAction(eLuxPlayerAction aAction, bool abPressed);
 
-	float DrawDebug(cGuiSet *apSet,iFontData *apFont, float afStartY);
+    void OnSaveBody(iPhysicsBody* apBody, float& afMass, bool& abCollideCharacter) {}
 
-	/////////////////////////////////
-	//Save data stuff
-	virtual bool IsSaved(){ return true; }
-	
-	void SaveToSaveData(iLuxPlayerState_SaveData* apSaveData);
-	void LoadFromSaveDataBeforeEnter(cLuxMap *apMap,iLuxPlayerState_SaveData* apSaveData);
-	void LoadFromSaveDataAfterEnter(cLuxMap *apMap, iLuxPlayerState_SaveData* apSaveData);
+    float DrawDebug(cGuiSet* apSet, iFontData* apFont, float afStartY);
+
+    /////////////////////////////////
+    // Save data stuff
+    virtual bool IsSaved() { return true; }
+
+    void SaveToSaveData(iLuxPlayerState_SaveData* apSaveData);
+    void LoadFromSaveDataBeforeEnter(cLuxMap* apMap, iLuxPlayerState_SaveData* apSaveData);
+    void LoadFromSaveDataAfterEnter(cLuxMap* apMap, iLuxPlayerState_SaveData* apSaveData);
 
 protected:
-	virtual bool ShowOutlineOnEntity(iLuxEntity *apEntity, iPhysicsBody *apBody, const cVector3f &avFocusPos);
+    virtual bool ShowOutlineOnEntity(iLuxEntity* apEntity, iPhysicsBody* apBody, const cVector3f& avFocusPos);
 
-	virtual void ImplementedUpdate(float afTimeStep){}
-	virtual bool ImplementedDoAction(eLuxPlayerAction aAction,bool abPressed){return true;}
-	virtual void ImplementedOnEnterState(eLuxPlayerState aPrevState){}
-	virtual void ImplementedOnLeaveState(eLuxPlayerState aNewState){}
+    virtual void ImplementedUpdate(float afTimeStep) {}
+    virtual bool ImplementedDoAction(eLuxPlayerAction aAction, bool abPressed) { return true; }
+    virtual void ImplementedOnEnterState(eLuxPlayerState aPrevState) {}
+    virtual void ImplementedOnLeaveState(eLuxPlayerState aNewState) {}
 
-	bool CanInteractWithEntity();	
+    bool CanInteractWithEntity();
 
-	void AddOutlineObjects(iPhysicsBody *apBody, iLuxEntity *apEntity, const cVector3f &avFocusPos);
-	void GetAttachedBodies(iPhysicsBody *apBody, tPhysicsBodyList &alstBodies);
+    void AddOutlineObjects(iPhysicsBody* apBody, iLuxEntity* apEntity, const cVector3f& avFocusPos);
+    void GetAttachedBodies(iPhysicsBody* apBody, tPhysicsBodyList& alstBodies);
 
-	iPhysicsBody *mpBodyInFocus;
-	iLuxEntity *mpEntityInFocus;
-	float mfFocusDistance;
-	cVector3f mvFocusPos;
-	bool mbCurrentEntityHasOutline;
+    iPhysicsBody* mpBodyInFocus;
+    iLuxEntity* mpEntityInFocus;
+    float mfFocusDistance;
+    cVector3f mvFocusPos;
+    bool mbCurrentEntityHasOutline;
 };
 
 //----------------------------------------------
-
 
 #endif // LUX_PLAYER_STATE_DEFAULT_BASE_H

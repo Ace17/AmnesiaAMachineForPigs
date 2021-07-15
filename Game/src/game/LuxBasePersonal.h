@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -43,20 +43,27 @@
 #endif
 #define PERSONAL_RELATIVEGAME_PARENT _W("Amnesia/")
 #define PERSONAL_RESOURCES _W("local_resources/")
-namespace hpl {
-inline void SetupBaseDirs(tWStringVec& vDirs, const tWString& asRelativeParent = _W(""), const tWString& asMainFolder = _W(""),
-                                        bool userDir = false, const tWString& asCustomStoryPath = _W(""))
+namespace hpl
+{
+inline void SetupBaseDirs(tWStringVec& vDirs,
+      const tWString& asRelativeParent = _W(""),
+      const tWString& asMainFolder = _W(""),
+      bool userDir = false,
+      const tWString& asCustomStoryPath = _W(""))
 {
     vDirs.clear();
 #if PERSONAL_RELATIVEPIECES_COUNT > 0
     tWString aDirs[] = { PERSONAL_RELATIVEPIECES };
-    for (int i = 0; i < PERSONAL_RELATIVEPIECES_COUNT; ++i) {
+    for (int i = 0; i < PERSONAL_RELATIVEPIECES_COUNT; ++i)
+    {
         vDirs.push_back(aDirs[i]);
     }
 #endif
-    if (asRelativeParent.length()) {
+    if (asRelativeParent.length())
+    {
         vDirs.push_back(PERSONAL_RELATIVEROOT + asRelativeParent);
-        if (asMainFolder.length()) {
+        if (asMainFolder.length())
+        {
             vDirs.push_back(PERSONAL_RELATIVEROOT + asRelativeParent + asMainFolder + _W("/"));
         }
     }
@@ -65,24 +72,26 @@ inline void SetupBaseDirs(tWStringVec& vDirs, const tWString& asRelativeParent =
     iFileBrowser::msGameDir = cPlatform::GetWorkingDir();
     iFileBrowser::msPersonalDir = PERSONAL_RELATIVEROOT PERSONAL_RELATIVEGAME_PARENT;
 #endif
-    if (userDir) {
+    if (userDir)
+    {
         vDirs.push_back(PERSONAL_RELATIVEROOT PERSONAL_RELATIVEGAME_PARENT PERSONAL_RESOURCES);
-        if (asCustomStoryPath.length()) {
-            vDirs.push_back(PERSONAL_RELATIVEROOT PERSONAL_RELATIVEGAME_PARENT PERSONAL_RESOURCES
-                            + asCustomStoryPath + _W("/"));
+        if (asCustomStoryPath.length())
+        {
+            vDirs.push_back(PERSONAL_RELATIVEROOT PERSONAL_RELATIVEGAME_PARENT PERSONAL_RESOURCES + asCustomStoryPath + _W("/"));
         }
     }
 }
 
 inline void CreateBaseDirs(const tWStringVec& vDirs, const tWString& asRoot)
 {
-	//Check if directories exist and if not create
-    for(tWStringVec::const_iterator it = vDirs.begin(); it != vDirs.end(); ++it)
-	{
-		tWString sDir = asRoot + (*it);
-		if(cPlatform::FolderExists(sDir)) continue;
+    // Check if directories exist and if not create
+    for (tWStringVec::const_iterator it = vDirs.begin(); it != vDirs.end(); ++it)
+    {
+        tWString sDir = asRoot + (*it);
+        if (cPlatform::FolderExists(sDir))
+            continue;
 
-		cPlatform::CreateFolder(sDir);
-	}
+        cPlatform::CreateFolder(sDir);
+    }
 }
-}
+} // namespace hpl

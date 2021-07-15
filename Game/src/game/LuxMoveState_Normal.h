@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -31,171 +31,170 @@ class cLuxMoveState_Normal;
 class cLuxMoveState_Normal_Callback : public iCharacterBodyCallback
 {
 public:
-	cLuxMoveState_Normal_Callback(cLuxMoveState_Normal *apMoveState);
+    cLuxMoveState_Normal_Callback(cLuxMoveState_Normal* apMoveState);
 
-	void OnGravityCollide(iCharacterBody *apCharBody, iPhysicsBody *apBody, cCollideData *apCollideData);
-	void OnHitGround(iCharacterBody *apCharBody,const cVector3f &avVel){}
-
+    void OnGravityCollide(iCharacterBody* apCharBody, iPhysicsBody* apBody, cCollideData* apCollideData);
+    void OnHitGround(iCharacterBody* apCharBody, const cVector3f& avVel) {}
 
 private:
-	cLuxMoveState_Normal *mpMoveState;
+    cLuxMoveState_Normal* mpMoveState;
 };
 
 //----------------------------------------------
 
 enum eLuxFootSound
 {
-	eLuxFootSound_Step,	
-	eLuxFootSound_Landing,
+    eLuxFootSound_Step,
+    eLuxFootSound_Landing,
 };
 
 //----------------------------------------------
 
 class cLuxMoveState_Normal : public iLuxMoveState
 {
-friend class cLuxMoveState_Normal_Callback;
-friend class cLuxPlayer_SaveData;
-public:	
-	cLuxMoveState_Normal(cLuxPlayer *apPlayer);
-	~cLuxMoveState_Normal();
-	
-	void OnMapEnter();
+    friend class cLuxMoveState_Normal_Callback;
+    friend class cLuxPlayer_SaveData;
 
-	void OnEnterState(eLuxMoveState aPrevState);
-	void OnLeaveState(eLuxMoveState aNewState);
+public:
+    cLuxMoveState_Normal(cLuxPlayer* apPlayer);
+    ~cLuxMoveState_Normal();
 
-	void OnUpdate(float afTimeStep);
+    void OnMapEnter();
 
-	bool GetAllowsInteraction();
+    void OnEnterState(eLuxMoveState aPrevState);
+    void OnLeaveState(eLuxMoveState aNewState);
 
-	bool OnMove(eCharDir aDir, float afMul);
-	bool OnAddYaw(float afAmount);
-	bool OnAddPitch(float afAmount);
+    void OnUpdate(float afTimeStep);
 
-	void OnRun(bool abActive);
-	void OnCrouch(bool abActive);
-	void OnJump(bool abActive);
-	
-	void Jump();
+    bool GetAllowsInteraction();
 
-	void OnDraw(float afFrameTime);
+    bool OnMove(eCharDir aDir, float afMul);
+    bool OnAddYaw(float afAmount);
+    bool OnAddPitch(float afAmount);
 
-	float GetHeadBobCount(){ return mfHeadBobCount;}
+    void OnRun(bool abActive);
+    void OnCrouch(bool abActive);
+    void OnJump(bool abActive);
 
-	bool IsRunning(){ return mbRunning;}
-	bool IsCrouching(){ return mbCrouching;}
+    void Jump();
 
-	void SetCrouch(bool abActive);
-	void ResetJumping();
+    void OnDraw(float afFrameTime);
 
-	float GetMoveSpeedMul();
-	float GetRunSpeedMul();
-	
+    float GetHeadBobCount() { return mfHeadBobCount; }
+
+    bool IsRunning() { return mbRunning; }
+    bool IsCrouching() { return mbCrouching; }
+
+    void SetCrouch(bool abActive);
+    void ResetJumping();
+
+    float GetMoveSpeedMul();
+    float GetRunSpeedMul();
+
 private:
-	bool UpdateLedgeCheck(float afTimeStep);
-	void UpdateMovement(float afTimeStep);
-	void UpdateSpeedMultipliers(float afTimeStep);
-	void UpdateJumpAndGroundCheck(float afTimeStep);
-	void UpdateHeadBob(float afTimeStep);
+    bool UpdateLedgeCheck(float afTimeStep);
+    void UpdateMovement(float afTimeStep);
+    void UpdateSpeedMultipliers(float afTimeStep);
+    void UpdateJumpAndGroundCheck(float afTimeStep);
+    void UpdateHeadBob(float afTimeStep);
 
-	void FootSound(eLuxFootSound aType);
+    void FootSound(eLuxFootSound aType);
 
-	void FallDamage(float afYSpeed);
+    void FallDamage(float afYSpeed);
 
-	cLuxMoveState_Normal_Callback *mpCallback;
+    cLuxMoveState_Normal_Callback* mpCallback;
 
-	tString msJumpSound;
-	tString msCrouchSound;
-	tString msStandSound;
-    
-	bool mbWasMoving;
+    tString msJumpSound;
+    tString msCrouchSound;
+    tString msStandSound;
 
-	float mfRunForwardMul;
-	float mfRunBackwardMul;
-	float mfRunSidewayMul;
+    bool mbWasMoving;
 
-	float mfCrouchForwardMul;
-	float mfCrouchBackwardMul;
-	float mfCrouchSidewayMul;
+    float mfRunForwardMul;
+    float mfRunBackwardMul;
+    float mfRunSidewayMul;
 
-	float mfInAirForwardMul;
-	float mfInAirBackwardMul;
-	float mfInAirSidewayMul;
+    float mfCrouchForwardMul;
+    float mfCrouchBackwardMul;
+    float mfCrouchSidewayMul;
 
-	float mfDefaultForwardMul; 
+    float mfInAirForwardMul;
+    float mfInAirBackwardMul;
+    float mfInAirSidewayMul;
 
-	float mfMinHitGroundBounceSpeed;
+    float mfDefaultForwardMul;
 
-	bool mbRunning;
-	bool mbCrouching;
+    float mfMinHitGroundBounceSpeed;
 
-	bool mbJumping;
-	float mfJumpStartForce;
-	float mfJumpCrouchStartForce;
-	float mfMaxJumpCount;
-	float mfJumpCount;
+    bool mbRunning;
+    bool mbCrouching;
 
-	cVector3f mvHeadBob;
-	float mfPrevHeadBobCount;
-	float mfHeadBobCount;
-	bool mbBobbing;
+    bool mbJumping;
+    float mfJumpStartForce;
+    float mfJumpCrouchStartForce;
+    float mfMaxJumpCount;
+    float mfJumpCount;
 
-	bool mbWasOnGround;
+    cVector3f mvHeadBob;
+    float mfPrevHeadBobCount;
+    float mfHeadBobCount;
+    bool mbBobbing;
 
-	bool mbHeadGroundBounceActive;
-	float mfHeadGroundBounce;
-	
-	cVector2f mvWalkBobMax;
-	cVector2f mvRunBobMax;
-	cVector2f mvCrouchBobMax;
-	
-	float mfWalkMinBobSpeed;
-	float mfWalkMaxBobSpeed;
-	
-	float mfRunMinBobSpeed;
-	float mfRunMaxBobSpeed;
-	
-	float mfCrouchMinBobSpeed;
-	float mfCrouchMaxBobSpeed;
+    bool mbWasOnGround;
 
-	float mfExhaustionBobMultiplier;
+    bool mbHeadGroundBounceActive;
+    float mfHeadGroundBounce;
 
-	cVector2f mvCurrentBobMax;
-	cVector2f mvBobMaxGoal;
+    cVector2f mvWalkBobMax;
+    cVector2f mvRunBobMax;
+    cVector2f mvCrouchBobMax;
 
-	float mfGroundBounceSize;
-	float mfGroundBounceSpeed;
-	
-	float mfBounceSizeMul;
-	float mfBounceSpeedMul;
+    float mfWalkMinBobSpeed;
+    float mfWalkMaxBobSpeed;
 
-	float mfClimbLedgeCount;
-	float mfMaxClimbLedgeCount;
+    float mfRunMinBobSpeed;
+    float mfRunMaxBobSpeed;
 
-	float mfClimbLedgeCheckDistForward;
-	float mfClimbLedgeCheckDistFromTop;
-	float mfClimbLedgeCheckDistTopToEnd;
-	float mfClimbLedgeMaxPushDist;
+    float mfCrouchMinBobSpeed;
+    float mfCrouchMaxBobSpeed;
 
-	float mfFallDamageBounceSizeMul;
-	float mfFallDamageBounceSpeedMul;
+    float mfExhaustionBobMultiplier;
 
-	float mfFallDamageSpeed_Min;
-	float mfFallDamage_Min;
-	tString msFallDamageSound_Min;
+    cVector2f mvCurrentBobMax;
+    cVector2f mvBobMaxGoal;
 
-	float mfFallDamageSpeed_Med;
-	float mfFallDamage_Med;
-	tString msFallDamageSound_Med;
+    float mfGroundBounceSize;
+    float mfGroundBounceSpeed;
 
-	float mfFallDamageSpeed_Max;
-	float mfFallDamage_Max;
-	tString msFallDamageSound_Max;
+    float mfBounceSizeMul;
+    float mfBounceSpeedMul;
 
-	int miScuffleMinInfectionLevel;
+    float mfClimbLedgeCount;
+    float mfMaxClimbLedgeCount;
+
+    float mfClimbLedgeCheckDistForward;
+    float mfClimbLedgeCheckDistFromTop;
+    float mfClimbLedgeCheckDistTopToEnd;
+    float mfClimbLedgeMaxPushDist;
+
+    float mfFallDamageBounceSizeMul;
+    float mfFallDamageBounceSpeedMul;
+
+    float mfFallDamageSpeed_Min;
+    float mfFallDamage_Min;
+    tString msFallDamageSound_Min;
+
+    float mfFallDamageSpeed_Med;
+    float mfFallDamage_Med;
+    tString msFallDamageSound_Med;
+
+    float mfFallDamageSpeed_Max;
+    float mfFallDamage_Max;
+    tString msFallDamageSound_Max;
+
+    int miScuffleMinInfectionLevel;
 };
 
 //----------------------------------------------
-
 
 #endif // LUX_MOVE_STATE_H

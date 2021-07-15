@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -28,14 +28,12 @@
 
 class cLuxProp_NPC_SaveData : public iLuxProp_SaveData
 {
-	kSerializableClassInit(cLuxProp_NPC_SaveData)
-public:
-	tString msFollowPlayerArea;
-	float mfHeadAngle;
-	bool mbPlayerIsInArea;
-	bool mbAwake;
-	bool mbPlayingWakeAnim;
-	bool mbFollowPlayer;
+    kSerializableClassInit(cLuxProp_NPC_SaveData) public : tString msFollowPlayerArea;
+    float mfHeadAngle;
+    bool mbPlayerIsInArea;
+    bool mbAwake;
+    bool mbPlayingWakeAnim;
+    bool mbFollowPlayer;
 };
 
 //----------------------------------------------
@@ -43,86 +41,85 @@ public:
 class cLuxProp_NPC_HeadMoveBone
 {
 public:
-	int mlBoneIdx;
+    int mlBoneIdx;
     float mfMul;
-	cVector3f mvRotVec;
+    cVector3f mvRotVec;
 };
 
 //----------------------------------------------
 
 class cLuxProp_NPC : public iLuxProp
 {
-typedef iLuxProp super_class;
-friend class cLuxPropLoader_NPC;
-public:	
-	cLuxProp_NPC(const tString &asName, int alID, cLuxMap *apMap);
-	virtual ~cLuxProp_NPC();
+    typedef iLuxProp super_class;
+    friend class cLuxPropLoader_NPC;
 
-	//////////////////////
-	//General
-	void AfterWorldLoad();
+public:
+    cLuxProp_NPC(const tString& asName, int alID, cLuxMap* apMap);
+    virtual ~cLuxProp_NPC();
 
-	bool CanInteract(iPhysicsBody *apBody);
-	bool OnInteract(iPhysicsBody *apBody, const cVector3f &avPos);
-	
-	void OnSetupAfterLoad(cWorld *apWorld);
+    //////////////////////
+    // General
+    void AfterWorldLoad();
 
-	void OnResetProperties();
+    bool CanInteract(iPhysicsBody* apBody);
+    bool OnInteract(iPhysicsBody* apBody, const cVector3f& avPos);
 
-	void UpdatePropSpecific(float afTimeStep);
-	
-	void BeforePropDestruction();
+    void OnSetupAfterLoad(cWorld* apWorld);
 
-	eLuxFocusCrosshair GetFocusCrosshair(iPhysicsBody *apBody, const cVector3f &avPos);
+    void OnResetProperties();
 
-	//////////////////////
-	//Settings
-	void SetAwake(bool abX, bool abEffects);
-	void SetFollowPlayer(bool abX){ mbFollowPlayer = abX; }
-	
-	//////////////////////
-	//Debug
-	float DrawDebug(cGuiSet *apSet,iFontData *apFont,float afStartY);
+    void UpdatePropSpecific(float afTimeStep);
 
-	
-	//////////////////////
-	//Connection callbacks
-	void OnConnectionStateChange(iLuxEntity *apEntity, int alState);
+    void BeforePropDestruction();
 
+    eLuxFocusCrosshair GetFocusCrosshair(iPhysicsBody* apBody, const cVector3f& avPos);
 
-	//////////////////////
-	//Save data stuff
-	iLuxEntity_SaveData* CreateSaveData();
-	void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
-	void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
-	void SetupSaveData(iLuxEntity_SaveData *apSaveData);
+    //////////////////////
+    // Settings
+    void SetAwake(bool abX, bool abEffects);
+    void SetFollowPlayer(bool abX) { mbFollowPlayer = abX; }
+
+    //////////////////////
+    // Debug
+    float DrawDebug(cGuiSet* apSet, iFontData* apFont, float afStartY);
+
+    //////////////////////
+    // Connection callbacks
+    void OnConnectionStateChange(iLuxEntity* apEntity, int alState);
+
+    //////////////////////
+    // Save data stuff
+    iLuxEntity_SaveData* CreateSaveData();
+    void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
+    void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
+    void SetupSaveData(iLuxEntity_SaveData* apSaveData);
 
 private:
-	void UpdateWakeState(float afTimeStep);
-	void UpdateCheckPlayerIsInArea(float afTimeStep);
-	void UpdateHeadMovement(float afTimeStep);
-	
-	//////////////////////
-	// Data
-	std::vector<cLuxProp_NPC_HeadMoveBone> mvHeadMoveBones;
+    void UpdateWakeState(float afTimeStep);
+    void UpdateCheckPlayerIsInArea(float afTimeStep);
+    void UpdateHeadMovement(float afTimeStep);
 
-	float mfHeadMoveSpeedMul;
-	float mfHeadMoveMaxSpeed;
-	float mfMaxHeadAngle;
-    	
-	//////////////////////
-	// Variables
-	tString msFollowPlayerArea;
-	iLuxEntity *mpFollowPlayerArea;
+    //////////////////////
+    // Data
+    std::vector<cLuxProp_NPC_HeadMoveBone> mvHeadMoveBones;
 
-	bool mbPlayerIsInArea;
-	float mfInAreaCount;
+    float mfHeadMoveSpeedMul;
+    float mfHeadMoveMaxSpeed;
+    float mfMaxHeadAngle;
 
-	float mfHeadAngle;
+    //////////////////////
+    // Variables
+    tString msFollowPlayerArea;
+    iLuxEntity* mpFollowPlayerArea;
 
-	bool mbAwake;
-	bool mbPlayingWakeAnim;
-	bool mbFollowPlayer;
+    bool mbPlayerIsInArea;
+    float mfInAreaCount;
+
+    float mfHeadAngle;
+
+    bool mbAwake;
+    bool mbPlayingWakeAnim;
+    bool mbFollowPlayer;
 };
 
 //----------------------------------------------
@@ -130,17 +127,16 @@ private:
 class cLuxPropLoader_NPC : public iLuxPropLoader
 {
 public:
-	cLuxPropLoader_NPC(const tString& asName);
-	virtual ~cLuxPropLoader_NPC(){}
+    cLuxPropLoader_NPC(const tString& asName);
+    virtual ~cLuxPropLoader_NPC() {}
 
-	iLuxProp *CreateProp(const tString& asName, int alID, cLuxMap *apMap);
-	void LoadVariables(iLuxProp *apProp, cXmlElement *apRootElem);
-	void LoadInstanceVariables(iLuxProp *apProp, cResourceVarsObject *apInstanceVars);
+    iLuxProp* CreateProp(const tString& asName, int alID, cLuxMap* apMap);
+    void LoadVariables(iLuxProp* apProp, cXmlElement* apRootElem);
+    void LoadInstanceVariables(iLuxProp* apProp, cResourceVarsObject* apInstanceVars);
 
 private:
 };
 
 //----------------------------------------------
-
 
 #endif // LUX_PROP_OIL_BARELL_H

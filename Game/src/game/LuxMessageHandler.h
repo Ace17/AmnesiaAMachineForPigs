@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -26,84 +26,83 @@
 
 //----------------------------------------
 
-
 class cLuxMessageHandler : public iLuxUpdateable
 {
-friend class cLuxMusicHandler_SaveData;
-public:	
-	cLuxMessageHandler();
-	~cLuxMessageHandler();
-	
-	void LoadFonts();
-	void OnStart();
-	void Update(float afTimeStep);
-	void Reset();
+    friend class cLuxMusicHandler_SaveData;
 
-	void LoadUserConfig();
-	void SaveUserConfig();
+public:
+    cLuxMessageHandler();
+    ~cLuxMessageHandler();
 
-	void OnMapEnter(cLuxMap *apMap);
-	void OnMapLeave(cLuxMap *apMap);
+    void LoadFonts();
+    void OnStart();
+    void Update(float afTimeStep);
+    void Reset();
 
-	void StarQuestAddedMessage();
+    void LoadUserConfig();
+    void SaveUserConfig();
 
-	void StartPauseMessage(const tWString& asText, bool abYesNo, iLuxMessageCallback *apCallback);
-	
-	/**
-	* if time is <=0 then the life time is calculated based on string length.
-	*/
-	void SetMessage(const tWString& asText, float afTime);
-	bool IsMessageActive(){ return mfMessageTime>0; }
+    void OnMapEnter(cLuxMap* apMap);
+    void OnMapLeave(cLuxMap* apMap);
 
-	void OnDraw(float afFrameTime);
+    void StarQuestAddedMessage();
 
-	void DoAction(eLuxPlayerAction aAction, bool abPressed);
+    void StartPauseMessage(const tWString& asText, bool abYesNo, iLuxMessageCallback* apCallback);
 
-	bool IsPauseMessageActive(){ return mbPauseMessageActive; }
-	void SetPauseMessageActive(bool abX);
+    /**
+     * if time is <=0 then the life time is calculated based on string length.
+     */
+    void SetMessage(const tWString& asText, float afTime);
+    bool IsMessageActive() { return mfMessageTime > 0; }
 
-	bool ShowSubtitles(){ return mbShowSubtitles;}
-	void SetShowSubtitles(bool abX){ mbShowSubtitles=abX;}
+    void OnDraw(float afFrameTime);
+
+    void DoAction(eLuxPlayerAction aAction, bool abPressed);
+
+    bool IsPauseMessageActive() { return mbPauseMessageActive; }
+    void SetPauseMessageActive(bool abX);
+
+    bool ShowSubtitles() { return mbShowSubtitles; }
+    void SetShowSubtitles(bool abX) { mbShowSubtitles = abX; }
+
 private:
-	void DrawQuestAdded();
-	void DrawMessage();
-	void DrawPauseMessage();
-	
-	
-	//////////////////
-	// Data
-	cGuiGfxElement *mpBlackGfx;
-	iFontData *mpFont;
+    void DrawQuestAdded();
+    void DrawMessage();
+    void DrawPauseMessage();
 
-	cGuiGfxElement *mpQuestAddedIcon;
-	tString msQuestAddedSound;
-	
-	cVector2f mvFontSize;
-	
-	//////////////////
-	// Variables
-	bool mbShowSubtitles;
+    //////////////////
+    // Data
+    cGuiGfxElement* mpBlackGfx;
+    iFontData* mpFont;
 
-	bool mbPauseMessageActive;
-	float mfPauseMessageAlpha;
+    cGuiGfxElement* mpQuestAddedIcon;
+    tString msQuestAddedSound;
 
-	float mfMessageAlpha;
-	float mfMessageTime;
+    cVector2f mvFontSize;
 
-	bool mbQuestMessageActive;
-	float mfQuestMessageAlpha;
-	float mfQuestMessageTime;
+    //////////////////
+    // Variables
+    bool mbShowSubtitles;
 
-	cLinearOscillation mQuestOscill;
+    bool mbPauseMessageActive;
+    float mfPauseMessageAlpha;
 
-	tWStringVec mvMessageRows;
+    float mfMessageAlpha;
+    float mfMessageTime;
 
-	tWStringVec mvLines;
-	bool mbMessageYesNo;
-	iLuxMessageCallback* mpCallback;
+    bool mbQuestMessageActive;
+    float mfQuestMessageAlpha;
+    float mfQuestMessageTime;
+
+    cLinearOscillation mQuestOscill;
+
+    tWStringVec mvMessageRows;
+
+    tWStringVec mvLines;
+    bool mbMessageYesNo;
+    iLuxMessageCallback* mpCallback;
 };
 
 //----------------------------------------------
-
 
 #endif // LUX_MESSAGE_HANDLER_H

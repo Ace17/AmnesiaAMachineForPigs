@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -28,84 +28,83 @@
 
 class cLuxArea_Liquid_SaveData : public iLuxArea_SaveData
 {
-	kSerializableClassInit(cLuxArea_Liquid_SaveData)
-public:
-	iLuxArea* CreateArea(cLuxMap *apMap);
-	
-	float mfDensity;
-	float mfLinearViscosity;
-	float mfAngularViscosity;
+    kSerializableClassInit(cLuxArea_Liquid_SaveData) public : iLuxArea* CreateArea(cLuxMap* apMap);
 
-	tString msPhysicsMaterial;
-	
-	int mnInfectionLevel;
-	bool mbHasWaves;
-	float mfWaveAmp;
-	float mfWaveFreq;
+    float mfDensity;
+    float mfLinearViscosity;
+    float mfAngularViscosity;
 
-	float mfPlayerSpeedMul;
-	float mfMaxWaveDistanceSqr;
+    tString msPhysicsMaterial;
 
-	float mfTimeCount;
+    int mnInfectionLevel;
+    bool mbHasWaves;
+    float mfWaveAmp;
+    float mfWaveFreq;
 
-	cPlanef mSurfacePlane;
+    float mfPlayerSpeedMul;
+    float mfMaxWaveDistanceSqr;
 
-	cVector3f mvPosition;
+    float mfTimeCount;
+
+    cPlanef mSurfacePlane;
+
+    cVector3f mvPosition;
 };
 
 //----------------------------------------------
 
 class cLuxArea_Liquid : public iLuxArea
 {
-typedef iLuxArea super_class;
-friend class cLuxAreaLoader_Liquid;
-public:	
-	cLuxArea_Liquid(const tString &asName, int alID, cLuxMap *apMap);
-	virtual ~cLuxArea_Liquid();
+    typedef iLuxArea super_class;
+    friend class cLuxAreaLoader_Liquid;
 
-	//////////////////////
-	//General
-	void SetupAfterLoad(cWorld *apWorld);
-	void OnUpdate(float afTimeStep);
+public:
+    cLuxArea_Liquid(const tString& asName, int alID, cLuxMap* apMap);
+    virtual ~cLuxArea_Liquid();
 
-	//////////////////////
-	//Connection callbacks
-	void OnConnectionStateChange(iLuxEntity *apEntity, int alState){}
+    //////////////////////
+    // General
+    void SetupAfterLoad(cWorld* apWorld);
+    void OnUpdate(float afTimeStep);
 
-	//////////////////////
-	//Save data stuff
-	iLuxEntity_SaveData* CreateSaveData();
-	virtual void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
-	virtual void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
-	virtual void SetupSaveData(iLuxEntity_SaveData *apSaveData);
+    //////////////////////
+    // Connection callbacks
+    void OnConnectionStateChange(iLuxEntity* apEntity, int alState) {}
+
+    //////////////////////
+    // Save data stuff
+    iLuxEntity_SaveData* CreateSaveData();
+    virtual void SaveToSaveData(iLuxEntity_SaveData* apSaveData);
+    virtual void LoadFromSaveData(iLuxEntity_SaveData* apSaveData);
+    virtual void SetupSaveData(iLuxEntity_SaveData* apSaveData);
 
 private:
-	void DoBuoyancyOnBody(iPhysicsBody *apBody, float afSurfaceY, bool abInsideWater);
-	void DoBuoyancyOnCharBody(iCharacterBody *apCharBody, float afSurfaceY, bool abInsideWater);
-	
-	void SplashEffect(iPhysicsBody *apBody, float afSurfaceY);
-	
-	/////////////////////////
-	// Data
-	float mfDensity;
-	float mfLinearViscosity;
-	float mfAngularViscosity;
-	
-	iPhysicsMaterial *mpPhysicsMaterial;
+    void DoBuoyancyOnBody(iPhysicsBody* apBody, float afSurfaceY, bool abInsideWater);
+    void DoBuoyancyOnCharBody(iCharacterBody* apCharBody, float afSurfaceY, bool abInsideWater);
 
-	int mnInfectionLevel;
-	bool mbHasWaves;
-	float mfWaveAmp;
-	float mfWaveFreq;
+    void SplashEffect(iPhysicsBody* apBody, float afSurfaceY);
 
-	float mfPlayerSpeedMul;
-	float mfMaxWaveDistanceSqr;
+    /////////////////////////
+    // Data
+    float mfDensity;
+    float mfLinearViscosity;
+    float mfAngularViscosity;
 
-	/////////////////////////
-	// Variables
-	float mfTimeCount;
+    iPhysicsMaterial* mpPhysicsMaterial;
 
-	cPlanef mSurfacePlane;
+    int mnInfectionLevel;
+    bool mbHasWaves;
+    float mfWaveAmp;
+    float mfWaveFreq;
+
+    float mfPlayerSpeedMul;
+    float mfMaxWaveDistanceSqr;
+
+    /////////////////////////
+    // Variables
+    float mfTimeCount;
+
+    cPlanef mSurfacePlane;
 };
 
 //----------------------------------------------
@@ -113,17 +112,15 @@ private:
 class cLuxAreaLoader_Liquid : public iLuxAreaLoader
 {
 public:
-	cLuxAreaLoader_Liquid(const tString& asName);
-	~cLuxAreaLoader_Liquid();
+    cLuxAreaLoader_Liquid(const tString& asName);
+    ~cLuxAreaLoader_Liquid();
 
-	iLuxArea *CreateArea(const tString& asName, int alID, cLuxMap *apMap);
-	
-	void LoadVariables(iLuxArea *apArea, cWorld *apWorld);
-	void SetupArea(iLuxArea *apArea, cWorld *apWorld);
-	
+    iLuxArea* CreateArea(const tString& asName, int alID, cLuxMap* apMap);
+
+    void LoadVariables(iLuxArea* apArea, cWorld* apWorld);
+    void SetupArea(iLuxArea* apArea, cWorld* apWorld);
 };
 
 //----------------------------------------------
-
 
 #endif // LUX_AREA_LIQUID_H

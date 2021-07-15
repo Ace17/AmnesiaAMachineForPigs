@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -21,77 +21,71 @@
 #define HPL_CGSHADER_H
 
 //#include <windows.h>
-#include <GL/GLee.h>
+#include "graphics/GPUShader.h"
+#include "math/MathTypes.h"
+#include "system/SystemTypes.h"
 #include <Cg/cg.h>
 #include <Cg/cgGL.h>
+#include <GL/GLee.h>
 
-#include "system/SystemTypes.h"
-#include "math/MathTypes.h"
-#include "graphics/GPUShader.h"
+namespace hpl
+{
 
-namespace hpl {
+class cCGShader : public iGpuShader
+{
+public:
+    cCGShader(tString asName, CGcontext aContext, eGpuShaderType aType);
+    ~cCGShader();
 
-	class cCGShader : public iGpuShader
-	{
-	public:
-		cCGShader(tString asName, CGcontext aContext,eGpuShaderType aType);
-		~cCGShader();
+    bool Reload();
+    void Unload();
+    void Destroy();
 
-		bool Reload();
-		void Unload();
-		void Destroy();
+    tString GetProgramName() { return msName; }
 
-		tString GetProgramName(){ return msName; }
+    bool CreateFromFile(const tString& asFile, const tString& asEntry = "main");
 
-		bool CreateFromFile(const tString& asFile, const tString& asEntry="main");
+    void Bind();
+    void UnBind();
 
-		void Bind();
-		void UnBind();
+    int GetVariableId(const tString& asName);
 
-		int GetVariableId(const tString& asName);
+    bool SetFloat(int alVarId, float afX);
+    bool SetVec2f(int alVarId, float afX, float afY);
+    bool SetVec3f(int alVarId, float afX, float afY, float afZ);
+    bool SetVec4f(int alVarId, float afX, float afY, float afZ, float afW);
 
-		bool SetFloat(int alVarId, float afX);
-		bool SetVec2f(int alVarId, float afX,float afY);
-		bool SetVec3f(int alVarId, float afX,float afY,float afZ);
-		bool SetVec4f(int alVarId, float afX,float afY,float afZ, float afW);
+    bool SetMatrixf(int alVarId, const cMatrixf& mMtx);
+    bool SetMatrixf(int alVarId, eGpuShaderMatrix mType, eGpuShaderMatrixOp mOp);
 
-		bool SetMatrixf(int alVarId, const cMatrixf& mMtx);
-		bool SetMatrixf(int alVarId, eGpuShaderMatrix mType, eGpuShaderMatrixOp mOp);
+    bool SetTexture(int alVarId, iTexture* apTexture, bool abAutoDisable = true);
+    bool SetTextureToUnit(int alUnit, iTexture* apTexture);
 
-		bool SetTexture(int alVarId,iTexture* apTexture, bool abAutoDisable=true);
-		bool SetTextureToUnit(int alUnit, iTexture* apTexture);
+    /// CG SPECIFIC //////////////////////
 
-		
-		/// CG SPECIFIC //////////////////////
+    CGprogram GetProgram() { return mProgram; }
+    CGprofile GetProfile() { return mProfile; }
 
-		CGprogram GetProgram(){ return mProgram;}
-		CGprofile GetProfile(){ return mProfile;}
+    static void SetVProfile(tString asProfile) { msForceVP = asProfile; }
+    static void SetFProfile(tString asProfile) { msForceFP = asProfile; }
+    static tString& GetVProfile() { return msForceVP; }
+    static tString& GetFProfile() { return msForceFP; }
 
-		static void SetVProfile(tString asProfile) {
-			msForceVP = asProfile;
-		}
-		static void SetFProfile(tString asProfile) {
-			msForceFP = asProfile;
-		}
-		static tString &GetVProfile(){ return msForceVP; }
-		static tString &GetFProfile(){ return msForceFP; }
+protected:
+    CGcontext mContext;
 
-	protected:
-		CGcontext mContext;
+    tString msName;
+    tString msFile;
+    tString msEntry;
+    CGprogram mProgram;
+    CGprofile mProfile;
 
-		tString msName;
-		tString msFile;
-		tString msEntry;
-		CGprogram mProgram;
-		CGprofile mProfile;
+    std::vector<CGparameter> mvParameters;
 
-		std::vector<CGparameter> mvParameters;
+    CGparameter mvTexUnitParam[kMaxTextureUnits];
 
-		CGparameter mvTexUnitParam[kMaxTextureUnits];
-	
-
-		static tString msForceFP;
-		static tString msForceVP;
-    };
+    static tString msForceFP;
+    static tString msForceVP;
 };
+}; // namespace hpl
 #endif // HPL_CGSHADER_H

@@ -1,18 +1,18 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -20,73 +20,78 @@
 #ifndef HPL_RESOURCEBASE_H
 #define HPL_RESOURCEBASE_H
 
-#include <time.h>
-#include "system/SystemTypes.h"
 #include "system/LowLevelSystem.h"
+#include "system/SystemTypes.h"
 
-namespace hpl {
+#include <time.h>
 
-	class iResourceBase
-	{
-	public:
-		
-		iResourceBase(const tString& asName, const tWString& asFullPath,unsigned long alPrio);
+namespace hpl
+{
 
-		virtual ~iResourceBase();
-				
-		/**
-		 * virtual bool Reload()=0; 
-		 * \return true is reload was succesful, else false.
-		 */
-		virtual bool Reload()=0;
+class iResourceBase
+{
+public:
+    iResourceBase(const tString& asName, const tWString& asFullPath, unsigned long alPrio);
 
-		/**
-		 * Free most the memory, save info to get started again. 
-		 */
-		virtual void Unload()=0;
+    virtual ~iResourceBase();
 
-        /**
-         * Free all memory.
-         */
-        virtual void Destroy()=0;
+    /**
+     * virtual bool Reload()=0;
+     * \return true is reload was succesful, else false.
+     */
+    virtual bool Reload() = 0;
 
-		const tString& GetName(){return msName;}
-		unsigned long GetHandle(){return mlHandle;}
-		void SetHandle(unsigned long alHandle){mlHandle=alHandle;}
-		
-		void SetFullPath(const tWString& asPath);
-		const tWString& GetFullPath(){return msFullPath;}
-		
-		unsigned long GetTime(){return mlTime;}
-		unsigned long GetPrio(){return mlPrio;}
-		unsigned long GetSize(){return mlSize;}
+    /**
+     * Free most the memory, save info to get started again.
+     */
+    virtual void Unload() = 0;
 
-		void SetLogDestruction(bool abX){ mbLogDestruction = abX;}
-		
-		unsigned int GetUserCount(){return mlUserCount;}
-		void IncUserCount();
-		void DecUserCount(){if(mlUserCount>0)mlUserCount--;}
-		bool HasUsers(){ return mlUserCount>0;}
+    /**
+     * Free all memory.
+     */
+    virtual void Destroy() = 0;
 
-		static bool GetLogCreateAndDelete(){ return mbLogCreateAndDelete;}
-		static void SetLogCreateAndDelete(bool abX){ mbLogCreateAndDelete = abX;}
+    const tString& GetName() { return msName; }
+    unsigned long GetHandle() { return mlHandle; }
+    void SetHandle(unsigned long alHandle) { mlHandle = alHandle; }
 
-	protected:
-		static bool mbLogCreateAndDelete;
-		
-		tString msName;
-		
-		unsigned int mlPrio; //dunno if this will be of any use.
-		unsigned long mlTime; //Time for creation.
-		unsigned long mlSize; //for completion. Not used yet.
-		
-		unsigned int mlUserCount;
-        unsigned long mlHandle;
-		bool mbLogDestruction;
-	
-	private:
-		tWString msFullPath;
-	};
+    void SetFullPath(const tWString& asPath);
+    const tWString& GetFullPath() { return msFullPath; }
 
+    unsigned long GetTime() { return mlTime; }
+    unsigned long GetPrio() { return mlPrio; }
+    unsigned long GetSize() { return mlSize; }
+
+    void SetLogDestruction(bool abX) { mbLogDestruction = abX; }
+
+    unsigned int GetUserCount() { return mlUserCount; }
+    void IncUserCount();
+    void DecUserCount()
+    {
+        if (mlUserCount > 0)
+            mlUserCount--;
+    }
+    bool HasUsers() { return mlUserCount > 0; }
+
+    static bool GetLogCreateAndDelete() { return mbLogCreateAndDelete; }
+    static void SetLogCreateAndDelete(bool abX) { mbLogCreateAndDelete = abX; }
+
+protected:
+    static bool mbLogCreateAndDelete;
+
+    tString msName;
+
+    unsigned int mlPrio; // dunno if this will be of any use.
+    unsigned long mlTime; // Time for creation.
+    unsigned long mlSize; // for completion. Not used yet.
+
+    unsigned int mlUserCount;
+    unsigned long mlHandle;
+    bool mbLogDestruction;
+
+private:
+    tWString msFullPath;
 };
+
+}; // namespace hpl
 #endif // HPL_RESOURCEBASE_H

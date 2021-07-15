@@ -1,29 +1,28 @@
 /*
  * Copyright © 2011-2020 Frictional Games
- * 
+ *
  * This file is part of Amnesia: A Machine For Pigs.
- * 
+ *
  * Amnesia: A Machine For Pigs is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version. 
+ * (at your option) any later version.
 
  * Amnesia: A Machine For Pigs is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "LuxGlobalDataHandler.h"
 
+#include "LuxEnemy.h"
 #include "LuxMap.h"
 #include "LuxMapHandler.h"
 #include "LuxPlayer.h"
-#include "LuxEnemy.h"
-
 
 //////////////////////////////////////////////////////////////////////////
 // CONSTRUCTORS
@@ -31,22 +30,23 @@
 
 //-----------------------------------------------------------------------
 
-cLuxGlobalDataHandler::cLuxGlobalDataHandler() : iLuxUpdateable("LuxGlobalDataHandler")
+cLuxGlobalDataHandler::cLuxGlobalDataHandler()
+    : iLuxUpdateable("LuxGlobalDataHandler")
 {
-	mpScript = NULL;
-	
-	mfLightLampMaxInfectionIncrease = gpBase->mpGameCfg->GetFloat("Player_Infection", "LightLampMaxInfectionIncrease",0);
-	mfLightLampMinInfectionIncrease = gpBase->mpGameCfg->GetFloat("Player_Infection", "LightLampMinInfectionIncrease",0);
+    mpScript = NULL;
+
+    mfLightLampMaxInfectionIncrease = gpBase->mpGameCfg->GetFloat("Player_Infection", "LightLampMaxInfectionIncrease", 0);
+    mfLightLampMinInfectionIncrease = gpBase->mpGameCfg->GetFloat("Player_Infection", "LightLampMinInfectionIncrease", 0);
 }
 
 //-----------------------------------------------------------------------
 
 cLuxGlobalDataHandler::~cLuxGlobalDataHandler()
 {
-	if(mpScript)
-	{
-		gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
-	}
+    if (mpScript)
+    {
+        gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
+    }
 }
 
 //-----------------------------------------------------------------------
@@ -59,124 +59,124 @@ cLuxGlobalDataHandler::~cLuxGlobalDataHandler()
 
 void cLuxGlobalDataHandler::LoadAndInitGlobalScript()
 {
-	LoadScript();
+    LoadScript();
 
-	RunScript("OnGameStart()");
+    RunScript("OnGameStart()");
 }
 
 //-----------------------------------------------------------------------
 
 void cLuxGlobalDataHandler::OnGameStart()
 {
-	
 }
 
 //-----------------------------------------------------------------------
 
 void cLuxGlobalDataHandler::OnStart()
 {
-	
 }
 
 //-----------------------------------------------------------------------
 
 void cLuxGlobalDataHandler::Reset()
 {
-	m_mapVars.clear();
+    m_mapVars.clear();
 
-	if(mpScript) gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
-	mpScript = NULL;
+    if (mpScript)
+        gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
+    mpScript = NULL;
 
-	mfEnemyActivateSoundCount =0;
+    mfEnemyActivateSoundCount = 0;
 }
 
 //-----------------------------------------------------------------------
 
 void cLuxGlobalDataHandler::Update(float afTimeStep)
 {
-	if(mfEnemyActivateSoundCount>0)
-	{
-		mfEnemyActivateSoundCount-=afTimeStep;
-	}
+    if (mfEnemyActivateSoundCount > 0)
+    {
+        mfEnemyActivateSoundCount -= afTimeStep;
+    }
 }
 
 //-----------------------------------------------------------------------
 
-void cLuxGlobalDataHandler::OnMapEnter(cLuxMap *apMap)
+void cLuxGlobalDataHandler::OnMapEnter(cLuxMap* apMap)
 {
 }
 
 //-----------------------------------------------------------------------
 
-void cLuxGlobalDataHandler::OnMapLeave(cLuxMap *apMap)
+void cLuxGlobalDataHandler::OnMapLeave(cLuxMap* apMap)
 {
 }
-
 
 //-----------------------------------------------------------------------
 
 void cLuxGlobalDataHandler::LoadScript()
 {
-	/////////////////////
-	// Destroy old
-	if(mpScript)
-	{
-		gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
-		mpScript = NULL;
-	}
+    /////////////////////
+    // Destroy old
+    if (mpScript)
+    {
+        gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
+        mpScript = NULL;
+    }
 
-	/////////////////////
-	// Load script
-	tString sFile = gpBase->mpMapHandler->GetMapFolder() + "global.hps";
-	mpScript  = gpBase->mpEngine->GetResources()->GetScriptManager()->CreateScript(sFile);
-	if(mpScript==NULL)
-	{
-		Error("Global script '%s' could not be created!\n", sFile.c_str());
-	}
+    /////////////////////
+    // Load script
+    tString sFile = gpBase->mpMapHandler->GetMapFolder() + "global.hps";
+    mpScript = gpBase->mpEngine->GetResources()->GetScriptManager()->CreateScript(sFile);
+    if (mpScript == NULL)
+    {
+        Error("Global script '%s' could not be created!\n", sFile.c_str());
+    }
 }
 
-bool cLuxGlobalDataHandler::RecompileScript(tString *apOutput)
+bool cLuxGlobalDataHandler::RecompileScript(tString* apOutput)
 {
-	if(mpScript)
-		gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
+    if (mpScript)
+        gpBase->mpEngine->GetResources()->GetScriptManager()->Destroy(mpScript);
 
-	tString sFile = gpBase->mpMapHandler->GetMapFolder() + "global.hps";
-	mpScript = gpBase->mpEngine->GetResources()->GetScriptManager()->CreateScript(sFile, apOutput);
+    tString sFile = gpBase->mpMapHandler->GetMapFolder() + "global.hps";
+    mpScript = gpBase->mpEngine->GetResources()->GetScriptManager()->CreateScript(sFile, apOutput);
 
-	return mpScript != NULL;
+    return mpScript != NULL;
 }
 
 //-----------------------------------------------------------------------
 
 void cLuxGlobalDataHandler::RunScript(const tString& asCommand)
 {
-	if(mpScript==NULL) return;
+    if (mpScript == NULL)
+        return;
 
-	mpScript->Run(asCommand);
+    mpScript->Run(asCommand);
 }
 
 //-----------------------------------------------------------------------
 
-cLuxScriptVar* cLuxGlobalDataHandler::GetVar(const tString &asName)
+cLuxScriptVar* cLuxGlobalDataHandler::GetVar(const tString& asName)
 {
-	tLuxScriptVarMapIt it = m_mapVars.find(asName);
-	if(it != m_mapVars.end()) return &(it->second);
+    tLuxScriptVarMapIt it = m_mapVars.find(asName);
+    if (it != m_mapVars.end())
+        return &(it->second);
 
-	m_mapVars.insert(tLuxScriptVarMap::value_type(asName, cLuxScriptVar(asName)));
-	it = m_mapVars.find(asName);
-	return &(it->second);
+    m_mapVars.insert(tLuxScriptVarMap::value_type(asName, cLuxScriptVar(asName)));
+    it = m_mapVars.find(asName);
+    return &(it->second);
 }
 
 //-----------------------------------------------------------------------
 
 bool cLuxGlobalDataHandler::GetEnemyActivateSoundAllowed()
 {
-	return mfEnemyActivateSoundCount<=0;
+    return mfEnemyActivateSoundCount <= 0;
 }
 
 void cLuxGlobalDataHandler::SetEnemyActivateSoundMade()
 {
-	mfEnemyActivateSoundCount = 5.0f;
+    mfEnemyActivateSoundCount = 5.0f;
 }
 
 //-----------------------------------------------------------------------
@@ -187,6 +187,4 @@ void cLuxGlobalDataHandler::SetEnemyActivateSoundMade()
 
 //-----------------------------------------------------------------------
 
-
 //-----------------------------------------------------------------------
-
