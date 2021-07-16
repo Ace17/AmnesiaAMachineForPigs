@@ -119,9 +119,9 @@ void cScene::DestroyViewport(cViewport* apViewPort)
 
 bool cScene::ViewportExists(cViewport* apViewPort)
 {
-    for (tViewportListIt it = mlstViewports.begin(); it != mlstViewports.end(); ++it)
+    for (cViewport* pViewPort : mlstViewports)
     {
-        if (apViewPort == *it)
+        if (apViewPort == pViewPort)
             return true;
     }
 
@@ -180,10 +180,8 @@ void cScene::Render(float afFrameTime, tFlag alFlags)
 
     ///////////////////////////////////////////
     // Iterate all viewports and render
-    tViewportListIt viewIt = mlstViewports.begin();
-    for (; viewIt != mlstViewports.end(); ++viewIt)
+    for (cViewport* pViewPort : mlstViewports)
     {
-        cViewport* pViewPort = *viewIt;
         if (pViewPort->IsVisible() == false)
             continue;
 
@@ -263,10 +261,8 @@ void cScene::PostUpdate(float afTimeStep)
 {
     //////////////////////////////////////
     // Update worlds
-    tWorldListIt it = mlstWorlds.begin();
-    for (; it != mlstWorlds.end(); ++it)
+    for (cWorld* pWorld : mlstWorlds)
     {
-        cWorld* pWorld = *it;
         if (pWorld->IsActive())
             pWorld->Update(afTimeStep);
     }
@@ -337,9 +333,9 @@ void cScene::DestroyWorld(cWorld* apWorld)
 
 bool cScene::WorldExists(cWorld* apWorld)
 {
-    for (tWorldListIt it = mlstWorlds.begin(); it != mlstWorlds.end(); ++it)
+    for (cWorld* pWorld : mlstWorlds)
     {
-        if (apWorld == *it)
+        if (apWorld == pWorld)
             return true;
     }
 

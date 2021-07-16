@@ -183,10 +183,9 @@ void cProgramComboManager::SetupGenerateProgramData(int alMainMode,
     tParseVarMap* pVarMap = avDefaultVars.GetMapPtr();
     comboSettings.mvDefaultVars.reserve(pVarMap->size());
 
-    tParseVarMapIt it = pVarMap->begin();
-    for (; it != pVarMap->end(); ++it)
+    for (auto& it : *pVarMap)
     {
-        comboSettings.mvDefaultVars.push_back(cProgramComboSettingsVar(it->first, it->second));
+        comboSettings.mvDefaultVars.push_back(cProgramComboSettingsVar(it.first, it.second));
     }
 }
 
@@ -411,9 +410,9 @@ void cProgramComboManager::DestroyShadersAndPrograms()
         // Destroy Generated Content
 
         // Programs
-        for (tProgramComboProgramMapIt it = mvProgramSets[rmode].begin(); it != mvProgramSets[rmode].end(); ++it)
+        for (auto& it : mvProgramSets[rmode])
         {
-            cProgramComboProgram* pProgramData = it->second;
+            cProgramComboProgram* pProgramData = it.second;
             pProgramData->DestroyProgram();
         }
         STLMapDeleteAll(mvProgramSets[rmode]);

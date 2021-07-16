@@ -1998,17 +1998,14 @@ void cRendererDeferred::InitLightRendering()
 
     //////////////////////////////
     // Clear lists
-    for (int i = 0; i < eDeferredLightList_LastEnum; ++i)
-    {
-        mvSortedLights[i].resize(0); // No clear, keep array size data, no need to delete, same pointer in temp list
-    }
+    for (auto& light : mvSortedLights)
+        light.resize(0); // No clear, keep array size data, no need to delete, same pointer in temp list
 
     //////////////////////////////
     // Fill lists
     mpCurrentSettings->mlNumberOfLightsRendered = 0;
-    for (size_t i = 0; i < mvTempDeferredLights.size(); ++i)
+    for(cDeferredLight* pLightData : mvTempDeferredLights)
     {
-        cDeferredLight* pLightData = mvTempDeferredLights[i];
         iLight* pLight = pLightData->mpLight;
         eLightType lightType = pLight->GetLightType();
 
