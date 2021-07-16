@@ -2148,11 +2148,7 @@ void cRendererDeferred::RenderLights_StencilBack_ScreenQuad()
         // cVector2l vMinClip(10000,10000);
         // cVector2l vMaxClip(-1000,-10000);
 
-        int lIterations;
-        if (lNumOfNearPlaneLights > kMaxStencilBitsUsed)
-            lIterations = kMaxStencilBitsUsed;
-        else
-            lIterations = lNumOfNearPlaneLights;
+        const int lIterations = cMath::Min(lNumOfNearPlaneLights, kMaxStencilBitsUsed);
 
         lNumOfNearPlaneLights -= lIterations;
 
