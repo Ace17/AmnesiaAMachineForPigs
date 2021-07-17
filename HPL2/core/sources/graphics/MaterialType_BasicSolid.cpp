@@ -118,6 +118,19 @@ cProgramComboManager* iMaterialType_SolidBase::mpGlobalProgramManager;
 
 float iMaterialType_SolidBase::mfVirtualPositionAddScale = 0.03f;
 
+namespace
+{
+class cMaterialType_SolidDiffuse_Vars : public iMaterialVars
+{
+public:
+    float mfHeightMapScale = 0.05f;
+    float mfHeightMapBias = 0;
+    float mfFrenselBias = 0;
+    float mfFrenselPow = 0;
+    bool mbAlphaDissolveFilter = false;
+};
+} // namespace
+
 //--------------------------------------------------------------------------
 
 //////////////////////////////////////////////////////////////////////////

@@ -64,28 +64,4 @@ private:
 
 //------------------------------------------
 
-class cPostEffect_Bloom : public iPostEffect
-{
-public:
-    cPostEffect_Bloom(cGraphics* apGraphics, cResources* apResources, iPostEffectType* apType);
-    ~cPostEffect_Bloom();
-
-private:
-    void OnSetParams();
-    iPostEffectParams* GetTypeSpecificParams() { return &mParams; }
-
-    iTexture* RenderEffect(iTexture* apInputTexture, iFrameBuffer* apFinalTempBuffer);
-
-    void RenderBlur(iTexture* apInputTex);
-
-    iFrameBuffer* mpBlurBuffer[2];
-    iTexture* mpBlurTexture[2];
-
-    cPostEffectType_Bloom* mpBloomType;
-
-    cPostEffectParams_Bloom mParams;
-};
-
-//------------------------------------------
-
 }; // namespace hpl

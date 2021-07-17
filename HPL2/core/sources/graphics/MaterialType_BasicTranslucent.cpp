@@ -83,6 +83,22 @@ static cProgramComboFeature vDiffuseFeatureVec[] = {
 // TRANSLUCENT
 //////////////////////////////////////////////////////////////////////////
 
+namespace
+{
+struct cMaterialType_Translucent_Vars : public iMaterialVars
+{
+    bool mbRefraction = false;
+    bool mbRefractionEdgeCheck = true;
+    bool mbRefractionNormals = false;
+    float mfRefractionScale = 0.1f;
+    float mfFrenselBias = 0.2f;
+    float mfFrenselPow = 8.0f;
+    float mfRimLightMul = 0;
+    float mfRimLightPow = 0;
+    bool mbAffectedByLightLevel = false;
+};
+} // namespace
+
 //--------------------------------------------------------------------------
 
 cMaterialType_Translucent::cMaterialType_Translucent(cGraphics* apGraphics, cResources* apResources)

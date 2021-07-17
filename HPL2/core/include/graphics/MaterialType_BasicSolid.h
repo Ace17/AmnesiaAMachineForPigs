@@ -71,26 +71,6 @@ protected:
 // SOLID DIFFUSE
 //---------------------------------------------------
 
-class cMaterialType_SolidDiffuse_Vars : public iMaterialVars
-{
-public:
-    cMaterialType_SolidDiffuse_Vars()
-        : mfHeightMapScale(0.05f)
-        , mfHeightMapBias(0.0f)
-        , mbAlphaDissolveFilter(false)
-    {
-    }
-    ~cMaterialType_SolidDiffuse_Vars() {}
-
-    float mfHeightMapScale;
-    float mfHeightMapBias;
-    float mfFrenselBias;
-    float mfFrenselPow;
-    bool mbAlphaDissolveFilter;
-};
-
-//---------------------------------------------------
-
 class cMaterialType_SolidDiffuse : public iMaterialType_SolidBase
 {
 public:
