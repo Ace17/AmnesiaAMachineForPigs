@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SQ_SCRIPT_H
-#define HPL_SQ_SCRIPT_H
+#pragma once
 
 #include "impl/LowLevelSystemSDL.h"
 #include "system/Script.h"
@@ -54,4 +53,3 @@ private:
     char* LoadCharBuffer(const tWString& asFileName, int& alLength);
 };
 }; // namespace hpl
-#endif // HPL_SCRIPT_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_WORLD_LOADER_HANDLER_H
-#define HPL_WORLD_LOADER_HANDLER_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "resources/ResourceLoaderHandler.h"
@@ -54,4 +53,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_WORLD_LOADER_HANDLER_H

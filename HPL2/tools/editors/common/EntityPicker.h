@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_PICKER_H
-#define HPLEDITOR_ENTITY_PICKER_H
+#pragma once
 
 class iEntityWrapper;
 class iEditorWorld;
@@ -106,4 +105,3 @@ protected:
 
 //---------------------------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_PICKER_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FRAMETEXTURE_H
-#define HPL_FRAMETEXTURE_H
+#pragma once
 
 #include "graphics/FrameBase.h"
 
@@ -55,4 +54,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_FRAMETEXTURE_H

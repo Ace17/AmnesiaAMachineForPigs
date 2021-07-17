@@ -24,12 +24,10 @@
     Feel free to customize this file to suit your needs
 */
 
-#ifndef _SDLMain_h_
-#define _SDLMain_h_
+#pragma once
 
 #import <Cocoa/Cocoa.h>
 
 @interface SDLMain : NSObject
 @end
 
-#endif /* _SDLMain_h_ */

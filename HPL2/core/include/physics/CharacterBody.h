@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_CHARACTER_BODY_H
-#define HPL_CHARACTER_BODY_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "math/PidController.h"
@@ -548,4 +547,3 @@ protected:
     static std::vector<iPhysicsBody*> mvTempBodies;
 };
 }; // namespace hpl
-#endif // HPL_CHARACTER_BODY_H

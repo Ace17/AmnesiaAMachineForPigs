@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELENGINESETUP_H
-#define HPL_LOWLEVELENGINESETUP_H
+#pragma once
 
 namespace hpl
 {
@@ -51,4 +50,3 @@ public:
     virtual cHaptic* CreateHaptic() = 0;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELENGINESETUP_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MODEL_EDITOR_WINDOW_PHYSICS_TEST_H
-#define MODEL_EDITOR_WINDOW_PHYSICS_TEST_H
+#pragma once
 
 //--------------------------------------------------------------------
 
@@ -145,7 +144,6 @@ protected:
 
 //--------------------------------------------------------------------
 
-#endif // MODEL_EDITOR_WINDOW_PHYSICS_TEST_H
 
 
 

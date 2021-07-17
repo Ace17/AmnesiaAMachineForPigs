@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_MATHTYPES_H
-#define HPL_MATHTYPES_H
+#pragma once
 
 #pragma warning(disable : 4996) // disable unsafe warning!
 
@@ -402,4 +401,3 @@ typedef tVector3fList::iterator tVector3fVecIt;
 
 #include "math/Quaternion.h"
 
-#endif // HPL_MATHTYPES_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_VOXEL_MAP_H
-#define HPL_VOXEL_MAP_H
+#pragma once
 
 #include "generate/GenerateTypes.h"
 #include "graphics/GraphicsTypes.h"
@@ -69,4 +68,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_VOXEL_MAP_H

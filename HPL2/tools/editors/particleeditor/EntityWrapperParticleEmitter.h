@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_PARTICLE_EMITTER_H
-#define HPLEDITOR_ENTITY_WRAPPER_PARTICLE_EMITTER_H
+#pragma once
 
 #include "../common/EntityWrapper.h"
 
@@ -702,5 +701,4 @@ protected:
 	ePESubDivType mSubDivType; 
 };
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_PARTICLE_EMITTER_H
 

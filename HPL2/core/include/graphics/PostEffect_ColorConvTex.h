@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_POSTEFFECT_COLOR_CONV_TEX_H
-#define HPL_POSTEFFECT_COLOR_CONV_TEX_H
+#pragma once
 
 #include "graphics/PostEffect.h"
 
@@ -83,4 +82,3 @@ private:
 //------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_POSTEFFECT_COLOR_CONV_TEX_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_AI_NODE_CONTAINER_H
-#define HPL_AI_NODE_CONTAINER_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "physics/PhysicsWorld.h"
@@ -316,4 +315,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_AI_NODE_CONTAINER_H

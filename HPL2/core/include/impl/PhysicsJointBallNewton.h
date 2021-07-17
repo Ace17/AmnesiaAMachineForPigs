@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_JOINT_BALL_NEWTON_H
-#define HPL_PHYSICS_JOINT_BALL_NEWTON_H
+#pragma once
 
 #include "impl/PhysicsJointNewton.h"
 #include "physics/PhysicsJointBall.h"
@@ -50,4 +49,3 @@ public:
 private:
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_JOINT_BALL_NEWTON_H

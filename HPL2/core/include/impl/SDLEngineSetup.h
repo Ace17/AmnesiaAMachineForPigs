@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SDL_ENGINESETUP_H
-#define HPL_SDL_ENGINESETUP_H
+#pragma once
 
 #include "engine/LowLevelEngineSetup.h"
 #include "system/SystemTypes.h"
@@ -64,4 +63,3 @@ private:
     iLowLevelHaptic* mpLowLevelHaptic;
 };
 }; // namespace hpl
-#endif // HPL_SDL_ENGINESETUP_H

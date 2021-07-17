@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENGINE_ENTITY_H
-#define HPLEDITOR_ENGINE_ENTITY_H
+#pragma once
 
 #include "StdAfx.h"
 
@@ -218,4 +217,3 @@ protected:
 	cEntityIcon* mpIcon;
 };
 
-#endif //HPLEDITOR_ENGINE_ENTITY_H

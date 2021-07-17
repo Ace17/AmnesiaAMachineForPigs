@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LEVEL_EDITOR_ACTIONS_H
-#define LEVEL_EDITOR_ACTIONS_H
+#pragma once
 
 #include "../common/EditorAction.h"
 #include "../common/EditorEditModeSelect.h"
@@ -398,4 +397,3 @@ private:
 
 //--------------------------------------------------------------------------------------
 
-#endif // LEVEL_EDITOR_ACTIONS_H

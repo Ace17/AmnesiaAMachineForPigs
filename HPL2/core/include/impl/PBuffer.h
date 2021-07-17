@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_P_BUFFER_H
-#define HPL_P_BUFFER_H
+#pragma once
 
 #include <GL/glew.h>
 #ifdef WIN32
@@ -66,4 +65,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_P_BUFFER_H

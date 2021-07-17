@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_MATRIX_H
-#define HPL_MATRIX_H
+#pragma once
 
 #include <math.h>
 
@@ -253,4 +252,3 @@ public:
 
 }; // namespace hpl
 
-#endif // HPL_MATRIX_H

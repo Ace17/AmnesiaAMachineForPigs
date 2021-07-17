@@ -17,7 +17,5 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MATERIAL_EDITOR_TYPES_H
-#define MATERIAL_EDITOR_TYPES_H
+#pragma once
 
-#endif // MATERIAL_EDITOR_TYPES_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_VERTEXBUFFER_H
-#define HPL_VERTEXBUFFER_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/BoundingVolume.h"
@@ -132,4 +131,3 @@ protected:
 };
 
 }; // namespace hpl
-#endif // HPL_RENDERER3D_H

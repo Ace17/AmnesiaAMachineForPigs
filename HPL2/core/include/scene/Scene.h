@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SCENE_H
-#define HPL_SCENE_H
+#pragma once
 
 #include "engine/EngineTypes.h"
 #include "engine/Updateable.h"
@@ -123,4 +122,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_SCENE_H

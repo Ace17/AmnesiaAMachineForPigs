@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_ACTION_COMPOUND_OBJECT_H
-#define HPLEDITOR_EDITOR_ACTION_COMPOUND_OBJECT_H
+#pragma once
 
 #include "EditorAction.h"
 
@@ -60,4 +59,3 @@ protected:
 
 //---------------------------------------------------------------------
 
-#endif // HPLEDITOR_EDITOR_ACTION_COMPOUND_OBJECT_H

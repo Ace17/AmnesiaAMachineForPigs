@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_BOX_CREATOR_H
-#define HPLEDITOR_BOX_CREATOR_H
+#pragma once
 
 #include "StdAfx.h"
 
@@ -86,5 +85,4 @@ private:
 
 //-----------------------------------------------------------
 
-#endif //HPLEDITOR_BOX_CREATOR_H
 

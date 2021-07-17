@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_MATERIAL_TYPE_H
-#define HPL_MATERIAL_TYPE_H
+#pragma once
 
 #include "engine/EngineTypes.h"
 #include "graphics/GraphicsTypes.h"
@@ -153,4 +152,3 @@ protected:
 //---------------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_MATERIAL_H

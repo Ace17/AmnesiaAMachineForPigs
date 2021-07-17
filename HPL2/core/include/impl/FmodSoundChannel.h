@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FMOD_SOUND_CHANNEL_H
-#define HPL_FMOD_SOUND_CHANNEL_H
+#pragma once
 
 #include "sound/SoundChannel.h"
 #include "sound/SoundData.h"
@@ -72,4 +71,3 @@ private:
     float mfVelocity[3];
 };
 }; // namespace hpl
-#endif // HPL_SOUND_CHANNEL_H

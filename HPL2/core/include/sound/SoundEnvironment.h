@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SOUNDENVIRONMENT_H
-#define HPL_SOUNDENVIRONMENT_H
+#pragma once
 
 #include "system/String.h"
 
@@ -45,4 +44,3 @@ protected:
 
 } // namespace hpl
 
-#endif // HPL_SOUNDENVIRONMENT_H

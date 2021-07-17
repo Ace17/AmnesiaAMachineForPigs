@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_SELECTION_H
-#define HPLEDITOR_EDITOR_SELECTION_H
+#pragma once
 
 #include "EditorEditMode.h"
 #include "EditorTypes.h"
@@ -156,4 +155,3 @@ protected:
 	static float mfRotateSnap;
 };
 
-#endif // HPLEDITOR_EDITOR_SELECTION_H

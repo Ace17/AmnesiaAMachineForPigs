@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LEVEL_EDITOR_STATIC_OBJECT_COMBO_H
-#define LEVEL_EDITOR_STATIC_OBJECT_COMBO_H
+#pragma once
 
 //------------------------------------------------------
 
@@ -80,4 +79,3 @@ typedef tStaticObjectComboList::iterator tStaticObjectComboListIt;
 
 //------------------------------------------------------
 
-#endif // LEVEL_EDITOR_STATIC_OBJECT_COMBO_H

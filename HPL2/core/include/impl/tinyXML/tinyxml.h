@@ -22,8 +22,7 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
-#ifndef TINYXML_INCLUDED
-#define TINYXML_INCLUDED
+#pragma once
 
 #ifdef _MSC_VER
 #pragma warning(push)
@@ -1784,4 +1783,3 @@ private:
 #pragma warning(pop)
 #endif
 
-#endif

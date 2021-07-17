@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_ENGINE_TYPES_H
-#define HPL_ENGINE_TYPES_H
+#pragma once
 
 #include "system/SerializeClass.h"
 
@@ -185,4 +184,3 @@ typedef tScriptVarMap::iterator tScriptVarMapIt;
 
 }; // namespace hpl
 
-#endif // HPL_ENGINE_TYPES_H

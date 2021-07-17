@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_NODE3D_H
-#define HPL_NODE3D_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "scene/SceneTypes.h"
@@ -144,4 +143,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_NODE3D_H

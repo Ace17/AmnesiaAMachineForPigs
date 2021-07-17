@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_JOINT_H
-#define HPL_PHYSICS_JOINT_H
+#pragma once
 
 #include "engine/SaveGame.h"
 #include "math/MathTypes.h"
@@ -263,4 +262,3 @@ protected:
     void LimitEffect(cJointLimitEffect* pEffect);
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_JOINT_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_ACTION_HAPTIC_H
-#define HPL_ACTION_HAPTIC_H
+#pragma once
 
 #include "haptic/Haptic.h"
 #include "input/Action.h"
@@ -49,4 +48,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_ACTIONMOUSEBUTTON_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_PRIMITIVE_PLANE_H
-#define HPLEDITOR_ENTITY_WRAPPER_PRIMITIVE_PLANE_H
+#pragma once
 
 #include "EntityWrapperPrimitive.h"
 
@@ -141,4 +140,3 @@ protected:
 
 //------------------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_PRIMITIVE_H

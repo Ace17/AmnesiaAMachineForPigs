@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_ANIMATION_TRACK_H
-#define HPL_ANIMATION_TRACK_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/MathTypes.h"
@@ -95,4 +94,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_ANIMATION_TRACK_H

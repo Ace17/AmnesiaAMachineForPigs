@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_GLSL_PROGRAM_H
-#define HPL_GLSL_PROGRAM_H
+#pragma once
 
 //#include <windows.h>
 
@@ -93,4 +92,3 @@ private:
     std::vector<cGLSLParam> mvParameters;
 };
 }; // namespace hpl
-#endif // HPL_GLSL_PROGRAM_H

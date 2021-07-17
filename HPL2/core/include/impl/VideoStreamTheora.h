@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_VIDEO_STREAM_THEORA_H
-#define HPL_VIDEO_STREAM_THEORA_H
+#pragma once
 
 #include "graphics/VideoStream.h"
 #include "resources/VideoLoader.h"
@@ -109,4 +108,3 @@ private:
 //-----------------------------------------
 
 }; // namespace hpl
-#endif // HPL_VIDEO_STREAM_THEORA_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_JOINT_SLIDER_NEWTON_H
-#define HPL_PHYSICS_JOINT_SLIDER_NEWTON_H
+#pragma once
 
 #include "impl/PhysicsJointNewton.h"
 #include "physics/PhysicsJointSlider.h"
@@ -55,4 +54,3 @@ private:
     float mfPreviousDist;
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_JOINT_SLIDER_NEWTON_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_SHAPE_CREATOR_H
-#define HPLEDITOR_SHAPE_CREATOR_H
+#pragma once
 
 class iEditorEditMode;
 class cEditorWindowViewport;
@@ -58,4 +57,3 @@ protected:
 	cVector3f mvDebugPos;
 };
 
-#endif // HPLEDITOR_SHAPE_CREATOR_H

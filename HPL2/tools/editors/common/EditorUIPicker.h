@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_UI_PICKER_H
-#define HPLEDITOR_EDITOR_UI_PICKER_H
+#pragma once
 
 #include "EntityPicker.h"
 
@@ -82,4 +81,3 @@ protected:
 	tIntList* mpOutputIDList;
 };
 
-#endif //HPLEDITOR_EDITOR_UI_PICKER_H

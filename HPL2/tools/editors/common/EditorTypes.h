@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_TYPES_H
-#define HPLEDITOR_EDITOR_TYPES_H
+#pragma once
 
 #include "../common/StdAfx.h"
 
@@ -239,4 +238,3 @@ typedef tEditorClipPlaneVec::iterator  tEditorClipPlaneVecIt;
 
 typedef std::map<tString, float> tEditorSettingsMap;
 
-#endif //HPLEDITOR_EDITOR_TYPES

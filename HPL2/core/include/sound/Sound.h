@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SOUND_H
-#define HPL_SOUND_H
+#pragma once
 
 #include "engine/Updateable.h"
 
@@ -63,4 +62,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_SOUND_H

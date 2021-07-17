@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_MATERIAL_DECAL_H
-#define HPL_MATERIAL_DECAL_H
+#pragma once
 
 #include "graphics/Material.h"
 #include "graphics/MaterialType.h"
@@ -72,4 +71,3 @@ private:
 //---------------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_MATERIAL_DECAL_H

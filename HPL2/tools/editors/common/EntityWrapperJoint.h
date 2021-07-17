@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_BODY_JOINT_H
-#define HPLEDITOR_ENTITY_WRAPPER_BODY_JOINT_H
+#pragma once
 
 #include "StdAfx.h"
 
@@ -275,4 +274,3 @@ typedef tJointWrapperVec::iterator		  tJointWrapperVecIt;
 
 //-------------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_BODY_JOINT_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FMOD_SOUND_DATA_H
-#define HPL_FMOD_SOUND_DATA_H
+#pragma once
 
 #include "sound/SoundData.h"
 #include <fmod/fmod.h>
@@ -49,4 +48,3 @@ private:
     FSOUND_STREAM* mpStream;
 };
 }; // namespace hpl
-#endif // HPL_FMOD_SOUND_DATA_H

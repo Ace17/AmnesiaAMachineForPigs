@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PID_CONTROLLER_H
-#define HPL_PID_CONTROLLER_H
+#pragma once
 
 #include "math/MathTypes.h"
 
@@ -124,4 +123,3 @@ private:
 typedef cPidController<float> cPidControllerf;
 typedef cPidController<cVector3f> cPidControllerVec3;
 }; // namespace hpl
-#endif // HPL_PID_CONTROLLER_H

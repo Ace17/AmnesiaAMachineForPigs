@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef ED_MODULE_H
-#define ED_MODULE_H
+#pragma once
 
 //-----------------------------------------------
 
@@ -93,5 +92,4 @@ typedef std::vector<iEdModule*> tEdModuleVec;
 
 //-----------------------------------------------
 
-#endif // ED_MODULE_H
               

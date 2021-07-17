@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_RESOURCES_TYPES_H
-#define HPL_RESOURCES_TYPES_H
+#pragma once
 
 #include "system/SystemTypes.h"
 
@@ -80,4 +79,3 @@ typedef tBinaryBufferList::iterator tBinaryBufferListIt;
 //-------------------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_RESOURCES_TYPES_H

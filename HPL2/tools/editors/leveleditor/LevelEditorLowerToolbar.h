@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LEVEL_EDITOR_LOWER_TOOLBAR_H
-#define LEVEL_EDITOR_LOWER_TOOLBAR_H
+#pragma once
 
 #include "hpl.h"
 
@@ -73,4 +72,3 @@ protected:
 
 //--------------------------------------------------------------------
 
-#endif //LEVEL_EDITOR_LOWER_TOOLBAR_H

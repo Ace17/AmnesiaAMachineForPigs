@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_ENTITY3D_H
-#define HPL_ENTITY3D_H
+#pragma once
 
 #include "math/BoundingVolume.h"
 #include "math/MathTypes.h"
@@ -162,4 +161,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_ENTITY3D_H

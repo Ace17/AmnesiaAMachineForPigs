@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef EDIT_MODE_H
-#define EDIT_MODE_H
+#pragma once
 
 //----------------------------------------------
 
@@ -58,4 +57,3 @@ protected:
 
 //----------------------------------------------
 
-#endif // EDIT_MODE_H

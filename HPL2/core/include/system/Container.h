@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_CONTAINER_H
-#define HPL_CONTAINER_H
+#pragma once
 
 #include "system/MemoryManager.h"
 
@@ -229,4 +228,3 @@ public:
 //---------------------------------
 
 }; // namespace hpl
-#endif // HPL_CONTAINER_H

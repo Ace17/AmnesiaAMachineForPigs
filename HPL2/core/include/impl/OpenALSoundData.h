@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_OPENAL_SOUND_DATA_H
-#define HPL_OPENAL_SOUND_DATA_H
+#pragma once
 
 #include "sound/SoundData.h"
 
@@ -55,4 +54,3 @@ private:
     // iOAL_Loadable*	mpSoundData;
 };
 }; // namespace hpl
-#endif // HPL_OPENAL_SOUND_DATA_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_RENDERABLE_CONTAINER_DYNBOXTREE_H
-#define HPL_RENDERABLE_CONTAINER_DYNBOXTREE_H
+#pragma once
 
 #include "scene/RenderableContainer.h"
 
@@ -144,4 +143,3 @@ private:
 
 //-------------------------------------------
 }; // namespace hpl
-#endif // HPL_RENDERABLE_CONTAINER_DYNBOXTREE_H

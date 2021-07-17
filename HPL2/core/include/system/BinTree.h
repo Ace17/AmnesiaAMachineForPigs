@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_BINTREE_H
-#define HPL_BINTREE_H
+#pragma once
 
 #include <list>
 #include <vector>
@@ -234,4 +233,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_BINTREE_H

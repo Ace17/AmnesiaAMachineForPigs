@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_VECTOR2_H
-#define HPL_VECTOR2_H
+#pragma once
 
 #include "system/SystemTypes.h"
 
@@ -253,4 +252,3 @@ public:
 };
 
 }; // namespace hpl
-#endif // HPL_VECTOR2_H

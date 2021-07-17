@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PARTICLE_EMITTER_H
-#define HPL_PARTICLE_EMITTER_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "graphics/Renderable.h"
@@ -324,4 +323,3 @@ typedef tParticleEmitterDataMap::iterator tParticleEmitterDataMapIt;
 //-----------------------------------------------------------------
 }; // namespace hpl
 
-#endif // HPL_PARTICLE_EMITTER_H

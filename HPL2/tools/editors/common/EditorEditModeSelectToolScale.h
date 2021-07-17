@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_SCALE_H
-#define HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_SCALE_H
+#pragma once
 
 
 //-----------------------------------------------------------------------
@@ -69,4 +68,3 @@ public:
 
 //-----------------------------------------------------------------------
 
-#endif // HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_SCALE_H

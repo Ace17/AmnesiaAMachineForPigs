@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDIT_MODE_COMBINE_H
-#define HPLEDITOR_EDIT_MODE_COMBINE_H
+#pragma once
 
 #include "EditorEditMode.h"
 #include "../leveleditor/LevelEditorStaticObjectCombo.h"
@@ -91,4 +90,3 @@ protected:
 
 //--------------------------------------------------------------
 
-#endif // HPLEDITOR_EDIT_MODE_COMBINE_H

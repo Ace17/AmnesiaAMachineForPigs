@@ -27,8 +27,7 @@
 // not cause any problem for most applications.
 //
 
-#ifndef SCRIPTSTDSTRING_H
-#define SCRIPTSTDSTRING_H
+#pragma once
 
 #ifndef ANGELSCRIPT_H
 // Avoid having to inform include path if header is already include before
@@ -69,4 +68,3 @@ void RegisterStdStringUtils(asIScriptEngine* engine);
 
 END_AS_NAMESPACE
 
-#endif

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_MESH_LOADER_MSH_H
-#define HPL_MESH_LOADER_MSH_H
+#pragma once
 
 #include "resources/MeshLoader.h"
 
@@ -71,4 +70,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_MESH_LOADER_MSH_H

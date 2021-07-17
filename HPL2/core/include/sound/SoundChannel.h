@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SOUND_CHANNEL_H
-#define HPL_SOUND_CHANNEL_H
+#pragma once
 
 #include "math/MathTypes.h"
 
@@ -138,4 +137,3 @@ protected:
 typedef std::list<iSoundChannel*> tSoundChannelList;
 typedef tSoundChannelList::iterator tSoundChannelListIt;
 }; // namespace hpl
-#endif // HPL_SOUND_CHANNEL_H

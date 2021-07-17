@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDIT_MODE_DUMMY_H
-#define HPLEDITOR_EDIT_MODE_DUMMY_H
+#pragma once
 
 #include "EditorEditMode.h"
 
@@ -30,4 +29,3 @@ public:
 	cEditorEditModeDummy(iEditorBase* apEditor) : iEditorEditMode(apEditor, "Dummy") {}
 };
 
-#endif

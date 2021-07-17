@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FRAME_BUFFER_GL_H
-#define HPL_FRAME_BUFFER_GL_H
+#pragma once
 
 #include "graphics/FrameBuffer.h"
 #include "impl/LowLevelGraphicsSDL.h"
@@ -76,4 +75,3 @@ private:
     bool mbIsUpdated;
 };
 }; // namespace hpl
-#endif // HPL_TEXTURE_H

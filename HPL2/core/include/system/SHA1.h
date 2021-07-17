@@ -39,8 +39,7 @@
  *
  */
 
-#ifndef SHA1_H_
-#define SHA1_H_
+#pragma once
 
 #include "system/SystemTypes.h"
 
@@ -219,4 +218,3 @@ private:
 
 } // namespace hpl
 
-#endif /* SHA1_H_ */

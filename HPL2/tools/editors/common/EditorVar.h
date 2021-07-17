@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_VAR_H
-#define HPLEDITOR_EDITOR_VAR_H
+#pragma once
 
 #include "../common/StdAfx.h"
 #include "EditorInput.h"
@@ -498,4 +497,3 @@ protected:
 
 //--------------------------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_CUSTOM_VAR_H

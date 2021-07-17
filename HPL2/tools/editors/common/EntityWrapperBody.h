@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_BODY_H
-#define HPLEDITOR_ENTITY_WRAPPER_BODY_H
+#pragma once
 
 #include "../common/StdAfx.h"
 
@@ -219,4 +218,3 @@ protected:
 
 //---------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_STATIC_BODY_H

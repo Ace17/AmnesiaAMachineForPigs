@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SCRIPT_FUNCS_H
-#define HPL_SCRIPT_FUNCS_H
+#pragma once
 
 #include "physics/PhysicsJoint.h"
 
@@ -60,4 +59,3 @@ public:
 };
 
 }; // namespace hpl
-#endif // HPL_SCRIPT_FUNCS_H

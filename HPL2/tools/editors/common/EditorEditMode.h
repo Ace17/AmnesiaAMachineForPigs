@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDIT_MODE_H
-#define HPLEDITOR_EDIT_MODE_H
+#pragma once
 
 #include "../common/StdAfx.h"
 
@@ -162,4 +161,3 @@ protected:
 
 //------------------------------------------------------
 
-#endif // HPLEDITOR_EDIT_MODE_H

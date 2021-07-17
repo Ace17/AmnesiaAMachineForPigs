@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_BITMAP_H
-#define HPL_BITMAP_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/MathTypes.h"
@@ -106,4 +105,3 @@ private:
     int mlNumOfMipMaps;
 };
 }; // namespace hpl
-#endif // HPL_BITMAP_H

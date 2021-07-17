@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_WORLD_NEWTON_H
-#define HPL_PHYSICS_WORLD_NEWTON_H
+#pragma once
 
 #include "physics/PhysicsWorld.h"
 
@@ -114,4 +113,3 @@ private:
     ePhysicsAccuracy mAccuracy;
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_WORLD_NEWTON_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SCENE_TYPES_H
-#define HPL_SCENE_TYPES_H
+#pragma once
 
 #include <list>
 #include <vector>
@@ -279,4 +278,3 @@ typedef tLightVec::iterator tLightVecIt;
 
 } // namespace hpl
 
-#endif // HPL_SCENE_TYPES_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_GRAPHICS_TYPES_H
-#define HPL_GRAPHICS_TYPES_H
+#pragma once
 
 #pragma warning(disable : 4996) // disable unsafe warning!
 
@@ -936,4 +935,3 @@ inline float UCharColorToFloat(unsigned char alColor)
 
 } // namespace hpl
 
-#endif // HPL_GRAPHICS_TYPES_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_USER_CLASS_DEFINITION_MANAGER_H
-#define HPLEDITOR_USER_CLASS_DEFINITION_MANAGER_H
+#pragma once
 
 //------------------------------------------------------------------
 
@@ -249,4 +248,3 @@ protected:
 
 //------------------------------------------------------------------
 
-#endif // HPLEDITOR_USER_CLASS_DEFINITION_MANAGER_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_JOINT_HINGE_H
-#define HPLEDITOR_ENTITY_WRAPPER_JOINT_HINGE_H
+#pragma once
 
 #include "StdAfx.h"
 
@@ -82,4 +81,3 @@ protected:
 
 //-----------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_JOINT_HINGE_H

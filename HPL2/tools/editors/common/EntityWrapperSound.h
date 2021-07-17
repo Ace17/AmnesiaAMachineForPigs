@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_SOUND_H
-#define HPLEDITOR_ENTITY_WRAPPER_SOUND_H
+#pragma once
 
 #include "EntityWrapper.h"
 
@@ -138,4 +137,3 @@ protected:
 
 //---------------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_SOUND_H

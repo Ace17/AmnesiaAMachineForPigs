@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_PARTICLE_EDITOR_WINDOW_EMITTER_PARAMS_H
-#define HPLEDITOR_PARTICLE_EDITOR_WINDOW_EMITTER_PARAMS_H
+#pragma once
 
 #include "../common/EditorWindow.h"
 
@@ -142,4 +141,3 @@ protected:
 //-------------------------------------------------------------
 
 
-#endif // HPLEDITOR_PARTICLE_EDITOR_WINDOW_EMITTER_PARAMS_H

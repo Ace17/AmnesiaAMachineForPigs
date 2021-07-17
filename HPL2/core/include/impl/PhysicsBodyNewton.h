@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_BODY_NEWTON_H
-#define HPL_PHYSICS_BODY_NEWTON_H
+#pragma once
 
 #if defined(__linux__) || defined(__APPLE__)
 #include <unistd.h>
@@ -124,4 +123,3 @@ private:
     cVector3f mvTotalTorque;
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_BODY_NEWTON_H

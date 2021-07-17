@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_JOINT_HINGE_NEWTON_H
-#define HPL_PHYSICS_JOINT_HINGE_NEWTON_H
+#pragma once
 
 #include "impl/PhysicsJointNewton.h"
 #include "physics/PhysicsJointHinge.h"
@@ -61,4 +60,3 @@ private:
     // static unsigned LimitCallback(const NewtonJoint* pHinge, NewtonHingeSliderUpdateDesc* pDesc);
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_JOINT_HINGE_NEWTON_H

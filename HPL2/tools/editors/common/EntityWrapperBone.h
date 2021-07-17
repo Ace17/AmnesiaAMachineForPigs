@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_BONE_H
-#define HPLEDITOR_ENTITY_WRAPPER_BONE_H
+#pragma once
 
 #include "EntityWrapper.h"
 
@@ -123,4 +122,3 @@ protected:
 
 //------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_BONE_H

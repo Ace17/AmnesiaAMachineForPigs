@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MATERIAL_EDITOR_H
-#define MATERIAL_EDITOR_H
+#pragma once
 
 #include "hpl.h"
 
@@ -107,5 +106,4 @@ protected:
 
 //----------------------------------------------------------
 
-#endif //LEVEL_EDITOR_H
 

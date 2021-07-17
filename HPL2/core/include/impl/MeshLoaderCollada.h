@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_MESH_LOADER_COLLADA_H
-#define HPL_MESH_LOADER_COLLADA_H
+#pragma once
 
 #include "graphics/VertexBuffer.h"
 #include "math/MathTypes.h"
@@ -614,4 +613,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_MESH_LOADER_COLLADA_H

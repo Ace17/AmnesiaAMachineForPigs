@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_GLSL_SHADER_H
-#define HPL_GLSL_SHADER_H
+#pragma once
 
 //#include <windows.h>
 #include "graphics/GPUShader.h"
@@ -64,4 +63,3 @@ protected:
     GLuint mlHandle;
 };
 }; // namespace hpl
-#endif // HPL_GLSL_SHADER_H

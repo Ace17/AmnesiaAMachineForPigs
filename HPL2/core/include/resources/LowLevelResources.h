@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELRESOURCES_H
-#define HPL_LOWLEVELRESOURCES_H
+#pragma once
 
 #include "system/SystemTypes.h"
 
@@ -42,4 +41,3 @@ public:
     virtual iXmlDocument* CreateXmlDocument(const tString& asName = "") = 0;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELRESOURCES_H

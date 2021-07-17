@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_LEVEL_SETTINGS_H
-#define HPLEDITOR_EDITOR_LEVEL_SETTINGS_H
+#pragma once
 
 #include "../common/EditorWindow.h"
 
@@ -60,4 +59,3 @@ protected:
 	cWidgetButton*	mpBResetDecals;
 };
 
-#endif //HPLEDITOR_EDITOR_WORLD_SETTINGS_H 

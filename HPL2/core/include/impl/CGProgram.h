@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_CGPROGRAM_H
-#define HPL_CGPROGRAM_H
+#pragma once
 
 //#include <windows.h>
 
@@ -43,4 +42,3 @@ public:
 protected:
 };
 }; // namespace hpl
-#endif // HPL_CGPROGRAM_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_WORLD_LOADER_H
-#define HPL_WORLD_LOADER_H
+#pragma once
 
 #include "resources/ResourceLoader.h"
 
@@ -49,4 +48,3 @@ protected:
 };
 
 }; // namespace hpl
-#endif // HPL_MESH_LOADER_H

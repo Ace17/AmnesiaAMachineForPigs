@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_ACTIONKEYBOARD_H
-#define HPL_ACTIONKEYBOARD_H
+#pragma once
 
 #include "input/Action.h"
 #include "input/InputTypes.h"
@@ -48,4 +47,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_ACTIONKEYBOARD_H

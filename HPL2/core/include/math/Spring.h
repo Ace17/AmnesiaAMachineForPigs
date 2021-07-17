@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SPRING_H
-#define HPL_SPRING_H
+#pragma once
 
 #include "math/MathTypes.h"
 
@@ -55,4 +54,3 @@ public:
 typedef cSpring<float> cSpringf;
 typedef cSpring<cVector3f> cSpringVec3;
 }; // namespace hpl
-#endif // HPL_SPRING_H

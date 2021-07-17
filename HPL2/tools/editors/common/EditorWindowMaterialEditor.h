@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_WINDOW_MATERIAL_EDITOR_H
-#define HPLEDITOR_EDITOR_WINDOW_MATERIAL_EDITOR_H
+#pragma once
 
 #include "EditorWindow.h"
 #include "EditorViewport.h"
@@ -372,4 +371,3 @@ protected:
 
 //-------------------------------------------------------------------
 
-#endif // HPLEDITOR_EDITOR_WINDOW_MATERIAL_EDITOR_H

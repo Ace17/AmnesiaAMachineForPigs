@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_PARTICLE_EDITOR_WORLD_H
-#define HPLEDITOR_PARTICLE_EDITOR_WORLD_H
+#pragma once
 
 #include "../common/EditorWorld.h"
 
@@ -82,5 +81,4 @@ protected:
 
 //---------------------------------------------------------------
 
-#endif // HPLEDITOR_PARTICLE_EDITOR_WORLD_H
 

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_LEVEL_EDITOR_WORLD_H
-#define HPLEDITOR_LEVEL_EDITOR_WORLD_H
+#pragma once
 
 #include "../common/EditorWorld.h"
 #include "LevelEditorStaticObjectCombo.h"
@@ -97,5 +96,4 @@ protected:
 
 //---------------------------------------------------------------
 
-#endif // HPLEDITOR_LEVEL_EDITOR_WORLD_H
 

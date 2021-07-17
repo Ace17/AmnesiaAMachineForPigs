@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELSOUND_FMOD_H
-#define HPL_LOWLEVELSOUND_FMOD_H
+#pragma once
 
 #include "sound/LowLevelSound.h"
 
@@ -50,4 +49,3 @@ private:
     tString mvFormats[30];
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELSOUND_FMOD_H

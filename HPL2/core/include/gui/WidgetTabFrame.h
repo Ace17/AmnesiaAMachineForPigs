@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_WIDGET_TAB_FRAME
-#define HPL_WIDGET_TAB_FRAME
+#pragma once
 
 #include "gui/Widget.h"
 
@@ -229,4 +228,3 @@ protected:
 };
 }; // namespace hpl
 
-#endif // HPL_WIDGET_TAB_FRAME

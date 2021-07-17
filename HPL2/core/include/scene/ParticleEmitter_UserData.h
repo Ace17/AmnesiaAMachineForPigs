@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PARTICLE_EMITTER_USER_DATA_H
-#define HPL_PARTICLE_EMITTER_USER_DATA_H
+#pragma once
 
 #include "physics/PhysicsTypes.h"
 #include "scene/ParticleEmitter.h"
@@ -273,4 +272,3 @@ private:
 
 }; // namespace hpl
 
-#endif // HPL_PARTICLE_EMITTER_USER_DATA_H

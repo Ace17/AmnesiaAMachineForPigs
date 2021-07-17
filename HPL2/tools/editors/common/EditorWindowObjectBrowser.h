@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_WINDOW_OBJECT_BROWSER_H
-#define HPLEDITOR_EDITOR_WINDOW_OBJECT_BROWSER_H
+#pragma once
 
 #include "EditorWindow.h"
 #include "EditorIndex.h"
@@ -156,4 +155,3 @@ protected:
 
 //----------------------------------------------------------
 
-#endif // HPLEDITOR_EDITOR_WINDOW_OBJECT_BROWSER_H

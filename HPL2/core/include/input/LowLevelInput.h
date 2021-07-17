@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELINPUT_H
-#define HPL_LOWLEVELINPUT_H
+#pragma once
 
 namespace hpl
 {
@@ -69,4 +68,3 @@ public:
     virtual iGamepad* CreateGamepad(int alIndex) = 0;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELINPUT_H

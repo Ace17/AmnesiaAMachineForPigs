@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MODEL_EDITOR_H
-#define MODEL_EDITOR_H
+#pragma once
 
 #include "../common/StdAfx.h"
 using namespace hpl;
@@ -170,5 +169,4 @@ protected:
 
 //----------------------------------------------------------
 
-#endif //MODEL_EDITOR_H
 

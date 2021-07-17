@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MODELEDITOR_EDITOR_WINDOW_ANIMATIONS_H
-#define MODELEDITOR_EDITOR_WINDOW_ANIMATIONS_H
+#pragma once
 
 #include "../common/EditorWindow.h"
 #include "ModelEditor.h"
@@ -80,4 +79,3 @@ protected:
 
 //-------------------------------------------------------------------------
 
-#endif // MODELEDITOR_EDITOR_WINDOW_ANIMATIONS_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_ENGINE_FILE_LOADING_H
-#define HPL_ENGINE_FILE_LOADING_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/MathTypes.h"
@@ -66,4 +65,3 @@ private:
     static void SetupWorldEntity(iEntity3D* apEntity, cXmlElement* apElement);
 };
 }; // namespace hpl
-#endif // HPL_ENGINE_FILE_LOADING_H

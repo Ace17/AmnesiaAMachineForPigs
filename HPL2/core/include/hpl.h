@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_HPL_H
-#define HPL_HPL_H
+#pragma once
 
 #include "ai/AI.h"
 #include "ai/AINodeContainer.h"
@@ -202,4 +201,3 @@
 #include "system/SystemTypes.h"
 #include "system/Thread.h"
 
-#endif // HPL_HPL_H

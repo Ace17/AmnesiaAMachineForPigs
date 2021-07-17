@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_WINDOW_H
-#define HPLEDITOR_EDITOR_WINDOW_H
+#pragma once
 
 #include "../common/StdAfx.h"
 
@@ -224,5 +223,4 @@ protected:
 	cWidgetWindow* mpWindow;
 };
 
-#endif //HPLEDITOR_EDITOR_WINDOW_H
 

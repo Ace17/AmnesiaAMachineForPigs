@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_VIEWPORT_H
-#define HPL_VIEWPORT_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "gui/GuiTypes.h"
@@ -120,4 +119,3 @@ private:
 //------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_VIEWPORT_H

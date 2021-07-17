@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_WINDOW_ENTITY_EDIT_BOX_PARTICLE_SYSTEM_H
-#define HPLEDITOR_EDITOR_WINDOW_ENTITY_EDIT_BOX_PARTICLE_SYSTEM_H
+#pragma once
 
 #include "../common/StdAfx.h"
 using namespace hpl;
@@ -80,4 +79,3 @@ protected:
 //----------------------------------------------------------------------
 
 
-#endif // HPLEDITOR_EDITOR_WINDOW_ENTITY_EDIT_BOX_PARTICLE_SYSTEM_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_BILLBOARD_H
-#define HPL_BILLBOARD_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "graphics/Renderable.h"
@@ -123,4 +122,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_BILLBOARD_H

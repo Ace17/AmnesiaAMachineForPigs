@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SOUND_ENTITY_H
-#define HPL_SOUND_ENTITY_H
+#pragma once
 
 #include "scene/Entity3D.h"
 #include "sound/SoundTypes.h"
@@ -163,4 +162,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_SOUND_ENTITY_H

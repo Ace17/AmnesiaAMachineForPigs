@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FILESEARCHER_H
-#define HPL_FILESEARCHER_H
+#pragma once
 
 #include "resources/ResourcesTypes.h"
 #include "system/SystemTypes.h"
@@ -81,4 +80,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_FILESEARCHER_H

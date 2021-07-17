@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_CLIP_PLANE_H
-#define HPLEDITOR_EDITOR_CLIP_PLANE_H
+#pragma once
 
 #include "EditorAxisAlignedPlane.h"
 
@@ -52,4 +51,3 @@ protected:
 	bool mbActive;
 };
 
-#endif	// HPLEDITOR_EDITOR_CLIP_PLANE_H

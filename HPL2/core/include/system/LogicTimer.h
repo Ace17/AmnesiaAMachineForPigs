@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOGICTIMER_H
-#define HPL_LOGICTIMER_H
+#pragma once
 
 namespace hpl
 {
@@ -89,4 +88,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_LOGICTIMER_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_QUATERNION_H
-#define HPL_QUATERNION_H
+#pragma once
 
 #include "math/Matrix.h"
 #include "math/Vector3.h"
@@ -59,4 +58,3 @@ public:
 private:
 };
 }; // namespace hpl
-#endif // HPL_QUATERNION_H

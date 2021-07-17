@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_GAMEPAD_XINPUT_H
-#define HPL_GAMEPAD_XINPUT_H
+#pragma once
 
 #define USE_XINPUT 0
 
@@ -150,4 +149,3 @@ private:
 }; // namespace hpl
 
 #endif // USE_XINPUT
-#endif // HPL_GAMEPAD_XINPUT_H

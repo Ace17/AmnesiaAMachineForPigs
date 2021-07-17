@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_COLLIDE_SHAPE_H
-#define HPL_COLLIDE_SHAPE_H
+#pragma once
 
 #include "math/BoundingVolume.h"
 #include "math/MathTypes.h"
@@ -80,4 +79,3 @@ protected:
     cBoundingVolume mBoundingVolume;
 };
 }; // namespace hpl
-#endif // HPL_COLLIDE_SHAPE_H

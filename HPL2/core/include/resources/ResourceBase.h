@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_RESOURCEBASE_H
-#define HPL_RESOURCEBASE_H
+#pragma once
 
 #include "system/LowLevelSystem.h"
 #include "system/SystemTypes.h"
@@ -94,4 +93,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_RESOURCEBASE_H

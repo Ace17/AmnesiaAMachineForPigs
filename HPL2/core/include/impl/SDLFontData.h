@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SDL_FONTDATA_H
-#define HPL_SDL_FONTDATA_H
+#pragma once
 
 #include "graphics/FontData.h"
 
@@ -42,4 +41,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_FONTDATA_H

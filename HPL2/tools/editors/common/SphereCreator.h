@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_SPHERE_CREATOR_H
-#define HPLEDITOR_SPHERE_CREATOR_H
+#pragma once
 
 #include "StdAfx.h"
 
@@ -63,5 +62,4 @@ private:
 	cVector3f vDebugPos;
 };
 
-#endif //HPLEDITOR_SPHERE_CREATOR_H
 

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LEVEL_EDITOR_TYPES_H
-#define LEVEL_EDITOR_TYPES_H
+#pragma once
 
 class cLevelEditorGroup;
 
@@ -27,4 +26,3 @@ typedef std::map<unsigned int,cLevelEditorGroup> tGroupMap;
 typedef tGroupMap::iterator tGroupMapIt;
 
 
-#endif // LEVEL_EDITOR_TYPES_H

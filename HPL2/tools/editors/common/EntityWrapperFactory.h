@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_ENTITY_WRAPPER_FACTORY_H
-#define HPLEDITOR_ENTITY_WRAPPER_FACTORY_H
+#pragma once
 
 #include "../common/StdAfx.h"
 
@@ -71,4 +70,3 @@ private:
 
 //-----------------------------------------------------------------------
 
-#endif // HPLEDITOR_ENTITY_WRAPPER_FACTORY_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_WIDGET_BASE_CLASSES_H
-#define HPL_WIDGET_BASE_CLASSES_H
+#pragma once
 
 #include "gui/GuiTypes.h"
 
@@ -252,4 +251,3 @@ public:
 //--------------------------------------
 
 }; // namespace hpl
-#endif // HPL_WIDGET_BASE_CLASSES_H

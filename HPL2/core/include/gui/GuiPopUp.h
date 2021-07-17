@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_GUI_POP_UP_H
-#define HPL_GUI_POP_UP_H
+#pragma once
 
 #include "gui/GuiTypes.h"
 
@@ -80,4 +79,3 @@ protected:
 };
 
 }; // namespace hpl
-#endif // HPL_GUI_POP_UP_H

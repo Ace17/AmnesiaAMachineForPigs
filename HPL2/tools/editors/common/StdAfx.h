@@ -17,9 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef EDITOR_STDAFX_H
-#define EDITOR_STDAFX_H
+#pragma once
 
 #include "hpl.h"
 
-#endif // EDITOR_STDAFX_H

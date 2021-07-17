@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_HAPTIC_TYPES_H
-#define HPL_HAPTIC_TYPES_H
+#pragma once
 
 #include "system/SystemTypes.h"
 
@@ -93,4 +92,3 @@ typedef cSTLIterator<iHapticShape*, tHapticShapeList, tHapticShapeListIt> cHapti
 //----------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_HAPTIC_TYPES_H

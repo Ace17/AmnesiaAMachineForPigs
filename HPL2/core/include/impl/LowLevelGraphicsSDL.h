@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELGRAPHICS_SDL_H
-#define HPL_LOWLEVELGRAPHICS_SDL_H
+#pragma once
 
 #include <GL/glew.h>
 #ifdef WIN32
@@ -438,4 +437,3 @@ private:
     void SetVtxBatchStates(tVtxBatchFlag aFlags);
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELGRAPHICS_SDL_H

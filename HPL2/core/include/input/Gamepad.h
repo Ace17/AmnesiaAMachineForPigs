@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_GAMEPAD_H
-#define HPL_GAMEPAD_H
+#pragma once
 
 #include "input/InputDevice.h"
 #include "input/InputTypes.h"
@@ -226,4 +225,3 @@ protected:
 
 }; // namespace hpl
 
-#endif // HPL_GAMEPAD_H

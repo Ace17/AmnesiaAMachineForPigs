@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SERIALIZE_CLASS_H
-#define HPL_SERIALIZE_CLASS_H
+#pragma once
 
 #include "impl/tinyXML/tinyxml.h"
 #include "system/MemoryManager.h"
@@ -358,4 +357,3 @@ private:
 //-------------------------------------------------
 
 };
-#endif // HPL_SERIALIZE_CLASS_H

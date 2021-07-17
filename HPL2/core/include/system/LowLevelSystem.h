@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELSYSTEM_H
-#define HPL_LOWLEVELSYSTEM_H
+#pragma once
 
 #include "system/MemoryManager.h"
 #include "system/SystemTypes.h"
@@ -112,4 +111,3 @@ public:
     virtual bool AddScriptVar(const tString& asVarDecl, void* pVar) = 0;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELSYSTEM_H

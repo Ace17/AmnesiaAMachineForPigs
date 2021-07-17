@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_VIEWPORT_H
-#define HPLEDITOR_EDITOR_VIEWPORT_H
+#pragma once
 
 #include "../common/StdAfx.h"
 
@@ -382,4 +381,3 @@ protected:
 	static cVector2f mvCamPlanes;
 };
 
-#endif

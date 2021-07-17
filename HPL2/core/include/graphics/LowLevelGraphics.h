@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELGRAPHICS_H
-#define HPL_LOWLEVELGRAPHICS_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/MathTypes.h"
@@ -310,4 +309,3 @@ protected:
     static bool mbForceShaderModel3And4Off;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELGRAPHICS_H

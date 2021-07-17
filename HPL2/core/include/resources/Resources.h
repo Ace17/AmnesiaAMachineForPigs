@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_RESOURCES_H
-#define HPL_RESOURCES_H
+#pragma once
 
 #include "engine/Updateable.h"
 #include "graphics/GraphicsTypes.h"
@@ -296,4 +295,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_RESOURCES_H

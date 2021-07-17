@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_CONTROLLER_H
-#define HPL_PHYSICS_CONTROLLER_H
+#pragma once
 
 #include "engine/SaveGame.h"
 #include "math/MathTypes.h"
@@ -186,4 +185,3 @@ protected:
     bool mbLogInfo;
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_CONTROLLER_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_CRC_H
-#define HPL_CRC_H
+#pragma once
 
 #include <cstddef>
 
@@ -78,4 +77,3 @@ private:
 //----------------------------------------
 } // namespace hpl
 
-#endif // HPL_CRC_H

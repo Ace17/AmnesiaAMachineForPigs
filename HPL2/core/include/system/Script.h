@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SCRIPT_H
-#define HPL_SCRIPT_H
+#pragma once
 
 #include "resources/ResourceBase.h"
 
@@ -60,4 +59,3 @@ public:
     // virtual bool Run(int alHandle)=0;
 };
 }; // namespace hpl
-#endif // HPL_SCRIPT_H

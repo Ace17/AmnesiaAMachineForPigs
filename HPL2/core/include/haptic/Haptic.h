@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_HAPTIC_H
-#define HPL_HAPTIC_H
+#pragma once
 
 #include "engine/Updateable.h"
 #include "haptic/HapticTypes.h"
@@ -51,4 +50,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_HAPTIC_H

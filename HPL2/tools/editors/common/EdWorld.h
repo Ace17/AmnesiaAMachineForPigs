@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef ED_WORLD_H
-#define ED_WORLD_H
+#pragma once
 
 #include "../common/StdAfx.h"
 
@@ -178,4 +177,3 @@ protected:
 
 //-------------------------------------------------------------
 
-#endif // ED_WORLD_H

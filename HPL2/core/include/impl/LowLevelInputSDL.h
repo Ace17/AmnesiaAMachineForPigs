@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELINPUT_SDL_H
-#define HPL_LOWLEVELINPUT_SDL_H
+#pragma once
 
 #include "input/LowLevelInput.h"
 
@@ -73,4 +72,3 @@ private:
     bool mbQuitMessagePosted;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELINPUT_SDL_H

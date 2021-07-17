@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_COLLIDE_SHAPE_NEWTON_H
-#define HPL_COLLIDE_SHAPE_NEWTON_H
+#pragma once
 
 #if defined(__linux__) || defined(__APPLE__)
 #include <unistd.h>
@@ -65,4 +64,3 @@ private:
     tCollideShapeVec mvSubShapes;
 };
 }; // namespace hpl
-#endif // HPL_COLLIDE_SHAPE_NEWTON_H

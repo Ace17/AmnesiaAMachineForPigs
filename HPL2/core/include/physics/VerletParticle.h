@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_VERLET_PARTICLE_H
-#define HPL_VERLET_PARTICLE_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "physics/PhysicsTypes.h"
@@ -182,4 +181,3 @@ protected:
 //------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_VERLET_PARTICLE_H

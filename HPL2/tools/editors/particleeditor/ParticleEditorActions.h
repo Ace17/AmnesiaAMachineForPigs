@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PARTICLE_EDITOR_ACTIONS_H
-#define PARTICLE_EDITOR_ACTIONS_H
+#pragma once
 
 #include "../common/EditorAction.h"
 
@@ -106,4 +105,3 @@ public:
 
 //--------------------------------------------------------------------------------------
 
-#endif // PARTICLE_EDITOR_ACTIONS_H

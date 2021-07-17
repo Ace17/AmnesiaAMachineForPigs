@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_MOUSE_H
-#define HPL_MOUSE_H
+#pragma once
 
 #include "input/InputDevice.h"
 #include "input/InputTypes.h"
@@ -63,4 +62,3 @@ public:
 
 }; // namespace hpl
 
-#endif // HPL_MOUSE_H

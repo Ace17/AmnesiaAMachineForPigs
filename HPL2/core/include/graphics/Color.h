@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_COLOR_H
-#define HPL_COLOR_H
+#pragma once
 
 #include "system/SystemTypes.h"
 
@@ -70,4 +69,3 @@ typedef std::vector<cColor> tColorVec;
 typedef tColorVec::iterator tColorVecIt;
 
 }; // namespace hpl
-#endif // HPL_COLOR_H

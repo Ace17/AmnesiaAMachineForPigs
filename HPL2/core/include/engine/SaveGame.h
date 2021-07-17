@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SAVE_GAME_H
-#define HPL_SAVE_GAME_H
+#pragma once
 
 #include "system/SerializeClass.h"
 #include "system/SystemTypes.h"
@@ -235,4 +234,3 @@ private:
 //---------------------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_SAVE_GAME_H

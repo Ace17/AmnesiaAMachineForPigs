@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_TYPES_H
-#define HPL_PHYSICS_TYPES_H
+#pragma once
 
 #include "math/MathTypes.h"
 
@@ -118,4 +117,3 @@ public:
 //----------------------------------------------------
 } // namespace hpl
 
-#endif // HPL_PHYSICS_TYPES_H

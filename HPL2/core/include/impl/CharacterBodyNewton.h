@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_CHARACTER_BODY_NEWTON_H
-#define HPL_CHARACTER_BODY_NEWTON_H
+#pragma once
 
 #include "physics/CharacterBody.h"
 #if defined(__linux__) || defined(__APPLE__)
@@ -40,4 +39,3 @@ public:
 private:
 };
 }; // namespace hpl
-#endif // HPL_CHARACTER_BODY_NEWTON_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_RESOURCE_IMAGE_H
-#define HPL_RESOURCE_IMAGE_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/MathTypes.h"
@@ -102,4 +101,3 @@ typedef tResourceImageVec::iterator tResourceImageVecIt;
 
 }; // namespace hpl
 
-#endif // HPL_RESOURCE_IMAGE_H

@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_CGSHADER_H
-#define HPL_CGSHADER_H
+#pragma once
 
 //#include <windows.h>
 #include "graphics/GPUShader.h"
@@ -88,4 +87,3 @@ protected:
     static tString msForceVP;
 };
 }; // namespace hpl
-#endif // HPL_CGSHADER_H

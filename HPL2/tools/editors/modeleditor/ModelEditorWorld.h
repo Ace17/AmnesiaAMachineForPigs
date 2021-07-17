@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MODEL_EDITOR_WORLD_H
-#define MODEL_EDITOR_WORLD_H
+#pragma once
 
 #include "../common/EditorWorld.h"
 
@@ -171,4 +170,3 @@ protected:
 };
 
 
-#endif // MODEL_EDITOR_WORLD_H

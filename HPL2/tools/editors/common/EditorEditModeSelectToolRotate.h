@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_ROTATE_H
-#define HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_ROTATE_H
+#pragma once
 
 
 #include "EditorEditModeSelectTool.h"
@@ -79,4 +78,3 @@ public:
 
 };
 
-#endif // HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_ROTATE_H

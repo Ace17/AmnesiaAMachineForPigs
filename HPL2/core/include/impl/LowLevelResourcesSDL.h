@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELRESOURCES_SDL_H
-#define HPL_LOWLEVELRESOURCES_SDL_H
+#pragma once
 
 #include "resources/LowLevelResources.h"
 #include "system/SystemTypes.h"
@@ -48,4 +47,3 @@ private:
     iLowLevelGraphics* mpLowLevelGraphics;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELRESOURCES_SDL_H

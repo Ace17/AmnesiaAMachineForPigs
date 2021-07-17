@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_RENDERER_SIMPLE_H
-#define HPL_RENDERER_SIMPLE_H
+#pragma once
 
 #include "graphics/Renderer.h"
 
@@ -60,4 +59,3 @@ private:
 //---------------------------------------------
 
 }; // namespace hpl
-#endif // HPL_RENDERER_WIRE_FRAME_H

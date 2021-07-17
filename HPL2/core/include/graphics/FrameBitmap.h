@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FRAMEBITMAP_H
-#define HPL_FRAMEBITMAP_H
+#pragma once
 
 #include "graphics/FrameBase.h"
 #include "math/MathTypes.h"
@@ -116,4 +115,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_FRAMEBITMAP_H

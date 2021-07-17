@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FRAMEBASE_H
-#define HPL_FRAMEBASE_H
+#pragma once
 
 #include "math/MathTypes.h"
 
@@ -45,4 +44,3 @@ protected:
 };
 
 }; // namespace hpl
-#endif // HPL_FRAMEBASE_H

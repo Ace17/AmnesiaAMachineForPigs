@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_SURFACE_PICKER_H
-#define HPLEDITOR_SURFACE_PICKER_H
+#pragma once
 
 #include "EntityPicker.h"
 
@@ -94,4 +93,3 @@ protected:
 	cVector3f mvAverageForward;
 };
 
-#endif // HPLEDITOR_SURFACE_PICKER_H

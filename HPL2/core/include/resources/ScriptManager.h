@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_SCRIPT_MANAGER_H
-#define HPL_SCRIPT_MANAGER_H
+#pragma once
 
 #include "resources/ResourceManager.h"
 
@@ -51,4 +50,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_SCRIPT_MANAGER_H

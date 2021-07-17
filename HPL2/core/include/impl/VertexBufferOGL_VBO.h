@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_VERTEXBUFFER_OGL_VBO_H
-#define HPL_VERTEXBUFFER_OGL_VBO_H
+#pragma once
 
 #include "impl/VertexBufferOpenGL.h"
 
@@ -49,4 +48,3 @@ private:
 };
 
 }; // namespace hpl
-#endif // HPL_RENDERER3D_OGL_VBO_H

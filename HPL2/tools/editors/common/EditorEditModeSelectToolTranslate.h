@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_TRANSLATE_H
-#define HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_TRANSLATE_H
+#pragma once
 
 
 #include "EditorEditModeSelectTool.h"
@@ -67,4 +66,3 @@ public:
 	cPlanef mTranslationPlane;
 
 };
-#endif // HPLEDITOR_EDITOR_EDIT_MODE_SELECT_TOOL_TRANSLATE_H

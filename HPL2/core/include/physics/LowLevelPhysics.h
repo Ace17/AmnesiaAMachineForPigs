@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_LOWLEVELPHYSICS_H
-#define HPL_LOWLEVELPHYSICS_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "system/SystemTypes.h"
@@ -36,4 +35,3 @@ public:
     virtual iPhysicsWorld* CreateWorld() = 0;
 };
 }; // namespace hpl
-#endif // HPL_LOWLEVELPHYSICS_H

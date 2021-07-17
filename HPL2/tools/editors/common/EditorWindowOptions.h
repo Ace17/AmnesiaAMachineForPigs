@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPLEDITOR_EDITOR_WINDOW_OPTIONS_H
-#define HPLEDITOR_EDITOR_WINDOW_OPTIONS_H
+#pragma once
 
 //------------------------------------------------------------
 
@@ -73,5 +72,4 @@ protected:
 
 //------------------------------------------------------------
 
-#endif // HPLEDITOR_EDITOR_WINDOW_OPTIONS_H
 

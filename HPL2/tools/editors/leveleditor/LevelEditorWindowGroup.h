@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LEVEL_EDITOR_WINDOW_GROUP_H
-#define LEVEL_EDITOR_WINDOW_GROUP_H
+#pragma once
 
 #include "hpl.h"
 using namespace hpl;
@@ -96,4 +95,3 @@ protected:
 
 //--------------------------------------------------------------------
 
-#endif //LEVEL_EDITOR_WINDOW_GROUP_H

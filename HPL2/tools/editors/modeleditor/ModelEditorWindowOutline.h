@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MODEL_EDITOR_WINDOW_OUTLINE_H
-#define MODEL_EDITOR_WINDOW_OUTLINE_H
+#pragma once
 
 //--------------------------------------------------------------------
 
@@ -133,5 +132,4 @@ protected:
 
 //--------------------------------------------------------------------
 
-#endif // MODEL_EDITOR_WINDOW_OUTLINE_H
 

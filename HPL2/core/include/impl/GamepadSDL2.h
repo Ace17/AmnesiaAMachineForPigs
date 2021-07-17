@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_GAMEPAD_SDL2_H
-#define HPL_GAMEPAD_SDL2_H
+#pragma once
 
 #if USE_SDL2
 
@@ -117,4 +116,3 @@ private:
 
 #endif // USE_SDL2
 
-#endif // HPL_GAMEPAD_SDL2_H

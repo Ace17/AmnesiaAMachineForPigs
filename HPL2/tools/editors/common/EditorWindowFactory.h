@@ -18,8 +18,7 @@
  */
 
 
-#ifndef HPLEDITOR_EDITOR_WINDOW_FACTORY_H
-#define HPLEDITOR_EDITOR_WINDOW_FACTORY_H
+#pragma once
 
 #include "../common/StdAfx.h"
 using namespace hpl;
@@ -128,4 +127,3 @@ protected:
 
 //--------------------------------------------
 
-#endif //HPLEDITOR_EDITOR_WINDOW_FACTORY_H

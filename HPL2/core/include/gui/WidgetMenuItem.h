@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_WIDGET_MENU_ITEM
-#define HPL_WIDGET_MENU_ITEM
+#pragma once
 
 #include "gui/Widget.h"
 #include "input/InputTypes.h"
@@ -124,4 +123,3 @@ protected:
 
 }; // namespace hpl
 
-#endif // HPL_WIDGET_MENU_ITEM

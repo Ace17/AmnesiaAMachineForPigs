@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_FRUSTUM_H
-#define HPL_FRUSTUM_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/BoundingVolume.h"
@@ -144,4 +143,3 @@ private:
     cVector3f mvVertices[8];
 };
 }; // namespace hpl
-#endif // HPL_FRUSTUM_H

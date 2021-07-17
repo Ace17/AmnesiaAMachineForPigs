@@ -17,8 +17,7 @@
  * along with Amnesia: A Machine For Pigs.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef HPL_PHYSICS_JOINT_HINGE_H
-#define HPL_PHYSICS_JOINT_HINGE_H
+#pragma once
 
 #include "physics/PhysicsJoint.h"
 
@@ -56,4 +55,3 @@ protected:
     float mfMinAngle;
 };
 }; // namespace hpl
-#endif // HPL_PHYSICS_JOINT_HINGE_H
