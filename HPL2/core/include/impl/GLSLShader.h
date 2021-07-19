@@ -36,7 +36,7 @@ class iLowLevelGraphics;
 class cGLSLShader : public iGpuShader
 {
 public:
-    cGLSLShader(const tString& asName, eGpuShaderType aType, iLowLevelGraphics* apLowLevelGraphics);
+    cGLSLShader(const tString& asName, eGpuShaderType aType);
     ~cGLSLShader();
 
     bool Reload();
@@ -57,8 +57,6 @@ protected:
     void LogShaderInfoLog();
     void LogShaderCode(const char* apStringData);
     GLenum GetGLShaderType(eGpuShaderType aType);
-
-    iLowLevelGraphics* mpLowLevelGraphics;
 
     GLuint mlHandle;
 };

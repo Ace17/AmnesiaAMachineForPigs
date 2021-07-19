@@ -38,11 +38,9 @@ namespace hpl
 
 //-----------------------------------------------------------------------
 
-cGLSLShader::cGLSLShader(const tString& asName, eGpuShaderType aType, iLowLevelGraphics* apLowLevelGraphics)
+cGLSLShader::cGLSLShader(const tString& asName, eGpuShaderType aType)
     : iGpuShader(asName, _W(""), aType, eGpuProgramFormat_GLSL)
 {
-    mpLowLevelGraphics = apLowLevelGraphics;
-
     mlHandle = glCreateShader(GetGLShaderType(aType));
 }
 

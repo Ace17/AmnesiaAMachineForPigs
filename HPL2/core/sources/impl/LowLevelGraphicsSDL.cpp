@@ -699,7 +699,7 @@ iGpuProgram* cLowLevelGraphicsSDL::CreateGpuProgram(const tString& asName)
 iGpuShader* cLowLevelGraphicsSDL::CreateGpuShader(const tString& asName, eGpuShaderType aType)
 {
 
-    return hplNew(cGLSLShader, (asName, aType, this));
+    return hplNew(cGLSLShader, (asName, aType));
     // return hplNew( cCGShader, (asName,mCG_Context, aType) );
 }
 
