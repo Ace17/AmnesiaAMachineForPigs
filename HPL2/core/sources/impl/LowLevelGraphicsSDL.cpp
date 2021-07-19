@@ -229,7 +229,6 @@ bool cLowLevelGraphicsSDL::Init(int alWidth,
         }
     }
 
-#if SDL_VERSION_ATLEAST(2, 0, 0)
     unsigned int mlFlags = SDL_WINDOW_OPENGL;
     if (alWidth == 0 && alHeight == 0)
     {
@@ -270,59 +269,6 @@ bool cLowLevelGraphicsSDL::Init(int alWidth,
         mvScreenSize = cVector2l(w, h);
     }
     mGLContext = SDL_GL_CreateContext(mpScreen);
-#else
-    unsigned int mlFlags = SDL_OPENGL;
-
-    if (abFullscreen)
-        mlFlags |= SDL_FULLSCREEN;
-
-    // If caption set before engine creation, no chance for the "SDL_App" to appear for even a msec
-    SetWindowCaption(asWindowCaption);
-
-    Log(" Setting video mode: %d x %d - %d bpp\n", alWidth, alHeight, alBpp);
-    mpScreen = SDL_SetVideoMode(alWidth, alHeight, alBpp, mlFlags);
-    if (mpScreen == NULL)
-    {
-        Error("Could not set display mode setting a lower one!\n");
-        mvScreenSize = cVector2l(640, 480);
-
-        mpScreen = SDL_SetVideoMode(mvScreenSize.x, mvScreenSize.y, alBpp, mlFlags);
-        if (mpScreen == NULL)
-        {
-            FatalError("Unable to initialize display!\n");
-            return false;
-        }
-        else
-        {
-            // SetWindowCaption(asWindowCaption);
-            cPlatform::CreateMessageBox(_W("Warning!"), _W("Could not set displaymode and 640x480 is used instead!\n"));
-        }
-    }
-    else
-    {
-        // SetWindowCaption(asWindowCaption);
-    }
-    // update with the screen size ACTUALLY obtained
-    mvScreenSize = cVector2l(mpScreen->w, mpScreen->h);
-#ifdef WIN32
-    //////////////////////////////
-    // Set up window position
-    if (abFullscreen == false)
-    {
-        SDL_SysWMinfo pInfo;
-        SDL_VERSION(&pInfo.version);
-        SDL_GetWMInfo(&pInfo);
-
-        RECT r;
-        GetWindowRect(pInfo.window, &r);
-
-        if (avWindowPos.x >= 0 && avWindowPos.y >= 0)
-        {
-            SetWindowPos(pInfo.window, HWND_TOP, avWindowPos.x, avWindowPos.y, 0, 0, SWP_NOSIZE);
-        }
-    }
-#endif
-#endif
     if (mbGrab)
     {
         SetWindowGrab(true);
@@ -348,10 +294,6 @@ bool cLowLevelGraphicsSDL::Init(int alWidth,
     }
 
     /// Setup up windows specifc context:
-#if defined(WIN32) && !SDL_VERSION_ATLEAST(2, 0, 0)
-    mGLContext = wglGetCurrentContext();
-    mDeviceContext = wglGetCurrentDC();
-#endif
 
     // Check Multisample properties
     CheckMultisampleCaps();
@@ -361,24 +303,13 @@ bool cLowLevelGraphicsSDL::Init(int alWidth,
 
     // Gamma
     mfGammaCorrection = 1.0f;
-#if SDL_VERSION_ATLEAST(2, 0, 0)
     SDL_SetWindowBrightness(mpScreen, mfGammaCorrection);
-#else
-    SDL_GetGammaRamp(mvStartGammaArray[0], mvStartGammaArray[1], mvStartGammaArray[2]);
-
-    SDL_SetGamma(mfGammaCorrection, mfGammaCorrection, mfGammaCorrection);
-#endif
 
     // GL
     Log(" Setting up OpenGL\n");
     SetupGL();
 
-#if SDL_VERSION_ATLEAST(2, 0, 0)
     SDL_GL_SwapWindow(mpScreen);
-#else
-    // Set the clear color
-    SDL_GL_SwapBuffers();
-#endif
 
     mbInitHasBeenRun = true;
 
