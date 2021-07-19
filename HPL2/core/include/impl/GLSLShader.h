@@ -19,7 +19,6 @@
 
 #pragma once
 
-//#include <windows.h>
 #include "graphics/GPUShader.h"
 #include "math/MathTypes.h"
 #include "system/SystemTypes.h"

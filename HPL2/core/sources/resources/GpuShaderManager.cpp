@@ -27,10 +27,6 @@
 #include "system/PreprocessParser.h"
 #include "system/String.h"
 
-#ifdef WIN32
-#include <io.h>
-#endif
-
 namespace hpl
 {
 

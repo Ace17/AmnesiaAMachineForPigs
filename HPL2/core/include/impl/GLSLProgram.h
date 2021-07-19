@@ -19,8 +19,6 @@
 
 #pragma once
 
-//#include <windows.h>
-
 #include "graphics/GPUProgram.h"
 #include "graphics/GPUShader.h"
 #include "math/MathTypes.h"

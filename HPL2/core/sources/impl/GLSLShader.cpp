@@ -19,15 +19,8 @@
 
 #include "impl/GLSLShader.h"
 
-#include "impl/LowLevelGraphicsSDL.h"
-#include "impl/SDLTexture.h"
-#include "system/LowLevelSystem.h"
 #include "system/Platform.h"
 #include "system/String.h"
-
-#ifdef WIN32
-#include <io.h>
-#endif
 
 namespace hpl
 {

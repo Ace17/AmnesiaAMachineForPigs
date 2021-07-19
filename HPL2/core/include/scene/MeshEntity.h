@@ -27,7 +27,6 @@
 #include "scene/SubMeshEntity.h"
 #include "system/SystemTypes.h"
 
-#include <map>
 #include <vector>
 
 namespace hpl

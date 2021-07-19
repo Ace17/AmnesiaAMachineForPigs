@@ -19,17 +19,7 @@
 
 #include "graphics/MaterialType.h"
 
-#include "graphics/GPUProgram.h"
-#include "graphics/GPUShader.h"
-#include "graphics/Graphics.h"
-#include "graphics/LowLevelGraphics.h"
 #include "graphics/ProgramComboManager.h"
-#include "math/Math.h"
-#include "resources/GpuShaderManager.h"
-#include "resources/Resources.h"
-#include "resources/TextureManager.h"
-#include "system/LowLevelSystem.h"
-#include "system/PreprocessParser.h"
 #include "system/String.h"
 
 namespace hpl
