@@ -46,19 +46,9 @@ iMaterialType::iMaterialType(cGraphics* apGraphics, cResources* apResources)
     mpGraphics = apGraphics;
     mpResources = apResources;
 
-    mbIsTranslucent = false;
-    mbIsDecal = false;
-
-    for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
-    {
-        mbHasTypeSpecifics[i] = false;
-    }
-
     // Need to do this to support NULL materials (that do not use graphical stuff)
     if (mpGraphics && mpResources)
         mpProgramManager = hplNew(cProgramComboManager, ("", mpGraphics, mpResources, eMaterialRenderMode_LastEnum));
-    else
-        mpProgramManager = NULL;
 }
 
 iMaterialType::~iMaterialType()

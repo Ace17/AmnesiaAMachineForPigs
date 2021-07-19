@@ -135,16 +135,16 @@ protected:
 
     tString msName;
 
-    bool mbIsTranslucent;
-    bool mbIsDecal;
+    bool mbIsTranslucent = false;
+    bool mbIsDecal = false;
 
-    bool mbHasTypeSpecifics[eMaterialRenderMode_LastEnum];
+    bool mbHasTypeSpecifics[eMaterialRenderMode_LastEnum] {};
 
     tMaterialUsedTextureVec mvUsedTextures;
 
     tMaterialUserVariableVec mvUserVariables;
 
-    cProgramComboManager* mpProgramManager;
+    cProgramComboManager* mpProgramManager = nullptr;
 };
 
 //---------------------------------------------------
