@@ -179,8 +179,6 @@ protected:
 
     cMaterial* mpCurrentMaterial;
     iMaterialType* mpCurrentMaterialType;
-
-    cMatrixf m_mtxNULL; // used to reset current matrix pointer.
 };
 
 //---------------------------------------------
