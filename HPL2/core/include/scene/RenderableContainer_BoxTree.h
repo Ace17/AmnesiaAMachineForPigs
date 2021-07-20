@@ -103,10 +103,10 @@ private:
 
     void RenderDebugNode(cRendererCallbackFunctions* apFunctions, cRCNode_BoxTree* apNode, int alLevel);
 
-    void CalculateMinMax(tRenderableList* apObjectList, cVector3f& avMin, cVector3f& avMax);
-    cVector3f CalculateSize(tRenderableList* apObjectList);
+    static void CalculateMinMax(tRenderableList* apObjectList, cVector3f& avMin, cVector3f& avMax);
+    static cVector3f CalculateSize(tRenderableList* apObjectList);
 
-    float CalculateObjectsVolume(tRenderableList& alstObjects);
+    static float CalculateObjectsVolume(tRenderableList& alstObjects);
     float CalculateBestCutPlane(tRenderableList& alstObjects, int alAxis, const cVector3f& avNodeSize);
 
     int GetSplitGroup(iRenderable* apObject, float afCutPlane, int alAxis, const cVector3f& avNodeSize);
