@@ -399,8 +399,6 @@ protected:
 
     void RenderBasicSkyBox();
 
-    bool SetupLightScissorRect(iLight* apLight, cMatrixf* apViewSpaceMatrix);
-
     void SetMaterialProgram(eMaterialRenderMode aRenderMode, cMaterial* apMaterial);
     void SetMaterialTextures(eMaterialRenderMode aRenderMode, cMaterial* apMaterial);
 
@@ -550,8 +548,8 @@ public:
     inline bool SetCullMode(eCullMode aMode) { return mpRenderer->SetCullMode(aMode); }
     inline bool SetStencilActive(bool abX) { return mpRenderer->SetStencilActive(abX); }
     inline bool SetScissorActive(bool abX) { return mpRenderer->SetScissorActive(abX); }
-    inline bool SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling) { return mpRenderer->SetScissorRect(avPos, avSize, abAutoEnabling); }
-    inline bool SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling) { return mpRenderer->SetScissorRect(aClipRect, abAutoEnabling); }
+    inline void SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling) { mpRenderer->SetScissorRect(avPos, avSize, abAutoEnabling); }
+    inline void SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling) { mpRenderer->SetScissorRect(aClipRect, abAutoEnabling); }
     inline bool SetChannelMode(eMaterialChannelMode aMode) { return mpRenderer->SetChannelMode(aMode); }
     inline bool SetAlphaMode(eMaterialAlphaMode aMode) { return mpRenderer->SetAlphaMode(aMode); }
     inline bool SetBlendMode(eMaterialBlendMode aMode) { return mpRenderer->SetBlendMode(aMode); }

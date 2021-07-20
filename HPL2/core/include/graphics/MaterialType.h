@@ -89,8 +89,6 @@ public:
     bool IsTranslucent() { return mbIsTranslucent; }
     bool IsDecal() { return mbIsDecal; }
 
-    virtual bool SupportsHWSkinning() = 0;
-
     virtual iTexture* GetTextureForUnit(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, int alUnit) = 0;
     virtual iGpuProgram* GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, char alSkeleton) = 0;
 

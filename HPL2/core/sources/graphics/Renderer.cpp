@@ -2089,23 +2089,6 @@ void iRenderer::RenderBasicSkyBox()
 
 //-----------------------------------------------------------------------
 
-bool iRenderer::SetupLightScissorRect(iLight* apLight, cMatrixf* apViewSpaceMatrix)
-{
-    if (mfScissorLastFov != mpCurrentFrustum->GetFOV())
-    {
-        mfScissorLastTanHalfFov = tan(mpCurrentFrustum->GetFOV() * 0.5f);
-    }
-
-    /*cMath::GetClipRectFromBV(mTempClipRect,*apLight->GetBoundingVolume(),mpCurrentFrustum,
-                                                    mvScreenSize, mfScissorLastTanHalfFov);*/
-
-    mTempClipRect = cMath::GetClipRectFromSphere(apViewSpaceMatrix->GetTranslation(), apLight->GetRadius(), mpCurrentFrustum, mvRenderTargetSize, true, mfScissorLastTanHalfFov);
-
-    return SetScissorRect(mTempClipRect, true);
-}
-
-//-----------------------------------------------------------------------
-
 void iRenderer::SetMaterialProgram(eMaterialRenderMode aRenderMode, cMaterial* apMaterial)
 {
     iMaterialType* pMatType = apMaterial->GetType();

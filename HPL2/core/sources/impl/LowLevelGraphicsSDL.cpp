@@ -57,31 +57,8 @@
 #include "SDL/SDL_syswm.h"
 #endif
 
-#ifdef WIN32
-#include "impl/TaskKeyHook.h"
-#endif
-
-#ifndef WIN32
-#define CALLBACK __attribute__((__stdcall__))
-#endif
-
 namespace hpl
 {
-
-#ifdef HPL_OGL_THREADSAFE
-iMutex* gpLowlevelGfxMutex = NULL;
-
-cLowlevelGfxMutex::cLowlevelGfxMutex()
-{
-    if (gpLowlevelGfxMutex)
-        gpLowlevelGfxMutex->Lock();
-}
-cLowlevelGfxMutex::~cLowlevelGfxMutex()
-{
-    if (gpLowlevelGfxMutex)
-        gpLowlevelGfxMutex->Unlock();
-}
-#endif
 
 //////////////////////////////////////////////////////////////////////////
 // CONSTRUCTORS
@@ -99,10 +76,6 @@ cLowLevelGraphicsSDL::cLowLevelGraphicsSDL()
     mbGrab = false;
 
     mbDoubleSidedStencilIsSet = false;
-
-#ifdef WIN32
-    // mhKeyTrapper = NULL;
-#endif
 
     mpFrameBuffer = NULL;
 
@@ -139,10 +112,6 @@ cLowLevelGraphicsSDL::cLowLevelGraphicsSDL()
 
 cLowLevelGraphicsSDL::~cLowLevelGraphicsSDL()
 {
-    //#ifdef WIN32
-    //	if(mhKeyTrapper) FreeLibrary(mhKeyTrapper);
-    //#endif
-
     if (mbInitHasBeenRun)
     {
 #if !SDL_VERSION_ATLEAST(2, 0, 0)
@@ -170,13 +139,6 @@ cLowLevelGraphicsSDL::~cLowLevelGraphicsSDL()
 //////////////////////////////////////////////////////////////////////////
 // GENERAL SETUP
 //////////////////////////////////////////////////////////////////////////
-
-//-----------------------------------------------------------------------
-
-void CALLBACK OGLDebugOutputCallback(GLenum alSource, GLenum alType, GLuint alID, GLenum alSeverity, GLsizei alLength, const GLchar* apMessage, GLvoid* apUserParam)
-{
-    Log("Source: %d Type: %d Id: %d Severity: %d '%s'\n", alSource, alType, alID, alSeverity, apMessage);
-}
 
 //-----------------------------------------------------------------------
 
@@ -274,15 +236,6 @@ bool cLowLevelGraphicsSDL::Init(int alWidth,
         SetWindowGrab(true);
     }
 
-    // Trap Alt tab if in fullscreen
-#ifdef WIN32
-    if (abFullscreen)
-    {
-        // mhKeyTrapper = LoadLibrary( "keyhook.dll" );
-        //::DisableTaskKeys(true,false);
-    }
-#endif // WIN32
-
     Log(" Init Glew...");
     if (glewInit() == GLEW_OK)
     {
@@ -312,16 +265,6 @@ bool cLowLevelGraphicsSDL::Init(int alWidth,
     SDL_GL_SwapWindow(mpScreen);
 
     mbInitHasBeenRun = true;
-
-    /*if(GLEW_ARB_debug_output)
-    {
-            glDebugMessageCallbackARB(&OGLDebugOutputCallback, NULL);
-            glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB);
-    }
-    else
-    {
-            Warning("OGL debug output not supported!\n");
-    }*/
 
     return true;
 }

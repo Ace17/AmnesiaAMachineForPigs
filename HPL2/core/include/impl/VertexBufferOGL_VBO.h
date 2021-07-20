@@ -33,7 +33,6 @@ public:
     void UpdateData(tVertexElementFlag aTypes, bool abIndices);
 
     void Draw(eVertexBufferDrawType aDrawType = eVertexBufferDrawType_LastEnum);
-    void DrawIndices(unsigned int* apIndices, int alCount, eVertexBufferDrawType aDrawType = eVertexBufferDrawType_LastEnum);
 
     void Bind();
     void UnBind();

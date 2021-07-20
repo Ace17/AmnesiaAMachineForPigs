@@ -333,7 +333,6 @@ private:
 #if defined(WIN32) && !SDL_VERSION_ATLEAST(2, 0, 0)
     HGLRC mGLContext;
     HDC mDeviceContext;
-    HINSTANCE mhKeyTrapper;
 #endif
 
     bool mbInitHasBeenRun;

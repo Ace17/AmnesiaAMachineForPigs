@@ -41,8 +41,6 @@ public:
 
     void DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, char alSkeleton);
 
-    bool SupportsHWSkinning() { return true; }
-
     void CreateGlobalPrograms();
 
     iMaterialVars* CreateSpecificVariables() { return NULL; }
@@ -98,8 +96,6 @@ class cMaterialType_SolidDiffuse : public iMaterialType_SolidBase
 public:
     cMaterialType_SolidDiffuse(cGraphics* apGraphics, cResources* apResources);
     ~cMaterialType_SolidDiffuse();
-
-    bool SupportsHWSkinning() { return true; }
 
     iTexture* GetTextureForUnit(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, int alUnit);
     iTexture* GetSpecialTexture(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iRenderer* apRenderer, int alUnit);

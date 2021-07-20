@@ -87,8 +87,8 @@ public:
     /**
      * When abAutoEnabling is true, it will also set to false if size = render target and pos=0
      */
-    bool SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling);
-    bool SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling);
+    void SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling);
+    void SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling);
     bool SetChannelMode(eMaterialChannelMode aMode);
     bool SetAlphaMode(eMaterialAlphaMode aMode);
     bool SetAlphaLimit(float afLimit);
@@ -135,7 +135,6 @@ public:
     void CopyFrameBufferToTexure(iTexture* apTexture, const cVector2l& avPos, const cVector2l& avSize, const cVector2l& avTextureOffset, bool abTextureOffsetUsesRenderTargetPos);
 
     cRenderTarget* GetCurrentRenderTarget() { return mpCurrentRenderTarget; }
-    const cVector2l& GetCurrentFrameBufferSize() { return mvCurrentFrameBufferSize; }
     const cVector2l& GetRenderTargetSize() { return mvRenderTargetSize; }
 
 protected:

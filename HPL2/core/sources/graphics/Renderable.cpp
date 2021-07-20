@@ -49,8 +49,6 @@ iRenderable::iRenderable(const tString& asName)
     mlCalcScaleMatrixCount = -1;
     mvCalcScale = cVector3f(1, 1, 1);
 
-    mbForceShadow = false;
-
     mbIsOneSided = false;
     mvOneSidedNormal = 0;
 
@@ -65,8 +63,6 @@ iRenderable::iRenderable(const tString& asName)
     mpRenderCallback = NULL;
 
     mpRenderContainerNode = NULL;
-
-    mpRenderableUserData = NULL;
 
     mfShaderTimer = 0.0f;
 }
@@ -100,24 +96,6 @@ void iRenderable::SetVisible(bool abVisible)
 
     if (mpRenderCallback)
         mpRenderCallback->OnVisibleChange(this);
-}
-
-//-----------------------------------------------------------------------
-
-cMatrixf* iRenderable::GetInvModelMatrix()
-{
-    cMatrixf* pModelMatrix = GetModelMatrix(NULL);
-    if (pModelMatrix == NULL)
-        return NULL;
-
-    if (mlLastMatrixCount != GetMatrixUpdateCount())
-    {
-        mlLastMatrixCount = GetMatrixUpdateCount();
-
-        m_mtxInvModel = cMath::MatrixInverse(*pModelMatrix);
-    }
-
-    return &m_mtxInvModel;
 }
 
 //-----------------------------------------------------------------------

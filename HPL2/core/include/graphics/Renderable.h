@@ -107,11 +107,6 @@ public:
 
     virtual bool IsOccluder() { return false; }
 
-    cMatrixf* GetInvModelMatrix();
-
-    inline void SetPrevMatrix(const cMatrixf& a_mtxPrev) { m_mtxPrevious = a_mtxPrev; }
-    inline cMatrixf& GetPrevMatrix() { return m_mtxPrevious; }
-
     const cVector3f& GetCalcScale();
 
     void SetStatic(bool abX) { mbStatic = abX; }
@@ -128,12 +123,7 @@ public:
     inline iRenderableContainerNode* GetRenderContainerNode() { return mpRenderContainerNode; }
     inline void SetRenderContainerNode(iRenderableContainerNode* apNode) { mpRenderContainerNode = apNode; }
 
-    void SetRenderableUserData(void* apData) { mpRenderableUserData = apData; }
-    void* GetRenderableUserData() { return mpRenderableUserData; }
-
 protected:
-    cMatrixf m_mtxInvModel;
-    cMatrixf m_mtxPrevious;
     cMatrixf* mpModelMatrix;
 
     iRenderableCallback* mpRenderCallback;
@@ -149,8 +139,6 @@ protected:
 
     bool mbStatic;
 
-    bool mbForceShadow;
-
     int mlLargePlaneSurfacePlacement;
 
     int mlRenderFrameCount;
@@ -165,7 +153,5 @@ protected:
     float mfCoverageAmount;
 
     iRenderableContainerNode* mpRenderContainerNode;
-
-    void* mpRenderableUserData;
 };
 }; // namespace hpl

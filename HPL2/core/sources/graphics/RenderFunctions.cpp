@@ -388,12 +388,12 @@ bool iRenderFunctions::SetScissorActive(bool abX)
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling)
+void iRenderFunctions::SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling)
 {
-    return SetScissorRect(cVector2l(aClipRect.x, aClipRect.y), cVector2l(aClipRect.w, aClipRect.h), abAutoEnabling);
+    SetScissorRect(cVector2l(aClipRect.x, aClipRect.y), cVector2l(aClipRect.w, aClipRect.h), abAutoEnabling);
 }
 
-bool iRenderFunctions::SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling)
+void iRenderFunctions::SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling)
 {
     /////////////////////////////
     // Clip the rect
@@ -416,7 +416,7 @@ bool iRenderFunctions::SetScissorRect(const cVector2l& avPos, const cVector2l& a
     /////////////////////////////
     // Check if already set
     if (mvCurrentScissorRectPos == vFinalPos && mvCurrentScissorRectSize == vFinalSize)
-        return false;
+        return;
 
     mvCurrentScissorRectPos = vFinalPos;
     mvCurrentScissorRectSize = vFinalSize;
@@ -427,7 +427,6 @@ bool iRenderFunctions::SetScissorRect(const cVector2l& avPos, const cVector2l& a
     {
         if (abAutoEnabling)
             SetScissorActive(false);
-        return false;
     }
     else
     {
@@ -438,7 +437,6 @@ bool iRenderFunctions::SetScissorRect(const cVector2l& avPos, const cVector2l& a
             Log("  Setting scissor rect: %d, %d, %dx%d\n", vFinalPos.x, vFinalPos.y, vFinalSize.x, vFinalSize.y);
 
         mpLowLevelGraphics->SetScissorRect(mvCurrentScissorRectPos, mvCurrentScissorRectSize);
-        return true;
     }
 }
 

@@ -136,22 +136,6 @@ void cVertexBufferOGL_VBO::Draw(eVertexBufferDrawType aDrawType)
 
 //-----------------------------------------------------------------------
 
-void cVertexBufferOGL_VBO::DrawIndices(unsigned int* apIndices, int alCount, eVertexBufferDrawType aDrawType)
-{
-    eVertexBufferDrawType drawType = aDrawType == eVertexBufferDrawType_LastEnum ? mDrawType : aDrawType;
-
-    ///////////////////////////////
-    // Get the draw type
-    GLenum mode = GetDrawModeFromDrawType(drawType);
-
-    //////////////////////////////////
-    // Bind and draw the buffer
-    glDrawElements(mode, alCount, GL_UNSIGNED_INT, apIndices);
-    iRenderer::IncDrawCalls();
-}
-
-//-----------------------------------------------------------------------
-
 void cVertexBufferOGL_VBO::Bind()
 {
     SetVertexStates();
