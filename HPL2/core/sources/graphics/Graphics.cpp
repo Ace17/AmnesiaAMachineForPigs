@@ -88,12 +88,12 @@ cGraphics::~cGraphics()
 
     STLDeleteAll(mvPostEffectTypes);
 
-    for (size_t i = 0; i < mvRenderers.size(); ++i)
+    for (iRenderer* pRenderer : mvRenderers)
     {
-        if (mvRenderers[i])
+        if (pRenderer)
         {
-            mvRenderers[i]->DestroyData();
-            hplDelete(mvRenderers[i])
+            pRenderer->DestroyData();
+            hplDelete(pRenderer)
         }
     }
     mvRenderers.clear();
@@ -177,19 +177,14 @@ bool cGraphics::Init(int alWidth,
         mvRenderers[eRenderer_WireFrame] = hplNew(cRendererWireFrame, (this, apResources));
         mvRenderers[eRenderer_Simple] = hplNew(cRendererSimple, (this, apResources));
 
-        for (size_t i = 0; i < mvRenderers.size(); ++i)
+        for (iRenderer* pRenderer : mvRenderers)
         {
-            if (mvRenderers[i])
+            if (pRenderer)
             {
-                if (mvRenderers[i]->LoadData() == false)
-                {
-                    FatalError("Renderer #%d could not be initialized! Make sure your graphic card drivers are up to date. Check log file for more information.\n", i);
-                }
+                if (!pRenderer->LoadData())
+                    FatalError("Renderer could not be initialized! Make sure your graphic card drivers are up to date. Check log file for more information.\n");
             }
         }
-    }
-    else
-    {
     }
 
     ////////////////////////////////////////////////
@@ -224,12 +219,8 @@ bool cGraphics::Init(int alWidth,
 
 void cGraphics::Update(float afTimeStep)
 {
-    for (size_t i = 0; i < mvRenderers.size(); ++i)
-    {
-        iRenderer* pRenderer = mvRenderers[i];
-
+    for (iRenderer* pRenderer : mvRenderers)
         pRenderer->Update(afTimeStep);
-    }
 }
 
 //-----------------------------------------------------------------------
@@ -246,10 +237,8 @@ iRenderer* cGraphics::GetRenderer(eRenderer aType)
 
 void cGraphics::ReloadRendererData()
 {
-    for (size_t i = 0; i < mvRenderers.size(); ++i)
+    for (iRenderer* pRenderer : mvRenderers)
     {
-        iRenderer* pRenderer = mvRenderers[i];
-
         pRenderer->DestroyData();
         pRenderer->LoadData();
     }
