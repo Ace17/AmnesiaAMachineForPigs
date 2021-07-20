@@ -35,7 +35,6 @@ class iVertexBuffer;
 class cBitmap;
 class iFrameBuffer;
 class iDepthStencilBuffer;
-class iMutex;
 
 //----------------------------------------
 

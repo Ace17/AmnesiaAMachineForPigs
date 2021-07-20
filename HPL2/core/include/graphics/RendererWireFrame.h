@@ -24,15 +24,6 @@
 namespace hpl
 {
 
-//---------------------------------------------
-
-class iFrameBuffer;
-class iDepthStencilBuffer;
-class iTexture;
-class iLight;
-
-//---------------------------------------------
-
 class cRendererWireFrame : public iRenderer
 {
 public:

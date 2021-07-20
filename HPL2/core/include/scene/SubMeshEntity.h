@@ -33,17 +33,10 @@ namespace hpl
 {
 
 class cMaterialManager;
-class cMeshManager;
-class cMesh;
 class cSubMesh;
 class cMeshEntity;
-class cAnimationState;
-class cNodeState;
-class cBone;
 class cNode3D;
-class iPhysicsBody;
 class cMaterial;
-class cBoneState;
 
 //-----------------------------------------------------------------------
 

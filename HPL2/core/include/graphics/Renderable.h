@@ -32,12 +32,8 @@ class cMaterial;
 class iVertexBuffer;
 class cBoundingVolume;
 class cFrustum;
-class iLight;
-class cCamera;
 class iRenderableCallback;
-class cRenderList;
 class iRenderableContainerNode;
-class iPhysicsBody;
 class iRenderer;
 
 //------------------------------------------

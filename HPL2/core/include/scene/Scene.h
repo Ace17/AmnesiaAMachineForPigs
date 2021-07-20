@@ -41,7 +41,6 @@ class cGui;
 
 class cCamera;
 class cFrustum;
-class cUpdater;
 class cWorld;
 class cViewport;
 

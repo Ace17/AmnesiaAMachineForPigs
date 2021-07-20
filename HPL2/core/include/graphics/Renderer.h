@@ -31,9 +31,6 @@ namespace hpl
 
 class cGraphics;
 class cResources;
-class cEngine;
-class iLowLevelResources;
-class cMeshCreator;
 class cGpuShaderManager;
 class iRenderable;
 class cWorld;
@@ -42,7 +39,6 @@ class cRenderList;
 class cProgramComboManager;
 class iLight;
 class iOcclusionQuery;
-class cBoundingVolume;
 class iRenderableContainer;
 class iRenderableContainerNode;
 class cVisibleRCNodeTracker;

@@ -27,8 +27,6 @@
 namespace hpl
 {
 
-class iTexture;
-
 //---------------------------------------------------
 
 class cGpuShader_SamplerUnit

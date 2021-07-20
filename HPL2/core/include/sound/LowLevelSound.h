@@ -28,7 +28,6 @@ namespace hpl
 
 class iSoundData;
 class iSoundEnvironment;
-// class iSoundFilter;
 
 typedef std::list<iSoundEnvironment*> tSoundEnvList;
 typedef tSoundEnvList::iterator tSoundEnvListIt;

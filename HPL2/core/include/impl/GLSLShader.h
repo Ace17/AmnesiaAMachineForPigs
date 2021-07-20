@@ -26,12 +26,6 @@
 
 namespace hpl
 {
-
-//----------------------------------------------
-
-class iLowLevelGraphics;
-
-//----------------------------------------------
 class cGLSLShader : public iGpuShader
 {
 public:
