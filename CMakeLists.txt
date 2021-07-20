@@ -83,6 +83,3 @@ ENDIF()
 add_custom_target(BuildGame)
 add_dependencies(BuildGame Amnesia Launcher)
 
-add_custom_Target(BuildSteamGame)
-add_dependencies(BuildSteamGame AmnesiaSteam Launcher)
-
