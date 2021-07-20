@@ -537,19 +537,19 @@ public:
         mpRenderer->DrawQuad(aPos, avSize, avMinUV, avMaxUV, abInvertY, aColor);
     }
 
-    inline bool SetDepthTest(bool abX) { return mpRenderer->SetDepthTest(abX); }
-    inline bool SetDepthWrite(bool abX) { return mpRenderer->SetDepthWrite(abX); }
-    inline bool SetDepthTestFunc(eDepthTestFunc aFunc) { return mpRenderer->SetDepthTestFunc(aFunc); }
-    inline bool SetCullActive(bool abX) { return mpRenderer->SetCullActive(abX); }
-    inline bool SetCullMode(eCullMode aMode) { return mpRenderer->SetCullMode(aMode); }
-    inline bool SetStencilActive(bool abX) { return mpRenderer->SetStencilActive(abX); }
-    inline bool SetScissorActive(bool abX) { return mpRenderer->SetScissorActive(abX); }
+    inline void SetDepthTest(bool abX) { mpRenderer->SetDepthTest(abX); }
+    inline void SetDepthWrite(bool abX) { mpRenderer->SetDepthWrite(abX); }
+    inline void SetDepthTestFunc(eDepthTestFunc aFunc) { mpRenderer->SetDepthTestFunc(aFunc); }
+    inline void SetCullActive(bool abX) { mpRenderer->SetCullActive(abX); }
+    inline void SetCullMode(eCullMode aMode) { mpRenderer->SetCullMode(aMode); }
+    inline void SetStencilActive(bool abX) { mpRenderer->SetStencilActive(abX); }
+    inline void SetScissorActive(bool abX) { mpRenderer->SetScissorActive(abX); }
     inline void SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling) { mpRenderer->SetScissorRect(avPos, avSize, abAutoEnabling); }
     inline void SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling) { mpRenderer->SetScissorRect(aClipRect, abAutoEnabling); }
-    inline bool SetChannelMode(eMaterialChannelMode aMode) { return mpRenderer->SetChannelMode(aMode); }
-    inline bool SetAlphaMode(eMaterialAlphaMode aMode) { return mpRenderer->SetAlphaMode(aMode); }
-    inline bool SetBlendMode(eMaterialBlendMode aMode) { return mpRenderer->SetBlendMode(aMode); }
-    inline bool SetProgram(iGpuProgram* apProgram) { return mpRenderer->SetProgram(apProgram); }
+    inline void SetChannelMode(eMaterialChannelMode aMode) { mpRenderer->SetChannelMode(aMode); }
+    inline void SetAlphaMode(eMaterialAlphaMode aMode) { mpRenderer->SetAlphaMode(aMode); }
+    inline void SetBlendMode(eMaterialBlendMode aMode) { mpRenderer->SetBlendMode(aMode); }
+    inline void SetProgram(iGpuProgram* apProgram) { mpRenderer->SetProgram(apProgram); }
     inline void SetTexture(int alUnit, iTexture* apTexture) { mpRenderer->SetTexture(alUnit, apTexture); }
     inline void SetTextureRange(iTexture* apTexture, int alFirstUnit, int alLastUnit = kMaxTextureUnits - 1) { mpRenderer->SetTextureRange(apTexture, alFirstUnit, alLastUnit); }
     inline void SetVertexBuffer(iVertexBuffer* apVtxBuffer) { mpRenderer->SetVertexBuffer(apVtxBuffer); }

@@ -65,12 +65,12 @@ public:
     void SetFrustumProjection(cFrustum* apFrustum);
     void SetProjectionMatrix(const cMatrixf* apProjMatrix);
 
-    bool SetDepthTest(bool abX);
-    bool SetDepthWrite(bool abX);
-    bool SetDepthTestFunc(eDepthTestFunc aFunc);
-    bool SetCullActive(bool abX);
-    bool SetCullMode(eCullMode aMode, bool abCheckIfInverted = true);
-    bool SetStencilActive(bool abX);
+    void SetDepthTest(bool abX);
+    void SetDepthWrite(bool abX);
+    void SetDepthTestFunc(eDepthTestFunc aFunc);
+    void SetCullActive(bool abX);
+    void SetCullMode(eCullMode aMode, bool abCheckIfInverted = true);
+    void SetStencilActive(bool abX);
     void SetStencilWriteMask(unsigned int alMask);
     void SetStencil(eStencilFunc aFunc, int alRef, unsigned int aMask, eStencilOp aFailOp, eStencilOp aZFailOp, eStencilOp aZPassOp);
     void SetStencilTwoSide(eStencilFunc aFrontFunc,
@@ -83,17 +83,17 @@ public:
           eStencilOp aBackFailOp,
           eStencilOp aBackZFailOp,
           eStencilOp aBackZPassOp);
-    bool SetScissorActive(bool abX);
+    void SetScissorActive(bool abX);
     /**
      * When abAutoEnabling is true, it will also set to false if size = render target and pos=0
      */
     void SetScissorRect(const cVector2l& avPos, const cVector2l& avSize, bool abAutoEnabling);
     void SetScissorRect(const cRect2l& aClipRect, bool abAutoEnabling);
-    bool SetChannelMode(eMaterialChannelMode aMode);
-    bool SetAlphaMode(eMaterialAlphaMode aMode);
-    bool SetAlphaLimit(float afLimit);
-    bool SetBlendMode(eMaterialBlendMode aMode);
-    bool SetProgram(iGpuProgram* apProgram);
+    void SetChannelMode(eMaterialChannelMode aMode);
+    void SetAlphaMode(eMaterialAlphaMode aMode);
+    void SetAlphaLimit(float afLimit);
+    void SetBlendMode(eMaterialBlendMode aMode);
+    void SetProgram(iGpuProgram* apProgram);
     void SetTexture(int alUnit, iTexture* apTexture);
     void SetTextureRange(iTexture* apTexture, int alFirstUnit, int alLastUnit = kMaxTextureUnits - 1);
     void SetVertexBuffer(iVertexBuffer* apVtxBuffer);

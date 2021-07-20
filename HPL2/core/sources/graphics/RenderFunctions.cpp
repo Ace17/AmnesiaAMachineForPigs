@@ -184,42 +184,38 @@ void iRenderFunctions::SetProjectionMatrix(const cMatrixf* apProjMatrix)
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetDepthTest(bool abX)
+void iRenderFunctions::SetDepthTest(bool abX)
 {
     if (mbCurrentDepthTest == abX)
-        return false;
+        return;
 
     if (mbLog)
         Log("  Setting depth test active: %d\n", abX);
 
     mpLowLevelGraphics->SetDepthTestActive(abX);
     mbCurrentDepthTest = abX;
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetDepthWrite(bool abX)
+void iRenderFunctions::SetDepthWrite(bool abX)
 {
     if (mbCurrentDepthWrite == abX)
-        return false;
+        return;
 
     if (mbLog)
         Log("  Setting depth write active: %d\n", abX);
 
     mpLowLevelGraphics->SetDepthWriteActive(abX);
     mbCurrentDepthWrite = abX;
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetDepthTestFunc(eDepthTestFunc aFunc)
+void iRenderFunctions::SetDepthTestFunc(eDepthTestFunc aFunc)
 {
     if (mCurrentDepthTestFunc == aFunc)
-        return false;
+        return;
 
     if (mbLog)
     {
@@ -256,35 +252,31 @@ bool iRenderFunctions::SetDepthTestFunc(eDepthTestFunc aFunc)
 
     mCurrentDepthTestFunc = aFunc;
     mpLowLevelGraphics->SetDepthTestFunc(aFunc);
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetCullActive(bool abX)
+void iRenderFunctions::SetCullActive(bool abX)
 {
     if (mbCurrentCullActive == abX)
-        return false;
+        return;
 
     if (mbLog)
         Log("  Setting cull active: %d\n", abX);
 
     mbCurrentCullActive = abX;
     mpLowLevelGraphics->SetCullActive(abX);
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetCullMode(eCullMode aMode, bool abCheckIfInverted)
+void iRenderFunctions::SetCullMode(eCullMode aMode, bool abCheckIfInverted)
 {
     if (abCheckIfInverted && mbInvertCullMode)
         aMode = aMode == eCullMode_Clockwise ? eCullMode_CounterClockwise : eCullMode_Clockwise;
 
     if (mCurrentCullMode == aMode)
-        return false;
+        return;
 
     if (mbLog)
     {
@@ -303,24 +295,20 @@ bool iRenderFunctions::SetCullMode(eCullMode aMode, bool abCheckIfInverted)
 
     mCurrentCullMode = aMode;
     mpLowLevelGraphics->SetCullMode(aMode);
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetStencilActive(bool abX)
+void iRenderFunctions::SetStencilActive(bool abX)
 {
     if (mbCurrentStencilActive == abX)
-        return false;
+        return;
 
     if (mbLog)
         Log("  Setting stencil active: %d\n", abX);
 
     mpLowLevelGraphics->SetStencilActive(abX);
     mbCurrentStencilActive = abX;
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
@@ -351,10 +339,10 @@ void iRenderFunctions::SetStencilTwoSide(eStencilFunc aFrontFunc,
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetScissorActive(bool abX)
+void iRenderFunctions::SetScissorActive(bool abX)
 {
     if (mbCurrentScissorActive == abX)
-        return false;
+        return;
 
     ////////////////////////
     // Change scissor rect
@@ -369,8 +357,6 @@ bool iRenderFunctions::SetScissorActive(bool abX)
         {
             SetScissorRect(mvGlobalScissorRectPos, mvGlobalScissorRectSize, false);
         }
-
-        return false;
     }
     ////////////////////////
     // Set scissor on / off
@@ -382,8 +368,6 @@ bool iRenderFunctions::SetScissorActive(bool abX)
         mpLowLevelGraphics->SetScissorActive(abX);
         mbCurrentScissorActive = abX;
     }
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
@@ -442,10 +426,10 @@ void iRenderFunctions::SetScissorRect(const cVector2l& avPos, const cVector2l& a
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetChannelMode(eMaterialChannelMode aMode)
+void iRenderFunctions::SetChannelMode(eMaterialChannelMode aMode)
 {
     if (mCurrentChannelMode == aMode)
-        return false;
+        return;
 
     switch (aMode)
     {
@@ -472,16 +456,14 @@ bool iRenderFunctions::SetChannelMode(eMaterialChannelMode aMode)
     }
 
     mCurrentChannelMode = aMode;
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetAlphaMode(eMaterialAlphaMode aMode)
+void iRenderFunctions::SetAlphaMode(eMaterialAlphaMode aMode)
 {
     if (mCurrentAlphaMode == aMode)
-        return false;
+        return;
 
     if (aMode == eMaterialAlphaMode_Solid)
     {
@@ -496,14 +478,12 @@ bool iRenderFunctions::SetAlphaMode(eMaterialAlphaMode aMode)
         mpLowLevelGraphics->SetAlphaTestActive(true);
     }
     mCurrentAlphaMode = aMode;
-
-    return true;
 }
 
-bool iRenderFunctions::SetAlphaLimit(float afLimit)
+void iRenderFunctions::SetAlphaLimit(float afLimit)
 {
     if (afLimit == mfCurrentAlphaLimit)
-        return false;
+        return;
 
     mfCurrentAlphaLimit = afLimit;
 
@@ -511,16 +491,14 @@ bool iRenderFunctions::SetAlphaLimit(float afLimit)
         Log("  Setting alpha limit: %f\n", mfCurrentAlphaLimit);
 
     mpLowLevelGraphics->SetAlphaTestFunc(eAlphaTestFunc_GreaterOrEqual, mfCurrentAlphaLimit);
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetBlendMode(eMaterialBlendMode aMode)
+void iRenderFunctions::SetBlendMode(eMaterialBlendMode aMode)
 {
     if (mCurrentBlendMode == aMode)
-        return false;
+        return;
 
     ///////////////////////////
     // Blend off
@@ -567,16 +545,14 @@ bool iRenderFunctions::SetBlendMode(eMaterialBlendMode aMode)
     }
 
     mCurrentBlendMode = aMode;
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
 
-bool iRenderFunctions::SetProgram(iGpuProgram* apProgram)
+void iRenderFunctions::SetProgram(iGpuProgram* apProgram)
 {
     if (mpCurrentProgram == apProgram)
-        return false;
+        return;
 
     if (apProgram)
     {
@@ -596,8 +572,6 @@ bool iRenderFunctions::SetProgram(iGpuProgram* apProgram)
     // Setting material this way will always NULL current material and material type.
     mpCurrentMaterialType = NULL;
     mpCurrentMaterial = NULL;
-
-    return true;
 }
 
 //-----------------------------------------------------------------------
