@@ -144,7 +144,7 @@ public:
     int GetMultisampling() { return mlMultisampling; }
 
     cVector2f GetScreenSizeFloat();
-    const cVector2l& GetScreenSizeInt();
+    cVector2l GetScreenSizeInt();
 
     /////////////////////////////////////////////////////
     /////////////// DATA CREATION //////////////////////

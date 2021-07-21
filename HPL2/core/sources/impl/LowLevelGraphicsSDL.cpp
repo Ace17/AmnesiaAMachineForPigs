@@ -667,9 +667,8 @@ cVector2f cLowLevelGraphicsSDL::GetScreenSizeFloat()
     return cVector2f((float)mvScreenSize.x, (float)mvScreenSize.y);
 }
 
-const cVector2l& cLowLevelGraphicsSDL::GetScreenSizeInt()
+cVector2l cLowLevelGraphicsSDL::GetScreenSizeInt()
 {
-
     return mvScreenSize;
 }
 
