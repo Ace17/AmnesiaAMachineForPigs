@@ -54,8 +54,6 @@ public:
     virtual void Bind() = 0;
     virtual void UnBind() = 0;
 
-    virtual bool SetSamplerToUnit(const tString& asSamplerName, int alUnit) = 0;
-
     virtual int GetVariableId(const tString& asName) = 0;
     virtual bool GetVariableAsId(const tString& asName, int alId) = 0;
 
@@ -65,7 +63,6 @@ public:
     virtual bool SetVec3f(int alVarId, float afX, float afY, float afZ) = 0;
     virtual bool SetVec4f(int alVarId, float afX, float afY, float afZ, float afW) = 0;
     virtual bool SetMatrixf(int alVarId, const cMatrixf& mMtx) = 0;
-    virtual bool SetMatrixf(int alVarId, eGpuShaderMatrix mType, eGpuShaderMatrixOp mOp) = 0;
 
     bool SetVec2f(int alVarId, const cVector2f avVec) { return SetVec2f(alVarId, avVec.x, avVec.y); }
 

@@ -146,7 +146,7 @@ iGpuShader* cGpuShaderManager::CreateShader(const tString& asName, eGpuShaderTyp
 
         /////////////////////////////////
         // Sampler to texture units setup, if needed
-        if (aType == eGpuShaderType_Fragment && pShader->SamplerNeedsTextureUnitSetup())
+        if (aType == eGpuShaderType_Fragment)
         {
             tParseVarMap* pVarMap = mpPreprocessParser->GetParsingVarContainer()->GetMapPtr();
             tParseVarMapIt varIt = pVarMap->begin();

@@ -242,9 +242,6 @@ int cOpenALSoundChannel::GetPriority()
 
 void cOpenALSoundChannel::SetAffectedByEnv(bool abAffected)
 {
-    //		if (!(gpGame->GetSound()->GetLowLevel()->IsEnvAudioAvailable()))
-    //			return;
-
     iSoundChannel::SetAffectedByEnv(abAffected);
 
     if (mbAffectedByEnv)
@@ -255,25 +252,16 @@ void cOpenALSoundChannel::SetAffectedByEnv(bool abAffected)
 
 void cOpenALSoundChannel::SetFiltering(bool abEnabled, int alFlags)
 {
-    //		if (!(gpGame->GetSound()->GetLowLevel()->IsEnvAudioAvailable()))
-    //			return;
-
     OAL_Source_SetFiltering(mlChannel, abEnabled, alFlags);
 }
 
 void cOpenALSoundChannel::SetFilterGain(float afGain)
 {
-    //		if (!(gpGame->GetSound()->GetLowLevel()->IsEnvAudioAvailable()))
-    //			return;
-
     OAL_Source_SetFilterGain(mlChannel, afGain);
 }
 
 void cOpenALSoundChannel::SetFilterGainHF(float afGainHF)
 {
-    //		if (!(gpGame->GetSound()->GetLowLevel()->IsEnvAudioAvailable()))
-    //			return;
-
     OAL_Source_SetFilterGainHF(mlChannel, afGainHF);
 }
 

@@ -126,19 +126,6 @@ bool cGLSLShader::CreateFromString(const char* apStringData, const tString& asEn
         return false;
     }
 
-    /////////////////////////////
-    // If debug is on, then show code + compile log
-    if (mbDebugInfo)
-    {
-        Log("Shader '%s' code:\n-------------------\n", msName.c_str());
-
-        // LogShaderCode(apStringData);
-
-        // Log("---------------------\n");
-        Log("Compile log:\n");
-        LogShaderInfoLog();
-    }
-
     return true;
 }
 

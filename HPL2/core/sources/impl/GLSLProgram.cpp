@@ -154,22 +154,6 @@ void cGLSLProgram::UnBind()
 
 //-----------------------------------------------------------------------
 
-bool cGLSLProgram::SetSamplerToUnit(const tString& asSamplerName, int alUnit)
-{
-
-    GLint lVarHandle = glGetUniformLocation(mlHandle, asSamplerName.c_str());
-    if (lVarHandle < 0)
-        return false;
-
-    Bind();
-    glUniform1i(lVarHandle, alUnit);
-    UnBind();
-
-    return true;
-}
-
-//-----------------------------------------------------------------------
-
 int cGLSLProgram::GetVariableId(const tString& asName)
 {
 
@@ -329,14 +313,6 @@ bool cGLSLProgram::SetMatrixf(int alVarId, const cMatrixf& aMtx)
     glUniformMatrix4fv(mvParameters[alVarId].mlId, 1, true, aMtx.v);
 
     return true;
-}
-
-//-----------------------------------------------------------------------
-
-bool cGLSLProgram::SetMatrixf(int alVarId, eGpuShaderMatrix aType, eGpuShaderMatrixOp aOp)
-{
-    // Not needed for GLSL
-    return false;
 }
 
 //-----------------------------------------------------------------------

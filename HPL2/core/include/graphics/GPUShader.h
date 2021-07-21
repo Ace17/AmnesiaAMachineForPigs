@@ -49,10 +49,6 @@ public:
     }
     virtual ~iGpuShader() {}
 
-    static void SetLogDebugInformation(bool abX) { mbDebugInfo = abX; }
-
-    virtual bool SamplerNeedsTextureUnitSetup() = 0;
-
     /**
      * Create a from a file. Used internally
      * \param asFile
@@ -78,7 +74,5 @@ protected:
     unsigned int mlUserId;
 
     std::vector<cGpuShader_SamplerUnit> mvSamplerUnits;
-
-    static bool mbDebugInfo;
 };
 }; // namespace hpl

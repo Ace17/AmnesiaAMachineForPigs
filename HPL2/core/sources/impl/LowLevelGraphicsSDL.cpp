@@ -21,10 +21,7 @@
 #pragma comment(lib, "OpenGL32.lib")
 #pragma comment(lib, "GLu32.lib")
 //#pragma comment(lib, "GLaux.lib")
-#pragma comment(lib, "Cg.lib")
-#pragma comment(lib, "CgGL.lib")
 #pragma comment(lib, "SDL_ttf.lib")
-#pragma comment(lib, "TaskKeyHook.lib")
 #endif
 
 #include "impl/LowLevelGraphicsSDL.h"
@@ -37,8 +34,6 @@
 
 #include <assert.h>
 #include <stdlib.h>
-//#include "impl/CGShader.h"
-//#include "impl/CGProgram.h"
 #include "graphics/Bitmap.h"
 #include "impl/FrameBufferGL.h"
 #include "impl/GLSLProgram.h"
@@ -692,14 +687,11 @@ iGpuProgram* cLowLevelGraphicsSDL::CreateGpuProgram(const tString& asName)
 {
 
     return hplNew(cGLSLProgram, (asName));
-    // return hplNew( cCGProgram, () );
 }
 
 iGpuShader* cLowLevelGraphicsSDL::CreateGpuShader(const tString& asName, eGpuShaderType aType)
 {
-
     return hplNew(cGLSLShader, (asName, aType));
-    // return hplNew( cCGShader, (asName,mCG_Context, aType) );
 }
 
 //-----------------------------------------------------------------------

@@ -36,8 +36,6 @@ public:
     void Unload();
     void Destroy();
 
-    bool SamplerNeedsTextureUnitSetup() { return true; }
-
     tString GetProgramName() { return msName; }
 
     bool CreateFromFile(const tWString& asFile, const tString& asEntry = "main", bool abPrintInfoIfFail = true);

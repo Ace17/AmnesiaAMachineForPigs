@@ -56,10 +56,6 @@ public:
     iLowLevelSound();
     virtual ~iLowLevelSound();
 
-    /**
-     * Get the formats supported
-     * \param &alstFormats
-     */
     virtual void GetSupportedFormats(tStringList& alstFormats) = 0;
 
     virtual iSoundData* LoadSoundData(const tString& asName, const tWString& asFilePath, const tString& asType, bool abStream, bool abLoopStream) = 0;
@@ -84,7 +80,6 @@ public:
 
     float GetVolume() { return mfVolume; }
 
-    // virtual void LogSoundStatus() {}
     virtual void Init(int alSoundDeviceID,
           bool abUseEnvAudio,
           int alMaxChannels,
@@ -97,9 +92,6 @@ public:
           int alStreamingBufferCount,
           bool abEnableLowLevelLog) = 0;
 
-    bool IsHardwareAccelerated() { return mbHardwareAcc; }
-    bool IsEnvAudioAvailable() { return mbEnvAudioEnabled; }
-
     virtual void SetEnvVolume(float afVolume) = 0;
     float GetEnvVolume() { return mfEnvVolume; }
 
@@ -109,11 +101,9 @@ public:
     virtual void FadeSoundEnvironment(iSoundEnvironment* apSourceSoundEnv, iSoundEnvironment* apDestSoundEnv, float afT) = 0;
 
     iSoundEnvironment* GetSoundEnvironmentFromFileName(const tString& asName);
-    // void DestroySoundEnvironment( iSoundEnvironment* apSoundEnv);
 
     virtual iSoundDeviceIdentifier* GetCurrentSoundDevice() = 0;
 
-    // static tStringVec GetAvailableSoundDevices();
     static void SetSoundDeviceNameFilter(const tString& asFilter)
     {
         mbSoundDeviceNameFilterChanged = true;

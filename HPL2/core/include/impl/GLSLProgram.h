@@ -61,13 +61,6 @@ public:
     void Bind();
     void UnBind();
 
-    bool SamplerNeedsTextureUnitSetup() { return true; }
-
-    /**
-     * Binds and unbinds program so must not be done during rendering.
-     */
-    bool SetSamplerToUnit(const tString& asSamplerName, int alUnit);
-
     int GetVariableId(const tString& asName);
     bool GetVariableAsId(const tString& asName, int alId);
 
@@ -78,7 +71,6 @@ public:
     bool SetVec4f(int alVarId, float afX, float afY, float afZ, float afW);
 
     bool SetMatrixf(int alVarId, const cMatrixf& aMtx);
-    bool SetMatrixf(int alVarId, eGpuShaderMatrix aType, eGpuShaderMatrixOp aOp);
 
 private:
     void LogProgramInfoLog();
