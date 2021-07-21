@@ -196,16 +196,6 @@ public:
     virtual void SetStencilActive(bool abX) = 0;
     virtual void SetStencilWriteMask(unsigned int alMask) = 0;
     virtual void SetStencil(eStencilFunc aFunc, int alRef, unsigned int aMask, eStencilOp aFailOp, eStencilOp aZFailOp, eStencilOp aZPassOp) = 0;
-    virtual void SetStencilTwoSide(eStencilFunc aFrontFunc,
-          eStencilFunc aBackFunc,
-          int alRef,
-          unsigned int aMask,
-          eStencilOp aFrontFailOp,
-          eStencilOp aFrontZFailOp,
-          eStencilOp aFrontZPassOp,
-          eStencilOp aBackFailOp,
-          eStencilOp aBackZFailOp,
-          eStencilOp aBackZPassOp) = 0;
 
     virtual void SetScissorActive(bool abX) = 0;
     virtual void SetScissorRect(const cVector2l& avPos, const cVector2l& avSize) = 0;
@@ -280,18 +270,9 @@ public:
     /////////// VERTEX BATCHING /////////////////////////
     /////////////////////////////////////////////////////
 
-    virtual void AddVertexToBatch(const cVertex* apVtx) = 0;
-    virtual void AddVertexToBatch(const cVertex* apVtx, const cVector3f* avTransform) = 0;
-    virtual void AddVertexToBatch(const cVertex* apVtx, const cMatrixf* aMtx) = 0;
-
-    virtual void AddVertexToBatch_Size2D(const cVertex* apVtx, const cVector3f* avTransform, const cColor* apCol, const float& mfW, const float& mfH) = 0;
-
     virtual void AddVertexToBatch_Raw(const cVector3f& avPos, const cColor& aColor, const cVector3f& avTex) = 0;
 
     virtual void AddIndexToBatch(int alIndex) = 0;
-
-    virtual void AddTexCoordToBatch(unsigned int alUnit, const cVector3f* apCoord) = 0;
-    virtual void SetBatchTextureUnitActive(unsigned int alUnit, bool abActive) = 0;
 
     virtual void FlushTriBatch(tVtxBatchFlag aTypeFlags, bool abAutoClear = true) = 0;
     virtual void FlushQuadBatch(tVtxBatchFlag aTypeFlags, bool abAutoClear = true) = 0;

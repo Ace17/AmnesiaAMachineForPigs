@@ -323,20 +323,6 @@ void iRenderFunctions::SetStencil(eStencilFunc aFunc, int alRef, unsigned int aM
     mpLowLevelGraphics->SetStencil(aFunc, alRef, aMask, aFailOp, aZFailOp, aZPassOp);
 }
 
-void iRenderFunctions::SetStencilTwoSide(eStencilFunc aFrontFunc,
-      eStencilFunc aBackFunc,
-      int alRef,
-      unsigned int aMask,
-      eStencilOp aFrontFailOp,
-      eStencilOp aFrontZFailOp,
-      eStencilOp aFrontZPassOp,
-      eStencilOp aBackFailOp,
-      eStencilOp aBackZFailOp,
-      eStencilOp aBackZPassOp)
-{
-    mpLowLevelGraphics->SetStencilTwoSide(aFrontFunc, aBackFunc, alRef, aMask, aFrontFailOp, aFrontZFailOp, aFrontZPassOp, aBackFailOp, aBackZFailOp, aBackZPassOp);
-}
-
 //-----------------------------------------------------------------------
 
 void iRenderFunctions::SetScissorActive(bool abX)

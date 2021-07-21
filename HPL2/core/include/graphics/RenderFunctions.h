@@ -73,16 +73,6 @@ public:
     void SetStencilActive(bool abX);
     void SetStencilWriteMask(unsigned int alMask);
     void SetStencil(eStencilFunc aFunc, int alRef, unsigned int aMask, eStencilOp aFailOp, eStencilOp aZFailOp, eStencilOp aZPassOp);
-    void SetStencilTwoSide(eStencilFunc aFrontFunc,
-          eStencilFunc aBackFunc,
-          int alRef,
-          unsigned int aMask,
-          eStencilOp aFrontFailOp,
-          eStencilOp aFrontZFailOp,
-          eStencilOp aFrontZPassOp,
-          eStencilOp aBackFailOp,
-          eStencilOp aBackZFailOp,
-          eStencilOp aBackZPassOp);
     void SetScissorActive(bool abX);
     /**
      * When abAutoEnabling is true, it will also set to false if size = render target and pos=0

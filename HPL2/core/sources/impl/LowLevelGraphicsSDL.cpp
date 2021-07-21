@@ -1121,55 +1121,6 @@ void cLowLevelGraphicsSDL::SetStencil(eStencilFunc aFunc, int alRef, unsigned in
 
 //-----------------------------------------------------------------------
 
-void cLowLevelGraphicsSDL::SetStencilTwoSide(eStencilFunc aFrontFunc,
-      eStencilFunc aBackFunc,
-      int alRef,
-      unsigned int aMask,
-      eStencilOp aFrontFailOp,
-      eStencilOp aFrontZFailOp,
-      eStencilOp aFrontZPassOp,
-      eStencilOp aBackFailOp,
-      eStencilOp aBackZFailOp,
-      eStencilOp aBackZPassOp)
-{
-
-    mbDoubleSidedStencilIsSet = true;
-
-    // Nvidia implementation
-    if (GLEW_EXT_stencil_two_side)
-    {
-        glEnable(GL_STENCIL_TEST_TWO_SIDE_EXT);
-
-        // Front
-        glActiveStencilFaceEXT(GL_FRONT);
-        glStencilFunc(GetGLStencilFuncEnum(aFrontFunc), alRef, aMask);
-
-        glStencilOp(GetGLStencilOpEnum(aFrontFailOp), GetGLStencilOpEnum(aFrontZFailOp), GetGLStencilOpEnum(aFrontZPassOp));
-        // Back
-        glActiveStencilFaceEXT(GL_BACK);
-        glStencilFunc(GetGLStencilFuncEnum(aBackFunc), alRef, aMask);
-
-        glStencilOp(GetGLStencilOpEnum(aBackFailOp), GetGLStencilOpEnum(aBackZFailOp), GetGLStencilOpEnum(aBackZPassOp));
-    }
-    // Ati implementation
-    else if (GLEW_ATI_separate_stencil)
-    {
-        // Front
-        glStencilOpSeparateATI(GL_FRONT, GetGLStencilOpEnum(aFrontFailOp), GetGLStencilOpEnum(aFrontZFailOp), GetGLStencilOpEnum(aFrontZPassOp));
-        // Back
-        glStencilOpSeparateATI(GL_BACK, GetGLStencilOpEnum(aBackFailOp), GetGLStencilOpEnum(aBackZFailOp), GetGLStencilOpEnum(aBackZPassOp));
-
-        // Front and Back function
-        glStencilFuncSeparateATI(GetGLStencilFuncEnum(aFrontFunc), GetGLStencilFuncEnum(aBackFunc), alRef, aMask);
-    }
-    else
-    {
-        FatalError("Only single sided stencil supported!\n");
-    }
-}
-
-//-----------------------------------------------------------------------
-
 void cLowLevelGraphicsSDL::SetCullActive(bool abX)
 {
 
@@ -1191,8 +1142,7 @@ void cLowLevelGraphicsSDL::SetCullMode(eCullMode aMode)
     if (aMode == eCullMode_Clockwise)
         glFrontFace(GL_CCW);
     else
-        glFrontFace(GL_CW);
-}
+        glFrontFace(GL_CW); }
 
 //-----------------------------------------------------------------------
 
@@ -1881,112 +1831,6 @@ void cLowLevelGraphicsSDL::DrawLineQuad(const cVector3f& avPos, const cVector2f&
 
 //-----------------------------------------------------------------------
 
-void cLowLevelGraphicsSDL::AddVertexToBatch(const cVertex* apVtx)
-{
-
-    if (mlVertexCount / mlBatchStride >= mlBatchArraySize)
-    {
-        return;
-    }
-
-    // Coord
-    mpVertexArray[mlVertexCount + 0] = apVtx->pos.x;
-    mpVertexArray[mlVertexCount + 1] = apVtx->pos.y;
-    mpVertexArray[mlVertexCount + 2] = apVtx->pos.z;
-    // Color
-    mpVertexArray[mlVertexCount + 3] = apVtx->col.r;
-    mpVertexArray[mlVertexCount + 4] = apVtx->col.g;
-    mpVertexArray[mlVertexCount + 5] = apVtx->col.b;
-    mpVertexArray[mlVertexCount + 6] = apVtx->col.a;
-    // Texture coord
-    mpVertexArray[mlVertexCount + 7] = apVtx->tex.x;
-    mpVertexArray[mlVertexCount + 8] = apVtx->tex.y;
-    mpVertexArray[mlVertexCount + 9] = apVtx->tex.z;
-    // Normal coord
-    mpVertexArray[mlVertexCount + 10] = apVtx->norm.x;
-    mpVertexArray[mlVertexCount + 11] = apVtx->norm.y;
-    mpVertexArray[mlVertexCount + 12] = apVtx->norm.z;
-
-    mlVertexCount = mlVertexCount + mlBatchStride;
-}
-
-//-----------------------------------------------------------------------
-
-void cLowLevelGraphicsSDL::AddVertexToBatch(const cVertex* apVtx, const cVector3f* avTransform)
-{
-    if (mlVertexCount / mlBatchStride >= mlBatchArraySize)
-    {
-        return;
-    }
-
-    // Coord
-    mpVertexArray[mlVertexCount + 0] = apVtx->pos.x + avTransform->x;
-    mpVertexArray[mlVertexCount + 1] = apVtx->pos.y + avTransform->y;
-    mpVertexArray[mlVertexCount + 2] = apVtx->pos.z + avTransform->z;
-
-    /*Log("Trans: %s\n",avTransform->ToString().c_str());
-    Log("Adding: %f:%f:%f\n",mpVertexArray[mlVertexCount + 0],
-    mpVertexArray[mlVertexCount + 1],
-    mpVertexArray[mlVertexCount + 2]);*/
-    // Color
-    mpVertexArray[mlVertexCount + 3] = apVtx->col.r;
-    mpVertexArray[mlVertexCount + 4] = apVtx->col.g;
-    mpVertexArray[mlVertexCount + 5] = apVtx->col.b;
-    mpVertexArray[mlVertexCount + 6] = apVtx->col.a;
-    // Texture coord
-    mpVertexArray[mlVertexCount + 7] = apVtx->tex.x;
-    mpVertexArray[mlVertexCount + 8] = apVtx->tex.y;
-    mpVertexArray[mlVertexCount + 9] = apVtx->tex.z;
-
-    /*Log("Tex: %f:%f:%f\n",mpVertexArray[mlVertexCount + 7],
-    mpVertexArray[mlVertexCount + 8],
-    mpVertexArray[mlVertexCount + 9]);*/
-
-    // Normal coord
-    mpVertexArray[mlVertexCount + 10] = apVtx->norm.x;
-    mpVertexArray[mlVertexCount + 11] = apVtx->norm.y;
-    mpVertexArray[mlVertexCount + 12] = apVtx->norm.z;
-
-    mlVertexCount = mlVertexCount + mlBatchStride;
-}
-
-//-----------------------------------------------------------------------
-
-void cLowLevelGraphicsSDL::AddVertexToBatch(const cVertex* apVtx, const cMatrixf* aMtx)
-{
-}
-
-//-----------------------------------------------------------------------
-
-void cLowLevelGraphicsSDL::AddVertexToBatch_Size2D(const cVertex* apVtx, const cVector3f* avTransform, const cColor* apCol, const float& mfW, const float& mfH)
-{
-
-    if (mlVertexCount / mlBatchStride >= mlBatchArraySize)
-    {
-        return;
-    }
-
-    // Coord
-    mpVertexArray[mlVertexCount + 0] = avTransform->x + mfW;
-    mpVertexArray[mlVertexCount + 1] = avTransform->y + mfH;
-    mpVertexArray[mlVertexCount + 2] = avTransform->z;
-
-    // Color
-    mpVertexArray[mlVertexCount + 3] = apCol->r;
-    mpVertexArray[mlVertexCount + 4] = apCol->g;
-    mpVertexArray[mlVertexCount + 5] = apCol->b;
-    mpVertexArray[mlVertexCount + 6] = apCol->a;
-
-    // Texture coord
-    mpVertexArray[mlVertexCount + 7] = apVtx->tex.x;
-    mpVertexArray[mlVertexCount + 8] = apVtx->tex.y;
-    mpVertexArray[mlVertexCount + 9] = apVtx->tex.z;
-
-    mlVertexCount = mlVertexCount + mlBatchStride;
-}
-
-//-----------------------------------------------------------------------
-
 void cLowLevelGraphicsSDL::AddVertexToBatch_Raw(const cVector3f& avPos, const cColor& aColor, const cVector3f& avTex)
 {
 
@@ -2025,42 +1869,6 @@ void cLowLevelGraphicsSDL::AddIndexToBatch(int alIndex)
 
     mpIndexArray[mlIndexCount] = alIndex;
     mlIndexCount++;
-}
-
-//-----------------------------------------------------------------------
-
-void cLowLevelGraphicsSDL::AddTexCoordToBatch(unsigned int alUnit, const cVector3f* apCoord)
-{
-
-    unsigned int lCount = mlTexCoordArrayCount[alUnit];
-
-    if (lCount >= mlBatchArraySize * 3)
-    {
-        return;
-    }
-
-    mpTexCoordArray[alUnit][lCount + 0] = apCoord->x;
-    mpTexCoordArray[alUnit][lCount + 1] = apCoord->y;
-    mpTexCoordArray[alUnit][lCount + 2] = apCoord->z;
-
-    mlTexCoordArrayCount[alUnit] += 3;
-}
-
-//-----------------------------------------------------------------------
-
-void cLowLevelGraphicsSDL::SetBatchTextureUnitActive(unsigned int alUnit, bool abActive)
-{
-
-    glClientActiveTextureARB(GL_TEXTURE0_ARB + alUnit);
-
-    if (abActive == false)
-    {
-        glTexCoordPointer(3, GL_FLOAT, sizeof(float) * mlBatchStride, &mpVertexArray[7]);
-    }
-    else
-    {
-        glTexCoordPointer(3, GL_FLOAT, 0, &mpTexCoordArray[alUnit][0]);
-    }
 }
 
 //-----------------------------------------------------------------------
