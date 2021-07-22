@@ -44,13 +44,13 @@ public:
     int GetVariableId(const tString& asName);
     bool GetVariableAsId(const tString& asName, int alId);
 
-    bool SetInt(int alVarId, int alX);
-    bool SetFloat(int alVarId, float afX);
-    bool SetVec2f(int alVarId, float afX, float afY);
-    bool SetVec3f(int alVarId, float afX, float afY, float afZ);
-    bool SetVec4f(int alVarId, float afX, float afY, float afZ, float afW);
+    void SetInt(int alVarId, int alX);
+    void SetFloat(int alVarId, float afX);
+    void SetVec2f(int alVarId, float afX, float afY);
+    void SetVec3f(int alVarId, float afX, float afY, float afZ);
+    void SetVec4f(int alVarId, float afX, float afY, float afZ, float afW);
 
-    bool SetMatrixf(int alVarId, const cMatrixf& aMtx);
+    void SetMatrixf(int alVarId, const cMatrixf& aMtx);
 
 private:
     void LogProgramInfoLog();
@@ -60,8 +60,8 @@ private:
 
     struct cGLSLParam
     {
-      GLint mlId = -1;
-      tString msName;
+        GLint mlId = -1;
+        tString msName;
     };
 
     std::vector<cGLSLParam> mvParameters;

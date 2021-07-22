@@ -621,19 +621,17 @@ void cMaterialType_SolidDiffuse::SetupObjectSpecificData(eMaterialRenderMode aRe
     // Z Dissolve
     if (aRenderMode == eMaterialRenderMode_Z_Dissolve)
     {
-        bool bRet = apProgram->SetFloat(kVar_afDissolveAmount, apObject->GetCoverageAmount());
-        if (bRet == false)
-            Error("Could not set variable!\n");
+        apProgram->SetFloat(kVar_afDissolveAmount, apObject->GetCoverageAmount());
     }
     ////////////////////////////
     // Illumination
     else if (aRenderMode == eMaterialRenderMode_Illumination || aRenderMode == eMaterialRenderMode_IlluminationModulate)
     {
-        bool bRet = apProgram->SetFloat(kVar_afColorMul, apObject->GetIlluminationAmount() * apObject->GetIlluminationAmount());
+        apProgram->SetFloat(kVar_afColorMul, apObject->GetIlluminationAmount() * apObject->GetIlluminationAmount());
 
         if (aRenderMode == eMaterialRenderMode_IlluminationModulate)
         {
-            bRet = bRet && apProgram->SetFloat(kVar_afTimer, apObject->GetShaderTimer());
+            apProgram->SetFloat(kVar_afTimer, apObject->GetShaderTimer());
         }
     }
 }
