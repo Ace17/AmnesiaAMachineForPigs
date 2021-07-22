@@ -30,26 +30,6 @@ namespace hpl
 
 //-----------------------------------------------------
 
-class cGLSLParam
-{
-public:
-    cGLSLParam()
-        : mlId(-1)
-        , msName("")
-    {
-    }
-    cGLSLParam(GLint alId, const tString& asName)
-        : mlId(alId)
-        , msName(asName)
-    {
-    }
-
-    tString msName;
-    GLint mlId;
-};
-
-//-----------------------------------------------------
-
 class cGLSLProgram : public iGpuProgram
 {
 public:
@@ -77,6 +57,12 @@ private:
 
     GLuint mlHandle;
     static int mlCurrentProgram;
+
+    struct cGLSLParam
+    {
+      GLint mlId = -1;
+      tString msName;
+    };
 
     std::vector<cGLSLParam> mvParameters;
 };

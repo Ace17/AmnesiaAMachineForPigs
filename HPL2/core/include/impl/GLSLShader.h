@@ -46,8 +46,6 @@ public:
 
 protected:
     void LogShaderInfoLog();
-    void LogShaderCode(const char* apStringData);
-    GLenum GetGLShaderType(eGpuShaderType aType);
 
     GLuint mlHandle;
 };

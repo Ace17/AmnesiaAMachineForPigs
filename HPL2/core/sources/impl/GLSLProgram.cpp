@@ -167,7 +167,7 @@ int cGLSLProgram::GetVariableId(const tString& asName)
     if (lId < 0)
         return -1;
 
-    mvParameters.push_back(cGLSLParam(lId, asName));
+    mvParameters.push_back({lId, asName});
 
     return (int)mvParameters.size() - 1;
 }

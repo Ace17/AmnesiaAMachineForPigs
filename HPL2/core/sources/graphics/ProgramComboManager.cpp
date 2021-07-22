@@ -42,14 +42,28 @@ const static bool gbLogStuff = false;
 
 //-----------------------------------------------------------------------
 
-void cProgramComboProgram::DestroyProgram()
+class cProgramComboShader
 {
-    if (mpProgram == NULL)
-        return;
+public:
+    iGpuShader* mpShader = nullptr;
+    int mlUserCount = 0;
+};
 
-    hplDelete(mpProgram);
-    mpProgram = NULL;
-}
+class cProgramComboProgram
+{
+public:
+    void DestroyProgram()
+    {
+        if (mpProgram == NULL)
+            return;
+
+        hplDelete(mpProgram);
+        mpProgram = NULL;
+    }
+
+    iGpuProgram* mpProgram = nullptr;
+    int mlUserCount = 0;
+};
 
 //-----------------------------------------------------------------------
 

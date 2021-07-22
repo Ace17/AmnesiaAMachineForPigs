@@ -60,38 +60,14 @@ typedef tProgramComboVariableList::iterator tProgramComboVariableListIt;
 
 //---------------------------------------------------
 
-class cProgramComboShader
-{
-public:
-    cProgramComboShader()
-        : mpShader(NULL)
-        , mlUserCount(0)
-    {
-    }
-
-    iGpuShader* mpShader;
-    int mlUserCount;
-};
+class cProgramComboShader;
 
 typedef std::map<unsigned int, cProgramComboShader*> tProgramComboShaderMap;
 typedef tProgramComboShaderMap::iterator tProgramComboShaderMapIt;
 
 //---------------------------------------------------
 
-class cProgramComboProgram
-{
-public:
-    cProgramComboProgram()
-        : mpProgram(NULL)
-        , mlUserCount(0)
-    {
-    }
-
-    void DestroyProgram();
-
-    iGpuProgram* mpProgram;
-    int mlUserCount;
-};
+class cProgramComboProgram;
 
 typedef std::map<unsigned int, cProgramComboProgram*> tProgramComboProgramMap;
 typedef tProgramComboProgramMap::iterator tProgramComboProgramMapIt;

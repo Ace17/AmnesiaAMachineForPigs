@@ -25,6 +25,48 @@
 namespace hpl
 {
 
+namespace
+{
+
+void LogShaderCode(const char* apStringData)
+{
+    int lRow = 1;
+    tString sRowCode = "";
+    for (int i = 0; apStringData[i] != 0; ++i)
+    {
+        char lChar = apStringData[i];
+        if (lChar == '\r')
+            continue; // Can skip this sign.
+
+        if (lChar == '\n')
+        {
+            Log("[%04d] %s\n", lRow, sRowCode.c_str());
+            sRowCode.resize(0);
+            lRow++;
+        }
+        else
+        {
+            sRowCode += lChar;
+        }
+    }
+}
+
+//-----------------------------------------------------------------------
+
+GLenum GetGLShaderType(eGpuShaderType aType)
+{
+    switch (aType)
+    {
+    case eGpuShaderType_Fragment:
+        return GL_FRAGMENT_SHADER;
+    case eGpuShaderType_Vertex:
+        return GL_VERTEX_SHADER;
+    }
+
+    return GL_VERTEX_SHADER;
+}
+} // namespace
+
 //////////////////////////////////////////////////////////////////////////
 // CONSTRUCTORS
 //////////////////////////////////////////////////////////////////////////
@@ -154,46 +196,6 @@ void cGLSLShader::LogShaderInfoLog()
         Log("---------------------\n");
         hplFree(infoLog);
     }
-}
-
-//-----------------------------------------------------------------------
-
-void cGLSLShader::LogShaderCode(const char* apStringData)
-{
-    int lRow = 1;
-    tString sRowCode = "";
-    for (int i = 0; apStringData[i] != 0; ++i)
-    {
-        char lChar = apStringData[i];
-        if (lChar == '\r')
-            continue; // Can skip this sign.
-
-        if (lChar == '\n')
-        {
-            Log("[%04d] %s\n", lRow, sRowCode.c_str());
-            sRowCode.resize(0);
-            lRow++;
-        }
-        else
-        {
-            sRowCode += lChar;
-        }
-    }
-}
-
-//-----------------------------------------------------------------------
-
-GLenum cGLSLShader::GetGLShaderType(eGpuShaderType aType)
-{
-    switch (aType)
-    {
-    case eGpuShaderType_Fragment:
-        return GL_FRAGMENT_SHADER;
-    case eGpuShaderType_Vertex:
-        return GL_VERTEX_SHADER;
-    }
-
-    return GL_VERTEX_SHADER;
 }
 
 //-----------------------------------------------------------------------
