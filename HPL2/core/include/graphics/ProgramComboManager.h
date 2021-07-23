@@ -119,7 +119,7 @@ public:
           const tString& asModeName,
           const tString& asVtxShaderName,
           const tString& asFragShaderName,
-          cProgramComboFeature* apFeatures,
+          const cProgramComboFeature* apFeatures,
           int alFeatureNum,
           cParserVarContainer& avDefaultVars);
 

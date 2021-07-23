@@ -67,7 +67,7 @@ namespace hpl
 
 #define kDiffuseFeatureNum 7
 
-static cProgramComboFeature vDiffuseFeatureVec[] = {
+static const cProgramComboFeature vDiffuseFeatureVec[] = {
     cProgramComboFeature("UseNormalMapping", kPC_VertexBit | kPC_FragmentBit),
     cProgramComboFeature("UseSpecular", kPC_FragmentBit),
     cProgramComboFeature("UseParallax", kPC_VertexBit | kPC_FragmentBit, eFeature_Diffuse_Parallax),
@@ -85,7 +85,7 @@ static cProgramComboFeature vDiffuseFeatureVec[] = {
 
 #define kIllumFeatureNum 2
 
-cProgramComboFeature vIllumFeatureVec[] = {
+static const cProgramComboFeature vIllumFeatureVec[] = {
     cProgramComboFeature("UseUvAnimation", kPC_VertexBit),
     cProgramComboFeature("UseSkeleton", kPC_VertexBit),
 };
@@ -101,9 +101,13 @@ cProgramComboFeature vIllumFeatureVec[] = {
 
 #define kZFeatureNum 5
 
-cProgramComboFeature vZFeatureVec[] = { cProgramComboFeature("UseAlphaMap", kPC_FragmentBit), cProgramComboFeature("UseUvAnimation", kPC_VertexBit),
-    cProgramComboFeature("UseDissolve", kPC_FragmentBit), cProgramComboFeature("UseDissolveAlphaMap", kPC_FragmentBit),
-    cProgramComboFeature("UseAlphaUseDissolveFilter", kPC_FragmentBit) };
+static const cProgramComboFeature vZFeatureVec[] = {
+    cProgramComboFeature("UseAlphaMap", kPC_FragmentBit),
+    cProgramComboFeature("UseUvAnimation", kPC_VertexBit),
+    cProgramComboFeature("UseDissolve", kPC_FragmentBit),
+    cProgramComboFeature("UseDissolveAlphaMap", kPC_FragmentBit),
+    cProgramComboFeature("UseAlphaUseDissolveFilter", kPC_FragmentBit),
+};
 
 //------------------------------
 
