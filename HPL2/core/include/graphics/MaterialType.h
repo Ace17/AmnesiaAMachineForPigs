@@ -53,9 +53,6 @@ public:
     eMaterialTexture mType;
 };
 
-typedef std::vector<cMaterialUsedTexture> tMaterialUsedTextureVec;
-typedef tMaterialUsedTextureVec::iterator tMaterialUsedTextureVecIt;
-
 //---------------------------------------------------
 
 class cMaterialUserVariable
@@ -67,9 +64,6 @@ public:
     tString msDescription;
     tStringVec mvEnumValues;
 };
-
-typedef std::vector<cMaterialUserVariable> tMaterialUserVariableVec;
-typedef tMaterialUserVariableVec::iterator tMaterialUserVariableVecIt;
 
 //---------------------------------------------------
 
@@ -138,9 +132,8 @@ protected:
 
     bool mbHasTypeSpecifics[eMaterialRenderMode_LastEnum] {};
 
-    tMaterialUsedTextureVec mvUsedTextures;
-
-    tMaterialUserVariableVec mvUserVariables;
+    std::vector<cMaterialUsedTexture> mvUsedTextures;
+    std::vector<cMaterialUserVariable> mvUserVariables;
 
     cProgramComboManager* mpProgramManager = nullptr;
 };

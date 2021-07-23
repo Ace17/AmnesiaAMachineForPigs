@@ -46,17 +46,6 @@ class cViewport;
 
 //--------------------------------------------------------------------
 
-typedef std::list<cViewport*> tViewportList;
-typedef tViewportList::iterator tViewportListIt;
-
-typedef std::list<cCamera*> tCameraList;
-typedef tCameraList::iterator tCameraListIt;
-
-typedef std::list<cWorld*> tWorldList;
-typedef tWorldList::iterator tWorldListIt;
-
-//--------------------------------------------------------------------
-
 #define tSceneRenderFlag_World 0x00000001
 #define tSceneRenderFlag_Gui 0x00000002
 #define tSceneRenderFlag_PostEffects 0x00000004
@@ -115,9 +104,9 @@ private:
 
     cViewport* mpCurrentListener;
 
-    tViewportList mlstViewports;
-    tWorldList mlstWorlds;
-    tCameraList mlstCameras;
+    std::list<cViewport*> mlstViewports;
+    std::list<cWorld*> mlstWorlds;
+    std::list<cCamera*> mlstCameras;
 };
 
 }; // namespace hpl
