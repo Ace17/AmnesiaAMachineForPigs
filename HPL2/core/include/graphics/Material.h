@@ -119,7 +119,7 @@ public:
     bool GetAffectedByFog() { return mbAffectedByFog; }
 
     inline iTexture* GetTextureInUnit(eMaterialRenderMode aRenderMode, int alUnit) const { return mvTextureInUnit[aRenderMode][alUnit]; }
-    inline iGpuProgram* GetProgram(eMaterialRenderMode aRenderMode) const { return mvPrograms[0][aRenderMode]; }
+    inline iGpuProgram* GetProgram(eMaterialRenderMode aRenderMode) const { return mvPrograms[aRenderMode]; }
     inline eMaterialBlendMode GetBlendMode() const { return mBlendMode; }
     inline eMaterialAlphaMode GetAlphaMode() const { return mAlphaMode; }
     inline bool GetDepthTest() const { return mbDepthTest; }
@@ -194,7 +194,7 @@ private:
 
     bool mbUseAlphaDissolveFilter;
 
-    iGpuProgram* mvPrograms[2][eMaterialRenderMode_LastEnum]; //[2] == If it has skeleton or not.
+    iGpuProgram* mvPrograms[eMaterialRenderMode_LastEnum];
     iTexture* mvTextures[eMaterialTexture_LastEnum];
     iTexture* mvTextureInUnit[eMaterialRenderMode_LastEnum][kMaxTextureUnits];
 

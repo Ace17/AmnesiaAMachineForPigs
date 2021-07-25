@@ -88,11 +88,10 @@ cMaterial::cMaterial(const tString& asName, const tWString& asFullPath, cGraphic
     {
         mvTextures[i] = NULL;
     }
-    for (int j = 0; j < 2; ++j)
-        for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
-        {
-            mvPrograms[j][i] = NULL;
-        }
+    for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
+    {
+        mvPrograms[i] = NULL;
+    }
     for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
         for (int j = 0; j < kMaxTextureUnits; ++j)
         {
@@ -124,9 +123,9 @@ cMaterial::~cMaterial()
     {
         // Destroy all programs
         for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
-            if (mvPrograms[0][i])
+            if (mvPrograms[i])
             {
-                mpType->DestroyProgram(this, (eMaterialRenderMode)i, mvPrograms[0][i]);
+                mpType->DestroyProgram(this, (eMaterialRenderMode)i, mvPrograms[i]);
             }
     }
 
@@ -179,8 +178,8 @@ void cMaterial::Compile()
     // Get the programs
     for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
     {
-        iGpuProgram* pPrevProg = mvPrograms[0][i];
-        mvPrograms[0][i] = mpType->GetGpuProgram(this, (eMaterialRenderMode)i);
+        iGpuProgram* pPrevProg = mvPrograms[i];
+        mvPrograms[i] = mpType->GetGpuProgram(this, (eMaterialRenderMode)i);
 
         // Destroy any previous program (this is so recompilations work with program count!)
         if (pPrevProg)
