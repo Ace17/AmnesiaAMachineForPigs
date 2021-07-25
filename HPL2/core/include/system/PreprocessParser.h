@@ -35,7 +35,6 @@ public:
     void Add(const tString& asName, const tString& asVal = "");
     void Add(const tString& asName, int alVal);
     void Add(const tString& asName, float afVal);
-    bool Remove(const tString& asName);
     tString* Get(const tString& asName);
 
     tParseVarMap* GetMapPtr() { return &m_mapVars; }

@@ -60,18 +60,6 @@ void cParserVarContainer::Add(const tString& asName, float afVal)
 
 //-----------------------------------------------------------------------
 
-bool cParserVarContainer::Remove(const tString& asName)
-{
-    tParseVarMapIt it = m_mapVars.find(asName);
-    if (it == m_mapVars.end())
-        return false;
-
-    m_mapVars.erase(it);
-    return true;
-}
-
-//-----------------------------------------------------------------------
-
 tString* cParserVarContainer::Get(const tString& asName)
 {
     tParseVarMapIt it = m_mapVars.find(asName);
