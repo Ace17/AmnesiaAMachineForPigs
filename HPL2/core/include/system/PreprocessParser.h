@@ -181,7 +181,7 @@ public:
     cPreprocessParser();
     ~cPreprocessParser();
 
-    bool Parse(const tString* apInput, tString* apOutput, const cParserVarContainer* apVarContainer, const tWString& asDir = _W(""));
+    void Parse(const tString* apInput, tString* apOutput, const cParserVarContainer* apVarContainer, const tWString& asDir = _W(""));
 
     cParserVarContainer* GetEnvVarContainer() { return &mEnvironmentVars; }
     cParserVarContainer* GetParsingVarContainer() { return &mParsingVars; }
