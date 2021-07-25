@@ -131,12 +131,14 @@ cPreprocessParser::~cPreprocessParser()
 
 //-----------------------------------------------------------------------
 
-void cPreprocessParser::Parse(const tString* apInput, tString* apOutput, const cParserVarContainer* apVarContainer, const tWString& asDir)
+tString cPreprocessParser::Parse(const tString* apInput, const cParserVarContainer* apVarContainer, const tWString& asDir)
 {
+    tString sResult;
+
     //////////////////////////////
     // Set up data
     mpCurrentInput = apInput;
-    mpCurrentOutput = apOutput;
+    mpCurrentOutput = &sResult;
     mpCurrentVarContainer = apVarContainer;
     mpCurrentVars = apVarContainer;
 
@@ -176,8 +178,10 @@ void cPreprocessParser::Parse(const tString* apInput, tString* apOutput, const c
     while (EndOfSymbols() == false)
     {
         if (ParseSymbol(mpCurrentSymbol) == false)
-            return;
+            return sResult;
     }
+
+    return sResult;
 }
 
 //-----------------------------------------------------------------------

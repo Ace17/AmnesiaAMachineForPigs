@@ -108,7 +108,6 @@ iGpuShader* cGpuShaderManager::CreateShader(const tString& asName, eGpuShaderTyp
     if (apVarContainer)
     {
         tString sFileData;
-        tString sParsedOutput;
 
         /////////////////////////////////
         // Get file from file searcher
@@ -129,7 +128,7 @@ iGpuShader* cGpuShaderManager::CreateShader(const tString& asName, eGpuShaderTyp
 
         /////////////////////////////////
         // Parse file
-        mpPreprocessParser->Parse(&sFileData, &sParsedOutput, apVarContainer, cString::GetFilePathW(sPath));
+        const tString sParsedOutput = mpPreprocessParser->Parse(&sFileData, apVarContainer, cString::GetFilePathW(sPath));
 
         /////////////////////////////////
         // Compile
