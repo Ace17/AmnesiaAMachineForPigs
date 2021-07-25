@@ -60,9 +60,9 @@ void cParserVarContainer::Add(const tString& asName, float afVal)
 
 //-----------------------------------------------------------------------
 
-tString* cParserVarContainer::Get(const tString& asName)
+const tString* cParserVarContainer::Get(const tString& asName) const
 {
-    tParseVarMapIt it = m_mapVars.find(asName);
+    auto it = m_mapVars.find(asName);
     if (it == m_mapVars.end())
         return NULL;
 
@@ -131,7 +131,7 @@ cPreprocessParser::~cPreprocessParser()
 
 //-----------------------------------------------------------------------
 
-bool cPreprocessParser::Parse(const tString* apInput, tString* apOutput, cParserVarContainer* apVarContainer, const tWString& asDir)
+bool cPreprocessParser::Parse(const tString* apInput, tString* apOutput, const cParserVarContainer* apVarContainer, const tWString& asDir)
 {
     //////////////////////////////
     // Set up data
@@ -204,9 +204,9 @@ bool cPreprocessParser::VariableExists(const tString& asName)
 
 //-----------------------------------------------------------------------
 
-tString* cPreprocessParser::GetVar(const tString& asName)
+const tString* cPreprocessParser::GetVar(const tString& asName)
 {
-    tString* pVar = mEnvironmentVars.Get(asName);
+    const tString* pVar = mEnvironmentVars.Get(asName);
     if (mpCurrentVars && pVar == NULL)
         pVar = mpCurrentVars->Get(asName);
     if (pVar == NULL)
@@ -529,7 +529,7 @@ bool cPreprocessParser::ParseText(cParserSymbolText* apText)
 
 bool cPreprocessParser::ParseVariable(cParserSymbolVariable* apVar)
 {
-    tString* pVar = GetVar(apVar->msName);
+    const tString* pVar = GetVar(apVar->msName);
     if (pVar)
     {
         *mpCurrentOutput += *pVar;

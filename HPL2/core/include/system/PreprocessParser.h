@@ -35,7 +35,7 @@ public:
     void Add(const tString& asName, const tString& asVal = "");
     void Add(const tString& asName, int alVal);
     void Add(const tString& asName, float afVal);
-    tString* Get(const tString& asName);
+    const tString* Get(const tString& asName) const;
 
     tParseVarMap* GetMapPtr() { return &m_mapVars; }
 
@@ -181,7 +181,7 @@ public:
     cPreprocessParser();
     ~cPreprocessParser();
 
-    bool Parse(const tString* apInput, tString* apOutput, cParserVarContainer* apVarContainer, const tWString& asDir = _W(""));
+    bool Parse(const tString* apInput, tString* apOutput, const cParserVarContainer* apVarContainer, const tWString& asDir = _W(""));
 
     cParserVarContainer* GetEnvVarContainer() { return &mEnvironmentVars; }
     cParserVarContainer* GetParsingVarContainer() { return &mParsingVars; }
@@ -189,7 +189,7 @@ public:
 private:
     bool CharIsVariableValid(char alChar);
     bool VariableExists(const tString& asName);
-    tString* GetVar(const tString& asName);
+    const tString* GetVar(const tString& asName);
 
     bool EndOfInput();
     void GetNextString();
@@ -207,14 +207,14 @@ private:
     bool ParseOperator(cParserSymbolOperator* apOp);
     bool ParseKeyword(cParserSymbolKeyword* apKeyword);
 
-    cParserVarContainer* mpCurrentVars;
+    const cParserVarContainer* mpCurrentVars;
     cParserVarContainer mEnvironmentVars;
     cParserVarContainer mParsingVars;
 
     tWString msCurrentDirectory;
     const tString* mpCurrentInput;
     tString* mpCurrentOutput;
-    cParserVarContainer* mpCurrentVarContainer;
+    const cParserVarContainer* mpCurrentVarContainer;
 
     tString msCurrentString;
     int mlInputPos;
