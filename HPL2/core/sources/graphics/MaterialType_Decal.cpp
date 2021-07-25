@@ -79,7 +79,7 @@ cMaterialType_Decal::~cMaterialType_Decal()
 
 //--------------------------------------------------------------------------
 
-void cMaterialType_Decal::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, char alSkeleton)
+void cMaterialType_Decal::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram)
 {
     mpProgramManager->DestroyGeneratedProgram(aRenderMode, apProgram);
 }
@@ -134,7 +134,7 @@ iTexture* cMaterialType_Decal::GetSpecialTexture(cMaterial* apMaterial, eMateria
 
 //--------------------------------------------------------------------------
 
-iGpuProgram* cMaterialType_Decal::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, char alSkeleton)
+iGpuProgram* cMaterialType_Decal::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode)
 {
     ////////////////////////////
     // Diffuse

@@ -1686,9 +1686,9 @@ static bool SortFunc_ShadowCasters(iRenderable* apObjectA, iRenderable* apObject
     // If alpha, sort by texture (we know alpha is same for both materials, so can just test one)
     if (pMatA->GetAlphaMode() == eMaterialAlphaMode_Trans)
     {
-        if (pMatA->GetProgram(0, eMaterialRenderMode_Z) != pMatB->GetProgram(0, eMaterialRenderMode_Z))
+        if (pMatA->GetProgram(eMaterialRenderMode_Z) != pMatB->GetProgram(eMaterialRenderMode_Z))
         {
-            return pMatA->GetProgram(0, eMaterialRenderMode_Z) < pMatB->GetProgram(0, eMaterialRenderMode_Z);
+            return pMatA->GetProgram(eMaterialRenderMode_Z) < pMatB->GetProgram(eMaterialRenderMode_Z);
         }
 
         if (pMatA->GetTexture(eMaterialTexture_Diffuse) != pMatB->GetTexture(eMaterialTexture_Diffuse))
@@ -2092,7 +2092,7 @@ void iRenderer::RenderBasicSkyBox()
 void iRenderer::SetMaterialProgram(eMaterialRenderMode aRenderMode, cMaterial* apMaterial)
 {
     iMaterialType* pMatType = apMaterial->GetType();
-    iGpuProgram* pProgram = apMaterial->GetProgram(0, aRenderMode);
+    iGpuProgram* pProgram = apMaterial->GetProgram(aRenderMode);
 
     ///////////////////////////////////////
     // Check if program is set

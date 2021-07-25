@@ -157,7 +157,7 @@ iMaterialType_SolidBase::~iMaterialType_SolidBase()
 
 //--------------------------------------------------------------------------
 
-void iMaterialType_SolidBase::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, char alSkeleton)
+void iMaterialType_SolidBase::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram)
 {
     /////////////////////////////
     // Remove from global manager
@@ -494,7 +494,7 @@ iTexture* cMaterialType_SolidDiffuse::GetSpecialTexture(cMaterial* apMaterial, e
 
 //--------------------------------------------------------------------------
 
-iGpuProgram* cMaterialType_SolidDiffuse::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, char alSkeleton)
+iGpuProgram* cMaterialType_SolidDiffuse::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode)
 {
     cMaterialType_SolidDiffuse_Vars* pVars = (cMaterialType_SolidDiffuse_Vars*)apMaterial->GetVars();
 

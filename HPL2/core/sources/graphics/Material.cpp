@@ -124,12 +124,9 @@ cMaterial::~cMaterial()
     {
         // Destroy all programs
         for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
-            for (int j = 0; j < 2; ++j)
+            if (mvPrograms[0][i])
             {
-                if (mvPrograms[j][i])
-                {
-                    mpType->DestroyProgram(this, (eMaterialRenderMode)i, mvPrograms[j][i], j);
-                }
+                mpType->DestroyProgram(this, (eMaterialRenderMode)i, mvPrograms[0][i]);
             }
     }
 
@@ -181,15 +178,14 @@ void cMaterial::Compile()
     ///////////////////
     // Get the programs
     for (int i = 0; i < eMaterialRenderMode_LastEnum; ++i)
-        for (int j = 0; j < 2; ++j)
-        {
-            iGpuProgram* pPrevProg = mvPrograms[j][i];
-            mvPrograms[j][i] = mpType->GetGpuProgram(this, (eMaterialRenderMode)i, j);
+    {
+        iGpuProgram* pPrevProg = mvPrograms[0][i];
+        mvPrograms[0][i] = mpType->GetGpuProgram(this, (eMaterialRenderMode)i);
 
-            // Destroy any previous program (this is so recompilations work with program count!)
-            if (pPrevProg)
-                mpType->DestroyProgram(this, (eMaterialRenderMode)i, pPrevProg, j);
-        }
+        // Destroy any previous program (this is so recompilations work with program count!)
+        if (pPrevProg)
+            mpType->DestroyProgram(this, (eMaterialRenderMode)i, pPrevProg);
+    }
 
     ///////////////////
     // Compile texture lookup

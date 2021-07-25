@@ -139,7 +139,7 @@ cMaterialType_Translucent::~cMaterialType_Translucent()
 
 //--------------------------------------------------------------------------
 
-void cMaterialType_Translucent::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, char alSkeleton)
+void cMaterialType_Translucent::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram)
 {
     int lProgramNum = apMaterial->GetBlendMode() - 1;
 
@@ -254,7 +254,7 @@ iTexture* cMaterialType_Translucent::GetSpecialTexture(cMaterial* apMaterial, eM
 
 //--------------------------------------------------------------------------
 
-iGpuProgram* cMaterialType_Translucent::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, char alSkeleton)
+iGpuProgram* cMaterialType_Translucent::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode)
 {
     cMaterialType_Translucent_Vars* pVars = (cMaterialType_Translucent_Vars*)apMaterial->GetVars();
 

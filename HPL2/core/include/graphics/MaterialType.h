@@ -73,7 +73,7 @@ public:
     iMaterialType(cGraphics* apGraphics, cResources* apResources);
     virtual ~iMaterialType();
 
-    virtual void DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, char alSkeleton) = 0;
+    virtual void DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram) = 0;
 
     void SetName(const tString& asName);
     const tString& GetName() { return msName; }
@@ -82,7 +82,7 @@ public:
     bool IsDecal() { return mbIsDecal; }
 
     virtual iTexture* GetTextureForUnit(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, int alUnit) = 0;
-    virtual iGpuProgram* GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, char alSkeleton) = 0;
+    virtual iGpuProgram* GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode) = 0;
 
     virtual void SetupTypeSpecificData(eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, iRenderer* apRenderer) = 0;
     virtual void SetupMaterialSpecificData(eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, cMaterial* apMaterial, iRenderer* apRenderer) = 0;

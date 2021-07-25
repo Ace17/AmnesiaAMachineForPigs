@@ -111,7 +111,7 @@ cMaterialType_Water::~cMaterialType_Water()
 
 //--------------------------------------------------------------------------
 
-void cMaterialType_Water::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram, char alSkeleton)
+void cMaterialType_Water::DestroyProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, iGpuProgram* apProgram)
 {
     mpProgramManager->DestroyGeneratedProgram(eMaterialRenderMode_Diffuse, apProgram);
 }
@@ -213,7 +213,7 @@ iTexture* cMaterialType_Water::GetSpecialTexture(cMaterial* apMaterial, eMateria
 
 //--------------------------------------------------------------------------
 
-iGpuProgram* cMaterialType_Water::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode, char alSkeleton)
+iGpuProgram* cMaterialType_Water::GetGpuProgram(cMaterial* apMaterial, eMaterialRenderMode aRenderMode)
 {
     ////////////////////////////
     // Z

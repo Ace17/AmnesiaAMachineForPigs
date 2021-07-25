@@ -305,9 +305,9 @@ static bool SortFunc_Z(iRenderable* apObjectA, iRenderable* apObjectB)
     // If alpha, sort by texture (we know alpha is same for both materials, so can just test one)
     if (pMatA->GetAlphaMode() == eMaterialAlphaMode_Trans)
     {
-        if (pMatA->GetProgram(0, eMaterialRenderMode_Z) != pMatB->GetProgram(0, eMaterialRenderMode_Z))
+        if (pMatA->GetProgram(eMaterialRenderMode_Z) != pMatB->GetProgram(eMaterialRenderMode_Z))
         {
-            return pMatA->GetProgram(0, eMaterialRenderMode_Z) < pMatB->GetProgram(0, eMaterialRenderMode_Z);
+            return pMatA->GetProgram(eMaterialRenderMode_Z) < pMatB->GetProgram(eMaterialRenderMode_Z);
         }
 
         if (pMatA->GetTexture(eMaterialTexture_Diffuse) != pMatB->GetTexture(eMaterialTexture_Diffuse))
@@ -332,9 +332,9 @@ static bool SortFunc_Diffuse(iRenderable* apObjectA, iRenderable* apObjectB)
 
     //////////////////////////
     // Program
-    if (pMatA->GetProgram(0, eMaterialRenderMode_Diffuse) != pMatB->GetProgram(0, eMaterialRenderMode_Diffuse))
+    if (pMatA->GetProgram(eMaterialRenderMode_Diffuse) != pMatB->GetProgram(eMaterialRenderMode_Diffuse))
     {
-        return pMatA->GetProgram(0, eMaterialRenderMode_Diffuse) < pMatB->GetProgram(0, eMaterialRenderMode_Diffuse);
+        return pMatA->GetProgram(eMaterialRenderMode_Diffuse) < pMatB->GetProgram(eMaterialRenderMode_Diffuse);
     }
 
     //////////////////////////
