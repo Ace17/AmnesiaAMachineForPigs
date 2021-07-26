@@ -175,17 +175,11 @@ public:
 
     cScriptVar* CreateLocalVar(const tString& asName);
     cScriptVar* GetLocalVar(const tString& asName);
-    tScriptVarMap* GetLocalVarMap();
     cScriptVar* CreateGlobalVar(const tString& asName);
     cScriptVar* GetGlobalVar(const tString& asName);
-    tScriptVarMap* GetGlobalVarMap();
-
-    void ClearAllVariables();
 
     ////// ENGINE VARIABLES /////////////////////
 
-    eVariableType GetEngineTypeFromString(const tString& asType);
-    eVariableType GetEngineTypeFromStringW(const tWString& asType);
     const tString& GetEngineTypeString(eVariableType aType) { return mvEngineTypeStrings[aType]; }
 
     static int mlNumLogicLoops;

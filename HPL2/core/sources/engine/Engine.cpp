@@ -763,13 +763,6 @@ cScriptVar* cEngine::GetLocalVar(const tString& asName)
 
 //-----------------------------------------------------------------------
 
-tScriptVarMap* cEngine::GetLocalVarMap()
-{
-    return &m_mapLocalVars;
-}
-
-//-----------------------------------------------------------------------
-
 cScriptVar* cEngine::CreateGlobalVar(const tString& asName)
 {
     cScriptVar* pVar;
@@ -795,39 +788,6 @@ cScriptVar* cEngine::GetGlobalVar(const tString& asName)
         return NULL;
 
     return &it->second;
-}
-
-//-----------------------------------------------------------------------
-
-tScriptVarMap* cEngine::GetGlobalVarMap()
-{
-    return &m_mapGlobalVars;
-}
-
-//-----------------------------------------------------------------------
-
-void cEngine::ClearAllVariables()
-{
-    m_mapGlobalVars.clear();
-    m_mapLocalVars.clear();
-}
-
-//-----------------------------------------------------------------------
-
-eVariableType cEngine::GetEngineTypeFromString(const tString& asType)
-{
-    for (int i = 0; i < (int)mvEngineTypeStrings.size(); ++i)
-    {
-        if (asType == mvEngineTypeStrings[i])
-            return (eVariableType)i;
-    }
-
-    return eVariableType_LastEnum;
-}
-
-eVariableType cEngine::GetEngineTypeFromStringW(const tWString& asType)
-{
-    return GetEngineTypeFromString(cString::To8Char(asType));
 }
 
 //-----------------------------------------------------------------------
