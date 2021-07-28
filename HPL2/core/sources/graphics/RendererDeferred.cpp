@@ -96,11 +96,11 @@ bool cRendererDeferred::mbDebugRenderFrameBuffers = false;
 // LIGHT PROGRAM COMBOS
 //////////////////////////////////////////////////////////////////////////
 
-enum eDefferredProgramMode
+enum eDeferredProgramMode
 {
-    eDefferredProgramMode_Lights,
-    eDefferredProgramMode_Misc,
-    eDefferredProgramMode_LastEnum
+    eDeferredProgramMode_Lights,
+    eDeferredProgramMode_Misc,
+    eDeferredProgramMode_LastEnum
 };
 
 #define eFeature_Light_LightShapes eFlagBit_0
@@ -176,7 +176,7 @@ cProgramComboFeature gvFogAreaFeatureVec[] = {
 //-----------------------------------------------------------------------
 
 cRendererDeferred::cRendererDeferred(cGraphics* apGraphics, cResources* apResources)
-    : iRenderer("Deferred", apGraphics, apResources, eDefferredProgramMode_LastEnum)
+    : iRenderer("Deferred", apGraphics, apResources, eDeferredProgramMode_LastEnum)
 {
     ////////////////////////////////////
     // Set up render specific things
@@ -551,26 +551,26 @@ bool cRendererDeferred::LoadData()
                 defaultVars.Add("RenderTargets_3", "");
 
             mpProgramManager->SetupGenerateProgramData(
-                  eDefferredProgramMode_Lights, "Lights", "deferred_base_vtx.glsl", "deferred_light_frag.glsl", gvLightFeatureVec, kLightFeatureNum, defaultVars);
+                  eDeferredProgramMode_Lights, "Lights", "deferred_base_vtx.glsl", "deferred_light_frag.glsl", gvLightFeatureVec, kLightFeatureNum, defaultVars);
             // 1, defaultVars);
 
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "avLightPos", kVar_avLightPos);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "avLightColor", kVar_avLightColor);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "afInvLightRadius", kVar_afInvLightRadius);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "afNegFarPlane", kVar_afNegFarPlane);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "afOneMinusCosHalfSpotFOV", kVar_afOneMinusCosHalfSpotFOV);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "avLightForward", kVar_avLightForward);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "a_mtxSpotViewProj", kVar_a_mtxSpotViewProj);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "avShadowMapOffsetMul", kVar_avShadowMapOffsetMul);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "afFalloff", kVar_afFalloff);
-            mpProgramManager->AddGenerateProgramVariableId(eDefferredProgramMode_Lights, "afComplexity", kVar_afComplexity);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avLightPos", kVar_avLightPos);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avLightColor", kVar_avLightColor);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afInvLightRadius", kVar_afInvLightRadius);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afNegFarPlane", kVar_afNegFarPlane);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afOneMinusCosHalfSpotFOV", kVar_afOneMinusCosHalfSpotFOV);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avLightForward", kVar_avLightForward);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "a_mtxSpotViewProj", kVar_a_mtxSpotViewProj);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avShadowMapOffsetMul", kVar_avShadowMapOffsetMul);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afFalloff", kVar_afFalloff);
+            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afComplexity", kVar_afComplexity);
         }
 
         //////////////////////////////
         // Generate some light programs
         // for(i=0; i<128; ++i)
-        //	mpProgramManager->GenerateProgram(eDefferredProgramMode_Lights, i);
+        //	mpProgramManager->GenerateProgram(eDeferredProgramMode_Lights, i);
     }
 
     ////////////////////////////////////
@@ -1606,7 +1606,7 @@ iGpuProgram* cRendererDeferred::SetupProgramAndTextures(cDeferredLight* apLightD
 
     /////////////////////////
     // Program
-    iGpuProgram* pProgram = mpProgramManager->GenerateProgram(eDefferredProgramMode_Lights, lFlags);
+    iGpuProgram* pProgram = mpProgramManager->GenerateProgram(eDeferredProgramMode_Lights, lFlags);
     SetProgram(pProgram);
     if (pProgram)
     {
