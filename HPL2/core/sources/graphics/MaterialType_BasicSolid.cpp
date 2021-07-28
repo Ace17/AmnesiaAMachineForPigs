@@ -191,8 +191,8 @@ void iMaterialType_SolidBase::CreateGlobalPrograms()
 
     mpProgramManager->SetupGenerateProgramData(eMaterialRenderMode_Z, "Z", "deferred_base_vtx.glsl", "deferred_base_frag.glsl", vZFeatureVec, kZFeatureNum, defaultVars);
 
-    mpProgramManager->AddGenerateProgramVariableId("a_mtxUV", kVar_a_mtxUV, eMaterialRenderMode_Z);
-    mpProgramManager->AddGenerateProgramVariableId("afDissolveAmount", kVar_afDissolveAmount, eMaterialRenderMode_Z);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Z, "a_mtxUV", kVar_a_mtxUV);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Z, "afDissolveAmount", kVar_afDissolveAmount);
 
     mpGlobalProgramManager = mpProgramManager;
 }
@@ -341,18 +341,18 @@ void cMaterialType_SolidDiffuse::LoadSpecificData()
 
     ////////////////////////////////
     // Set up variable ids
-    mpProgramManager->AddGenerateProgramVariableId("afInvFarPlane", kVar_afInvFarPlane, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("avHeightMapScaleAndBias", kVar_avHeightMapScaleAndBias, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("a_mtxUV", kVar_a_mtxUV, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("avFrenselBiasPow", kVar_avFrenselBiasPow, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("a_mtxInvViewRotation", kVar_a_mtxInvViewRotation, eMaterialRenderMode_Diffuse);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afInvFarPlane", kVar_afInvFarPlane);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avHeightMapScaleAndBias", kVar_avHeightMapScaleAndBias);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "a_mtxUV", kVar_a_mtxUV);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avFrenselBiasPow", kVar_avFrenselBiasPow);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
 
-    mpProgramManager->AddGenerateProgramVariableId("a_mtxUV", kVar_a_mtxUV, eMaterialRenderMode_Illumination);
-    mpProgramManager->AddGenerateProgramVariableId("afColorMul", kVar_afColorMul, eMaterialRenderMode_Illumination);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Illumination, "a_mtxUV", kVar_a_mtxUV);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Illumination, "afColorMul", kVar_afColorMul);
 
-    mpProgramManager->AddGenerateProgramVariableId("a_mtxUV", kVar_a_mtxUV, eMaterialRenderMode_IlluminationModulate);
-    mpProgramManager->AddGenerateProgramVariableId("afColorMul", kVar_afColorMul, eMaterialRenderMode_IlluminationModulate);
-    mpProgramManager->AddGenerateProgramVariableId("afTimer", kVar_afTimer, eMaterialRenderMode_IlluminationModulate);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_IlluminationModulate, "a_mtxUV", kVar_a_mtxUV);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_IlluminationModulate, "afColorMul", kVar_afColorMul);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_IlluminationModulate, "afTimer", kVar_afTimer);
 }
 
 //--------------------------------------------------------------------------

@@ -97,7 +97,7 @@ void cMaterialType_Decal::LoadData()
 
     ////////////////////////////////
     // Set up variable ids
-    mpProgramManager->AddGenerateProgramVariableId("a_mtxUV", kVar_a_mtxUV, eMaterialRenderMode_Diffuse);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "a_mtxUV", kVar_a_mtxUV);
 }
 
 //--------------------------------------------------------------------------

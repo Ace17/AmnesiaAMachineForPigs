@@ -205,7 +205,7 @@ void cProgramComboManager::SetupGenerateProgramData(int alMainMode,
 
 //-----------------------------------------------------------------------
 
-void cProgramComboManager::AddGenerateProgramVariableId(const tString& asVarName, int alId, int alMainMode)
+void cProgramComboManager::AddGenerateProgramVariableId(int alMainMode, const tString& asVarName, int alId)
 {
     mvVarLists[alMainMode].push_back(cProgramComboVariable(asVarName, alId));
 }

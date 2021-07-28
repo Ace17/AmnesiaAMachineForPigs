@@ -123,7 +123,7 @@ public:
           int alFeatureNum,
           cParserVarContainer& avDefaultVars);
 
-    void AddGenerateProgramVariableId(const tString& asVarName, int alId, int alMainMode);
+    void AddGenerateProgramVariableId(int alMainMode, const tString& asVarName, int alId);
 
     void DestroyGeneratedProgram(int alMainMode, iGpuProgram* apProgram);
     void DestroyGeneratedShader(int alMainMode, iGpuShader* apShader, eGpuShaderType aType);

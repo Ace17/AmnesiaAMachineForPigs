@@ -137,18 +137,18 @@ void cMaterialType_Water::LoadData()
 
     ////////////////////////////////
     // Set up variable ids
-    mpProgramManager->AddGenerateProgramVariableId("afT", kVar_afT, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("afRefractionScale", kVar_afRefractionScale, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("a_mtxInvViewRotation", kVar_a_mtxInvViewRotation, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("avReflectionMapSizeMul", kVar_avReflectionMapSizeMul, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("avFrenselBiasPow", kVar_avFrenselBiasPow, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("avReflectionFadeStartAndLength", kVar_avReflectionFadeStartAndLength, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("afWaveAmplitude", kVar_afWaveAmplitude, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("afWaveFreq", kVar_afWaveFreq, eMaterialRenderMode_Diffuse);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afT", kVar_afT);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afRefractionScale", kVar_afRefractionScale);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avReflectionMapSizeMul", kVar_avReflectionMapSizeMul);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avFrenselBiasPow", kVar_avFrenselBiasPow);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avReflectionFadeStartAndLength", kVar_avReflectionFadeStartAndLength);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afWaveAmplitude", kVar_afWaveAmplitude);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afWaveFreq", kVar_afWaveFreq);
 
-    mpProgramManager->AddGenerateProgramVariableId("avFogStartAndLength", kVar_avFogStartAndLength, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("avFogColor", kVar_avFogColor, eMaterialRenderMode_Diffuse);
-    mpProgramManager->AddGenerateProgramVariableId("afFalloffExp", kVar_afFalloffExp, eMaterialRenderMode_Diffuse);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avFogStartAndLength", kVar_avFogStartAndLength);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avFogColor", kVar_avFogColor);
+    mpProgramManager->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afFalloffExp", kVar_afFalloffExp);
 }
 void cMaterialType_Water::DestroyData()
 {
