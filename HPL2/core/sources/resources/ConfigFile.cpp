@@ -50,7 +50,6 @@ cConfigFile::cConfigFile(const tWString& asFile, const tWString& asAltPath)
         msFile = asFile;
     }
     mpXmlDoc = hplNew(TiXmlDocument, ());
-    // mpFileSearcher = apFileSearcher;
 
     mbUseCRC = false;
 }

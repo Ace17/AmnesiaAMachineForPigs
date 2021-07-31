@@ -78,7 +78,6 @@ public:
 
 private:
     tWString msFile;
-    cFileSearcher* mpFileSearcher;
 
     TiXmlDocument* mpXmlDoc;
 
