@@ -180,16 +180,16 @@ void cMaterialType_Translucent::LoadData()
 
         ////////////////////////////////
         // Set up variable ids
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afAlpha", kVar_afAlpha);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avFogStartAndLength", kVar_avFogStartAndLength);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afOneMinusFogAlpha", kVar_afOneMinusFogAlpha);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afFalloffExp", kVar_afFalloffExp);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "a_mtxUV", kVar_a_mtxUV);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afRefractionScale", kVar_afRefractionScale);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avFrenselBiasPow", kVar_avFrenselBiasPow);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "avRimLightMulPow", kVar_avRimLightMulPow);
-        mpBlendProgramManager[i]->AddGenerateProgramVariableId(eMaterialRenderMode_Diffuse, "afLightLevel", kVar_afLightLevel);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "afAlpha", kVar_afAlpha);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "avFogStartAndLength", kVar_avFogStartAndLength);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "afOneMinusFogAlpha", kVar_afOneMinusFogAlpha);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "afFalloffExp", kVar_afFalloffExp);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "a_mtxUV", kVar_a_mtxUV);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "afRefractionScale", kVar_afRefractionScale);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "avFrenselBiasPow", kVar_avFrenselBiasPow);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "avRimLightMulPow", kVar_avRimLightMulPow);
+        mpBlendProgramManager[i]->AddUniform(eMaterialRenderMode_Diffuse, "afLightLevel", kVar_afLightLevel);
     }
 }
 void cMaterialType_Translucent::DestroyData()

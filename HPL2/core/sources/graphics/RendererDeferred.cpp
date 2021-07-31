@@ -448,14 +448,14 @@ bool cRendererDeferred::LoadData()
         mpFogProgramManager->SetupGenerateProgramData(0, "Fog", "deferred_fog_vtx.glsl", "deferred_fog_frag.glsl", gvFogAreaFeatureVec, kFogAreaFeatureNum, vars);
 
         if (GetGBufferType() == eDeferredGBuffer_32Bit)
-            mpFogProgramManager->AddGenerateProgramVariableId(0, "afNegFarPlane", kVar_afNegFarPlane);
-        mpFogProgramManager->AddGenerateProgramVariableId(0, "avFogStartAndLength", kVar_avFogStartAndLength);
-        mpFogProgramManager->AddGenerateProgramVariableId(0, "avFogColor", kVar_avFogColor);
-        mpFogProgramManager->AddGenerateProgramVariableId(0, "avRayCastStart", kVar_avRayCastStart);
-        mpFogProgramManager->AddGenerateProgramVariableId(0, "a_mtxBoxInvViewModelRotation", kVar_a_mtxBoxInvViewModelRotation);
-        mpFogProgramManager->AddGenerateProgramVariableId(0, "avNegPlaneDistNeg", kVar_avNegPlaneDistNeg);
-        mpFogProgramManager->AddGenerateProgramVariableId(0, "avNegPlaneDistPos", kVar_avNegPlaneDistPos);
-        mpFogProgramManager->AddGenerateProgramVariableId(0, "afFalloffExp", kVar_afFalloffExp);
+            mpFogProgramManager->AddUniform(0, "afNegFarPlane", kVar_afNegFarPlane);
+        mpFogProgramManager->AddUniform(0, "avFogStartAndLength", kVar_avFogStartAndLength);
+        mpFogProgramManager->AddUniform(0, "avFogColor", kVar_avFogColor);
+        mpFogProgramManager->AddUniform(0, "avRayCastStart", kVar_avRayCastStart);
+        mpFogProgramManager->AddUniform(0, "a_mtxBoxInvViewModelRotation", kVar_a_mtxBoxInvViewModelRotation);
+        mpFogProgramManager->AddUniform(0, "avNegPlaneDistNeg", kVar_avNegPlaneDistNeg);
+        mpFogProgramManager->AddUniform(0, "avNegPlaneDistPos", kVar_avNegPlaneDistPos);
+        mpFogProgramManager->AddUniform(0, "afFalloffExp", kVar_afFalloffExp);
 
         // cParserVarContainer vars2;
         // if(GetGBufferType() == eDeferredGBuffer_32Bit)	vars2.Add("PackedDepth");
@@ -466,14 +466,14 @@ bool cRendererDeferred::LoadData()
         // mpModulatedFogProgram->SetupGenerateProgramData(0,"ModulatedFog","deferred_fog_vtx.glsl","deferred_fog_frag.glsl",gvFogAreaFeatureVec,kFogAreaFeatureNum,vars2);
 
         // if(GetGBufferType() == eDeferredGBuffer_32Bit)
-        //		mpModulatedFogProgram->AddGenerateProgramVariableId("afNegFarPlane", kVar_afNegFarPlane,0);
-        // mpModulatedFogProgram->AddGenerateProgramVariableId("avFogStartAndLength", kVar_avFogStartAndLength,0);
-        // mpModulatedFogProgram->AddGenerateProgramVariableId("avFogColor", kVar_avFogColor,0);
-        // mpModulatedFogProgram->AddGenerateProgramVariableId("avRayCastStart", kVar_avRayCastStart,0);
-        // mpModulatedFogProgram->AddGenerateProgramVariableId("a_mtxBoxInvViewModelRotation", kVar_a_mtxBoxInvViewModelRotation,0);
-        // mpModulatedFogProgram->AddGenerateProgramVariableId("avNegPlaneDistNeg",kVar_avNegPlaneDistNeg,0);
-        // mpModulatedFogProgram->AddGenerateProgramVariableId("avNegPlaneDistPos",kVar_avNegPlaneDistPos,0);
-        // mpModulatedFogProgram->AddGenerateProgramVariableId("afFalloffExp",kVar_afFalloffExp,0);
+        //		mpModulatedFogProgram->AddUniform("afNegFarPlane", kVar_afNegFarPlane,0);
+        // mpModulatedFogProgram->AddUniform("avFogStartAndLength", kVar_avFogStartAndLength,0);
+        // mpModulatedFogProgram->AddUniform("avFogColor", kVar_avFogColor,0);
+        // mpModulatedFogProgram->AddUniform("avRayCastStart", kVar_avRayCastStart,0);
+        // mpModulatedFogProgram->AddUniform("a_mtxBoxInvViewModelRotation", kVar_a_mtxBoxInvViewModelRotation,0);
+        // mpModulatedFogProgram->AddUniform("avNegPlaneDistNeg",kVar_avNegPlaneDistNeg,0);
+        // mpModulatedFogProgram->AddUniform("avNegPlaneDistPos",kVar_avNegPlaneDistPos,0);
+        // mpModulatedFogProgram->AddUniform("afFalloffExp",kVar_afFalloffExp,0);
     }
 
     ////////////////////////////////////
@@ -554,17 +554,17 @@ bool cRendererDeferred::LoadData()
                   eDeferredProgramMode_Lights, "Lights", "deferred_base_vtx.glsl", "deferred_light_frag.glsl", gvLightFeatureVec, kLightFeatureNum, defaultVars);
             // 1, defaultVars);
 
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avLightPos", kVar_avLightPos);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avLightColor", kVar_avLightColor);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afInvLightRadius", kVar_afInvLightRadius);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afNegFarPlane", kVar_afNegFarPlane);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afOneMinusCosHalfSpotFOV", kVar_afOneMinusCosHalfSpotFOV);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avLightForward", kVar_avLightForward);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "a_mtxSpotViewProj", kVar_a_mtxSpotViewProj);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "avShadowMapOffsetMul", kVar_avShadowMapOffsetMul);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afFalloff", kVar_afFalloff);
-            mpProgramManager->AddGenerateProgramVariableId(eDeferredProgramMode_Lights, "afComplexity", kVar_afComplexity);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "avLightPos", kVar_avLightPos);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "avLightColor", kVar_avLightColor);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "afInvLightRadius", kVar_afInvLightRadius);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "afNegFarPlane", kVar_afNegFarPlane);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "afOneMinusCosHalfSpotFOV", kVar_afOneMinusCosHalfSpotFOV);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "avLightForward", kVar_avLightForward);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "a_mtxSpotViewProj", kVar_a_mtxSpotViewProj);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "a_mtxInvViewRotation", kVar_a_mtxInvViewRotation);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "avShadowMapOffsetMul", kVar_avShadowMapOffsetMul);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "afFalloff", kVar_afFalloff);
+            mpProgramManager->AddUniform(eDeferredProgramMode_Lights, "afComplexity", kVar_afComplexity);
         }
 
         //////////////////////////////
