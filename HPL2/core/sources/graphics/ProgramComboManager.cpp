@@ -234,8 +234,7 @@ void cProgramComboManager::DestroyGeneratedProgram(int alMainMode, iGpuProgram* 
         // Destroy program
         // Log("    Destroying program '%s'/%d id: %d\n", pProgram->GetName().c_str(),pProgram, pProgram->GetUserId());
         mvProgramSets[alMainMode].erase(it);
-        if (pProgram)
-            hplDelete(pProgram);
+        hplDelete(pProgram);
         hplDelete(pProgData);
 
         /////////////////////////
