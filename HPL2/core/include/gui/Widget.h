@@ -44,12 +44,6 @@ class iFontData;
 
 struct cWidgetCallback
 {
-    cWidgetCallback(void* apObject, tGuiCallbackFunc apFunc)
-    {
-        mpObject = apObject;
-        mpFunc = apFunc;
-    }
-
     void* mpObject;
     tGuiCallbackFunc mpFunc;
 };

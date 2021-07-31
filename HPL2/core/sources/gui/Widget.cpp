@@ -283,7 +283,7 @@ bool iWidget::ProcessMessage(eGuiMessage aMessage, const cGuiMessageData& aData,
 
 void iWidget::AddCallback(eGuiMessage aMessage, void* apObject, tGuiCallbackFunc apFunc)
 {
-    mvCallbackLists[aMessage].push_back(cWidgetCallback(apObject, apFunc));
+    mvCallbackLists[aMessage].push_back(cWidgetCallback{ apObject, apFunc });
 }
 
 //-----------------------------------------------------------------------
