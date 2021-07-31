@@ -124,7 +124,7 @@ bool cConfigFile::Load()
 
 //-----------------------------------------------------------------------
 
-bool cConfigFile::Save(tString* apDataCopy)
+void cConfigFile::Save(tString* apDataCopy)
 {
     if (apDataCopy)
     {
@@ -157,10 +157,8 @@ bool cConfigFile::Save(tString* apDataCopy)
         if (buff.Save(msFile) == false)
         {
             Error("Unable to save bin config file '%s'!\n", cString::To8Char(msFile).c_str());
-            return false;
+            return;
         }
-
-        return true;
     }
     ////////////////////////////////////
     // Normal load
@@ -176,15 +174,13 @@ bool cConfigFile::Save(tString* apDataCopy)
         if (pFile == NULL)
         {
             Error("Unable to save config file '%s'! Invalid filepointer returned!\n", cString::To8Char(msFile).c_str());
-            return false;
+            return;
         }
 
-        bool bRet = mpXmlDoc->SaveFile(pFile);
+        mpXmlDoc->SaveFile(pFile);
 
         if (pFile)
             fclose(pFile);
-
-        return bRet;
     }
 }
 

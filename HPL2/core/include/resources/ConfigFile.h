@@ -44,7 +44,7 @@ public:
      * Saves the data to file
      * \return true if loading ws ok, else false
      */
-    bool Save(tString* apDataCopy = NULL);
+    void Save(tString* apDataCopy = NULL);
 
     void SetUseCRC(bool abX) { mbUseCRC = abX; }
 
