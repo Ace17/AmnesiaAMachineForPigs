@@ -105,7 +105,6 @@ public:
     void SetName(const tString& asName) { msName = asName; }
 
     iGpuProgram* GenerateProgram(int alMainMode, int alFlags);
-    int GetGenerateCombinationNum(int alMainMode) { return mvCombinationNum[alMainMode]; }
 
     void SetupGenerateProgramData(int alMainMode,
           const tString& asModeName,
@@ -169,7 +168,6 @@ private:
     std::vector<cProgramComboSettings> mvSettings;
 
     int mlNumOfMainModes;
-    std::vector<int> mvCombinationNum;
 
     std::vector<tProgramComboProgramMap> mvProgramSets;
     std::vector<tProgramComboShaderMap> mvVtxShaderSets;

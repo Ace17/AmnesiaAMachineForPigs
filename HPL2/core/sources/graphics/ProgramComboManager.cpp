@@ -80,8 +80,6 @@ cProgramComboManager::cProgramComboManager(const tString& asName, cGraphics* apG
 
     mlNumOfMainModes = alNumOfMainModes;
 
-    mvCombinationNum.resize(mlNumOfMainModes);
-
     mvProgramSets.resize(mlNumOfMainModes);
     mvVtxShaderSets.resize(mlNumOfMainModes);
     mvFragShaderSets.resize(mlNumOfMainModes);
@@ -175,11 +173,6 @@ void cProgramComboManager::SetupGenerateProgramData(int alMainMode,
       int alFeatureNum,
       cParserVarContainer& avDefaultVars)
 {
-    ////////////////////////////////
-    // Set up variables and containers
-    int lCombinations = (int)(pow(2.0, (double)alFeatureNum) + 0.49);
-    mvCombinationNum[alMainMode] = lCombinations;
-
     ////////////////////////////////
     // Save settings
     cProgramComboSettings& comboSettings = mvSettings[alMainMode];
