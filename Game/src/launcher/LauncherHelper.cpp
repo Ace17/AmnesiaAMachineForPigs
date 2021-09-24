@@ -545,8 +545,8 @@ void cLauncherHelper::PopulateResolutions(const tVideoModeVec& avVidModes, cConf
 				sModeStr += " (" + cString::S16BitToUTF8(sAppendix) + ")";
 			}
 		}
-		lItemPos = apRes->add(sModeStr.c_str(), 0, NULL, (void*)i);
-			
+		lItemPos = apRes->add(sModeStr.c_str(), 0, NULL, (void*)(uintptr_t)i);
+
 		if(vMode == curMode)
 			lSelectedRes = lItemPos;
 	}
