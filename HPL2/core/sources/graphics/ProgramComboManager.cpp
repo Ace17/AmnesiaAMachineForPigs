@@ -197,7 +197,7 @@ void cProgramComboManager::SetupGenerateProgramData(int alMainMode,
 
     for (auto& it : *pVarMap)
     {
-        comboSettings.mvDefaultVars.push_back(cProgramComboSettingsVar(it.first, it.second));
+        comboSettings.mvDefaultVars.push_back({it.first, it.second});
     }
 }
 

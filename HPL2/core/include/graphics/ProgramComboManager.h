@@ -74,16 +74,8 @@ typedef tProgramComboProgramMap::iterator tProgramComboProgramMapIt;
 
 //---------------------------------------------------
 
-class cProgramComboSettingsVar
+struct cProgramComboSettingsVar
 {
-public:
-    cProgramComboSettingsVar() {}
-    cProgramComboSettingsVar(const tString& asName, const tString& asValue)
-        : msName(asName)
-        , msValue(asValue)
-    {
-    }
-
     tString msName;
     tString msValue;
 };
