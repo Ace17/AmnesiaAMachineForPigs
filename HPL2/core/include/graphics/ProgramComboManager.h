@@ -167,7 +167,7 @@ private:
     std::vector<tProgramComboVariableList> mvVarLists;
     std::vector<cProgramComboSettings> mvSettings;
 
-    int mlNumOfMainModes;
+    const int mlNumOfMainModes;
 
     std::vector<tProgramComboProgramMap> mvProgramSets;
     std::vector<tProgramComboShaderMap> mvVtxShaderSets;

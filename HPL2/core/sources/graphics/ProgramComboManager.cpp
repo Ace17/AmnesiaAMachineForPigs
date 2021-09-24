@@ -72,13 +72,12 @@ public:
 //-----------------------------------------------------------------------
 
 cProgramComboManager::cProgramComboManager(const tString& asName, cGraphics* apGraphics, cResources* apResources, int alNumOfMainModes)
+    : mlNumOfMainModes(alNumOfMainModes)
 {
     mpGraphics = apGraphics;
     mpResources = apResources;
 
     msName = asName;
-
-    mlNumOfMainModes = alNumOfMainModes;
 
     mvProgramSets.resize(mlNumOfMainModes);
     mvVtxShaderSets.resize(mlNumOfMainModes);
@@ -189,7 +188,7 @@ void cProgramComboManager::SetupGenerateProgramData(int alMainMode,
 
     for (auto& it : *pVarMap)
     {
-        comboSettings.mvDefaultVars.push_back({it.first, it.second});
+        comboSettings.mvDefaultVars.push_back({ it.first, it.second });
     }
 }
 
