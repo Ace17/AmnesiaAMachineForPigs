@@ -177,8 +177,7 @@ void cProgramComboManager::SetupGenerateProgramData(int alMainMode,
 {
     ////////////////////////////////
     // Set up variables and containers
-    int lFeatureNum = alFeatureNum;
-    int lCombinations = (int)(pow(2.0, (double)lFeatureNum) + 0.49);
+    int lCombinations = (int)(pow(2.0, (double)alFeatureNum) + 0.49);
     mvCombinationNum[alMainMode] = lCombinations;
 
     ////////////////////////////////
