@@ -42,15 +42,8 @@ class cParserVarContainer;
 
 //---------------------------------------------------
 
-class cProgramComboVariable
+struct cProgramComboVariable
 {
-public:
-    cProgramComboVariable(const tString& asVarName, int alId)
-        : msVarName(asVarName)
-        , mlId(alId)
-    {
-    }
-
     tString msVarName;
     int mlId;
 };

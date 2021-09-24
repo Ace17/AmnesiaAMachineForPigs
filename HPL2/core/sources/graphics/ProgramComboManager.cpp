@@ -196,7 +196,7 @@ void cProgramComboManager::SetupGenerateProgramData(int alMainMode,
 
 void cProgramComboManager::AddUniform(int alMainMode, const tString& asVarName, int alId)
 {
-    mvVarLists[alMainMode].push_back(cProgramComboVariable(asVarName, alId));
+    mvVarLists[alMainMode].push_back(cProgramComboVariable{asVarName, alId});
 }
 
 //-----------------------------------------------------------------------
