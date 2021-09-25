@@ -42,15 +42,10 @@ public:
     bool LoadData();
     void DestroyData();
 
-    static void SetUseShaders(bool abX) { mbUseShaders = abX; }
-    static bool GetUseShaders() { return mbUseShaders; }
-
 private:
     void CopyToFrameBuffer();
     void SetupRenderList();
     void RenderObjects();
-
-    static bool mbUseShaders;
 
     iGpuProgram* mpFlatProgram;
     iGpuProgram* mpDiffuseProgram;

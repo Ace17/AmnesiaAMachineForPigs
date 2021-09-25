@@ -42,8 +42,6 @@
 namespace hpl
 {
 
-bool cRendererSimple::mbUseShaders = true;
-
 //////////////////////////////////////////////////////////////////////////
 // CONSTRUCTORS
 //////////////////////////////////////////////////////////////////////////
@@ -155,13 +153,10 @@ void cRendererSimple::RenderObjects()
             iTexture* pTex = pMaterial->GetTexture(eMaterialTexture_Alpha);
 
             // If shaders and an alpha channel, use a program that handles textures.
-            if (mbUseShaders)
-            {
-                if (pTex)
-                    SetProgram(mpDiffuseProgram);
-                else
-                    SetProgram(mpFlatProgram);
-            }
+            if (pTex)
+                SetProgram(mpDiffuseProgram);
+            else
+                SetProgram(mpFlatProgram);
 
             SetTexture(0, pTex);
 
@@ -182,10 +177,7 @@ void cRendererSimple::RenderObjects()
         SetAlphaMode(eMaterialAlphaMode_Solid);
         SetTextureRange(NULL, 0);
 
-        if (mbUseShaders)
-        {
-            SetProgram(mpDiffuseProgram);
-        }
+        SetProgram(mpDiffuseProgram);
 
         cRenderableVecIterator diffIt = mpCurrentRenderList->GetArrayIterator(eRenderListType_Diffuse);
         while (diffIt.HasNext())
@@ -209,10 +201,7 @@ void cRendererSimple::RenderObjects()
         SetDepthTestFunc(eDepthTestFunc_LessOrEqual);
         SetDepthWrite(false);
 
-        if (mbUseShaders)
-        {
-            SetProgram(mpDiffuseProgram);
-        }
+        SetProgram(mpDiffuseProgram);
 
         cRenderableVecIterator decalIt = mpCurrentRenderList->GetArrayIterator(eRenderListType_Decal);
         while (decalIt.HasNext())
@@ -240,10 +229,7 @@ void cRendererSimple::RenderObjects()
         SetDepthTestFunc(eDepthTestFunc_LessOrEqual);
         SetDepthWrite(false);
 
-        if (mbUseShaders)
-        {
-            SetProgram(mpDiffuseProgram);
-        }
+        SetProgram(mpDiffuseProgram);
 
         cRenderableVecIterator transIt = mpCurrentRenderList->GetArrayIterator(eRenderListType_Translucent);
         while (transIt.HasNext())
