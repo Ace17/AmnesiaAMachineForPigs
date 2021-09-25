@@ -63,7 +63,6 @@
 #include "graphics/PostEffect_RadialBlur.h"
 #include "graphics/RenderList.h"
 #include "graphics/RendererDeferred.h"
-#include "graphics/RendererSimple.h"
 #include "graphics/Skeleton.h"
 #include "graphics/SubMesh.h"
 #include "graphics/Texture.h"
