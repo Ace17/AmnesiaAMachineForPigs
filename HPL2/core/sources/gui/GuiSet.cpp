@@ -92,7 +92,7 @@ static bool SortWidget_Z(const iWidget* apWidgetA, const iWidget* apWidgetB)
 
 //-----------------------------------------------------------------------
 
-bool cGuiRenderObjectCompare::operator()(const cGuiRenderObject& aObjectA, const cGuiRenderObject& aObjectB)
+bool cGuiRenderObjectCompare::operator()(const cGuiRenderObject& aObjectA, const cGuiRenderObject& aObjectB) const
 {
     // Z
     float fZA = aObjectA.mvPos.z;

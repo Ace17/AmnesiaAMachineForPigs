@@ -932,7 +932,7 @@ bool CScriptArray::Equals(const void* a, const void* b, asIScriptContext* ctx, S
         }
 
         // Execute object opCmp if available
-        if (cache && cache->cmpFunc >= 0)
+        if (cache && cache->cmpFunc != 0)
         {
             // TODO: Add proper error handling
             r = ctx->Prepare(cache->cmpFunc);

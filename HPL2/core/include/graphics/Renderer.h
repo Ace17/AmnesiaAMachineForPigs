@@ -200,7 +200,7 @@ private:
 class cRendererNodeSortFunc
 {
 public:
-    bool operator()(iRenderableContainerNode* apNodeA, iRenderableContainerNode* apNodeB);
+    bool operator()(iRenderableContainerNode* apNodeA, iRenderableContainerNode* apNodeB) const;
 };
 
 typedef std::multiset<iRenderableContainerNode*, cRendererNodeSortFunc> tRendererSortedNodeSet;
